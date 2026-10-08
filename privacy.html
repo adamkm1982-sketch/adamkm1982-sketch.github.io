@@ -29,9 +29,9 @@
 <link rel="preload" href="/assets/fonts/montserrat-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 <!-- Sink news ticker: critical layout inline so it is always a thin one-line bar, even if an old styles.css is cached. Full styles in styles.css (loaded after, so it wins). -->
 <style id="nt-critical">.news-ticker{background:#14365f;color:#fff;height:36px;overflow:hidden;font-size:13px;line-height:1.3}.nt-wrap{display:flex;align-items:center;gap:10px;height:36px;overflow:hidden}.nt-label{flex:none;color:#fff;text-decoration:none;font-weight:700;white-space:nowrap}.nt-viewport{flex:1 1 auto;min-width:0;overflow:hidden}.nt-track{display:flex;flex-wrap:nowrap;width:max-content;animation:nt-scroll var(--nt-dur,60s) linear infinite}.nt-list{display:flex;flex-wrap:nowrap;flex:none;list-style:none;margin:0;padding:0}.nt-list li{list-style:none;white-space:nowrap;padding:0 22px}.nt-list a{color:#fff;text-decoration:none}@keyframes nt-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}.news-ticker:hover .nt-track,.news-ticker:focus-within .nt-track,.news-ticker.is-paused .nt-track{animation-play-state:paused}@media (prefers-reduced-motion:reduce){.nt-track{animation:none}.nt-list[aria-hidden]{display:none}}</style>
-<link rel="stylesheet" href="/assets/css/styles.css?v=20261008b">
-<script src="/assets/config.js?v=20261008b" defer></script>
-<script src="/assets/js/main.js?v=20261008b" defer></script>
+<link rel="stylesheet" href="/assets/css/styles.css?v=20261008c">
+<script src="/assets/config.js?v=20261008c" defer></script>
+<script src="/assets/js/main.js?v=20261008c" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -83,10 +83,10 @@
 <li>Analytics data is kept for the period set in our Google Analytics settings, which is never more than 14 months, and is then deleted automatically.</li>
 <li>Google may process this data in the United States. See section 6.</li>
 <li>More information: <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">how Google uses information from sites that use its services</a>. You can also install <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google's opt-out browser add-on</a>.</li>
-<li>If you accept, Google Analytics also records clicks on our Buy direct, eBay and Amazon buttons (as an event called <code>store_click</code>) as part of your visit, and, if you arrived from one of our labelled social media links, the label on that link (see below).</li>
+<li>If you accept, Google Analytics also records clicks on our Buy direct (single bottle or 2-pack), eBay and Amazon buttons (as an event called <code>store_click</code>) as part of your visit, and, if you arrived from one of our labelled social media links, the label on that link (see below).</li>
 </ul>
 <h3 id="click-counting">Counting clicks on our buy buttons (no cookies)</h3>
-<p>When you click a <strong>Buy direct</strong>, <strong>eBay</strong> or <strong>Amazon</strong> button, your browser sends a short anonymous message to <strong>Abacus</strong> (abacus.jasoncameron.dev), a free counting service run by Jason Cameron, which may process data outside the UK, including in the United States. It adds one to a few counters: one for the shop you chose, one for the page and part of the page the button was on, and ones for the month, day and hour (UK time). We use these totals to see which ways of buying our customers use, and to compare clicks with orders by date and time.</p>
+<p>When you click a <strong>Buy direct</strong> (single bottle or 2-pack), <strong>eBay</strong> or <strong>Amazon</strong> button, your browser sends a short anonymous message to <strong>Abacus</strong> (abacus.jasoncameron.dev), a free counting service run by Jason Cameron, which may process data outside the UK, including in the United States. It adds one to a few counters: one for the shop you chose, one for the page and part of the page the button was on, and ones for the month, day and hour (UK time). We use these totals to see which ways of buying our customers use, and to compare clicks with orders by date and time.</p>
 <ul>
 <li>No cookies are used, and nothing is stored on or read from your device, so this happens whether or not you accept analytics cookies.</li>
 <li>We only send the counter names. There are no identifiers and no details about you or your order, and we've told your browser not to send the address of the page you were on. We can't tell who clicked.</li>
@@ -112,7 +112,7 @@ and add Cloudflare to sections 5, 6 and 7. -->
 <thead><tr><th scope="col">Type</th><th scope="col">Name / provider</th><th scope="col">Purpose</th><th scope="col">Needs your consent?</th></tr></thead>
 <tbody>
 <tr><td><strong>Your cookie choice</strong></td><td><code>astraclean-cookie-consent</code> (stored in your browser's local storage, not sent to us)</td><td>Remembers whether you accepted or rejected analytics cookies, for up to 12 months</td><td>No (strictly necessary)</td></tr>
-<tr><td><strong>Buy-button click counts and social media visit counts</strong></td><td>Abacus (abacus.jasoncameron.dev)</td><td>Anonymous count of clicks on the Buy direct, eBay and Amazon buttons, and of visits arriving from our labelled social media links (see section 3). Nothing is stored on your device</td><td>No (no cookies or device storage used)</td></tr>
+<tr><td><strong>Buy-button click counts and social media visit counts</strong></td><td>Abacus (abacus.jasoncameron.dev)</td><td>Anonymous count of clicks on the Buy direct (single bottle or 2-pack), eBay and Amazon buttons, and of visits arriving from our labelled social media links (see section 3). Nothing is stored on your device</td><td>No (no cookies or device storage used)</td></tr>
 <tr><td><strong>Our own test setting</strong></td><td><code>astraclean-click-test</code> (local storage)</td><td>Only set if someone opens a special test link that we use ourselves. It stops clicks from that browser being added to the real counts. Normal visitors never have it</td><td>No</td></tr>
 <tr><td><strong>Analytics</strong></td><td>Google Analytics 4 (<code>_ga</code>, <code>_ga_CVNBPXH52L</code>)</td><td>Visitor statistics (see section 3)</td><td><strong>Yes</strong></td></tr>
 <tr><td><strong>Embedded video</strong></td><td>YouTube (Google), privacy-enhanced mode (youtube-nocookie.com)</td><td>Nothing is loaded from YouTube until you press play on our product video. Once you press play, YouTube may store information on your device and record that you watched it, under <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's privacy policy</a></td><td>Only loads when you choose to play the video</td></tr>

@@ -140,6 +140,28 @@
     }
   }
 
+  /* ---------- 1c. Buy 2 direct (BUY_DIRECT_2PACK_URL / PRICE_2PACK_GBP in /assets/config.js) ----------
+     2 x 500ml in one PayPal order. The HTML already has the URL and price written in (works
+     without JavaScript); this keeps them in step with config.js, and hides every
+     "Buy 2 direct" element if the URL is set to "". Clicks count as store "direct2" (section 4).
+     No structured-data Offer is added for the 2-pack (the Product is the single 500ml bottle). */
+  if (typeof BUY_DIRECT_2PACK_URL === 'string') {
+    var direct2Url = BUY_DIRECT_2PACK_URL.trim();
+    var direct2Price = (typeof PRICE_2PACK_GBP === 'string' || typeof PRICE_2PACK_GBP === 'number') ? String(PRICE_2PACK_GBP).trim() : '';
+    if (/^https:\/\/\S+$/i.test(direct2Url)) {
+      $all('a[data-direct2-link]').forEach(function (a) { a.href = direct2Url; });
+      $all('[data-direct2-price]').forEach(function (el) {
+        if (/^\d+(\.\d{2})?$/.test(direct2Price)) { el.textContent = '£' + direct2Price; el.hidden = false; }
+        else { el.hidden = true; var sep = el.closest('[data-direct2-price-wrap]'); if (sep) sep.hidden = true; }
+      });
+    } else {
+      $all('[data-direct2]').forEach(function (el) {
+        el.hidden = true;
+        var wrap = el.closest('.pc-two'); if (wrap) wrap.hidden = true;
+      });
+    }
+  }
+
   // Fallback: if the static Offer is ever removed from index.html, add one to the
   // Product JSON-LD when a direct checkout exists, so Google never sees a price that
   // can't be paid on this site.
@@ -528,8 +550,9 @@
   });
 
   /* ---------- 4. Store-button click counting ----------
-     Every click on a Buy direct / eBay / eBay 2-pack / Amazon link is counted in two ways.
-     Stores: direct, ebay (single bottle), ebay2 (the 2-pack listing, EBAY_2PACK_URL in
+     Every click on a Buy direct / Buy 2 direct / eBay / eBay 2-pack / Amazon link is counted in two ways.
+     Stores: direct (single bottle, PayPal), direct2 (Buy 2 direct, the 2-pack via PayPal,
+     any link marked data-direct2-link), ebay (single bottle), ebay2 (the 2-pack listing, EBAY_2PACK_URL in
      config.js, or any link marked data-ebay2-link), amazon.
      Nothing here ever calls preventDefault() or waits, so the link always works
      even if a counter is down; every send is fire-and-forget inside try/catch.
@@ -568,6 +591,7 @@
 
   var EBAY2_ITEM = (function () { var m = /\/itm\/(?:[^\/]+\/)?(\d{9,15})/.exec(ebay2Url); return m ? m[1] : '198699332202'; })();
   function storeOf(a) {
+    if (a.hasAttribute('data-direct2-link')) return 'direct2'; // Buy 2 direct (2-pack, PayPal)
     if (a.hasAttribute('data-direct-link')) return 'direct';
     var host = (a.hostname || '').toLowerCase();
     // The eBay 2-pack listing is counted separately from the single-bottle listing.

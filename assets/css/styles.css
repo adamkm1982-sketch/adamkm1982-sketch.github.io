@@ -134,7 +134,19 @@ ul.ticks li::before{content:"✔";position:absolute;left:0;color:var(--b2);font-
 .twopack-dark .tp-text strong,.twopack-dark .tp-go{color:#fff}
 .twopack-center{margin:16px auto 0;text-align:left}
 .twopack-lp{width:100%;margin-top:10px}
-@media (max-width:900px){.hero .twopack,.buy-box .twopack{width:100%}}
+/* Buy 2 direct (PayPal 2-pack, store "direct2"): stronger than the eBay 2-pack below it */
+.twopack-direct{border:2px solid var(--b1);background:#fff;color:var(--muted)}
+.twopack-direct:hover{border-color:var(--b2)}
+.twopack-direct .tp-text strong{font-size:16px}
+.twopack-direct + .twopack{margin-top:8px}
+.twopack-dark.twopack-direct{background:#fff;border-color:#fff;color:var(--muted)}
+.twopack-dark.twopack-direct .tp-badge{background:var(--b1);color:#fff}
+.twopack-dark.twopack-direct .tp-text strong,.twopack-dark.twopack-direct .tp-go{color:var(--b1)}
+.twopack-dark.twopack-direct:hover{border-color:#fff;box-shadow:0 8px 22px rgba(8,30,70,.35)}
+.pc-two{margin:12px 0 0}
+.twopack-card{margin:0}
+.twopack[hidden],.pc-two[hidden]{display:none}
+@media (max-width:900px){.hero .twopack,.buy-box .twopack,.twopack-card{width:100%}}
 @media (prefers-reduced-motion:reduce){.twopack{transition:none}}
 /* Product photo gallery */
 .buy-grid{align-items:start}

@@ -19,6 +19,16 @@ Edit **`assets/config.js`** only:
   `.github/news/template.html` too (search for `198699332202`). `EBAY_2PACK_PRICE = ""` hides the price.
   The 2-pack is deliberately **not** in the Product JSON-LD or the Merchant Center feed: those describe the
   single 500ml bottle (sku AC500) sold on this site, and a second price would contradict them.
+- `BUY_DIRECT_2PACK_URL` / `PRICE_2PACK_GBP` – **Buy 2 direct**: 2 × 500ml in one PayPal order for £35.97 with free UK
+  delivery (10% under the eBay 2-pack). PayPal `_xclick` link to the same PayPal account as Buy direct, item name
+  "Astraclean 2-pack - 2 x 500ml Composite Sink Cleaner (2 bottles)", item number `AC500-2PK`, option line
+  "Pack contents: 2 x 500ml bottles", quantity fixed at 1 (one 2-pack), shipping 0.00. Shown as the white/blue
+  "2-pack – Buy 2 direct" button above every "Buy 2 on eBay" link (home hero, buy box, closing band, `/links/`, guide and
+  news product cards); the single-bottle "Buy direct" stays the main button. The URL and price are also written into
+  that HTML (works without JavaScript); if they change, update `index.html`, `links/index.html`, `guides/*.html`,
+  `news/index.html`, `site-tools/guide_shell.py` and `.github/news/template.html` too (search for `AC500-2PK`).
+  `BUY_DIRECT_2PACK_URL = ""` hides every Buy 2 direct button. Clicks count as store `direct2`. Like the eBay 2-pack,
+  it is not in the Product JSON-LD or the Merchant Center feed.
 
 ## Files
 
@@ -46,14 +56,14 @@ Open items that need Adam's input are in **`TODO.md`** and marked `TODO` in the 
 
 ## Buy-button click counting
 
-Every click on a **Buy direct**, **eBay** (single bottle), **eBay 2-pack** or **Amazon** link is counted by `assets/js/main.js`:
+Every click on a **Buy direct**, **Buy 2 direct** (PayPal 2-pack), **eBay** (single bottle), **eBay 2-pack** or **Amazon** link is counted by `assets/js/main.js`:
 
 - **Cookieless counter (all visitors):** Abacus (`abacus.jasoncameron.dev`, free, no account), namespace
   `astracleanuk-com-clicks`. Keys per store (`ebay` = single-bottle listing, `ebay2` = 2-pack listing 198699332202 or any link with
-  `data-ebay2-link`, `amazon`, `direct`), UK time: month, day, hour and
+  `data-ebay2-link`, `amazon`, `direct`, `direct2` = Buy 2 direct / any link with `data-direct2-link`), UK time: month, day, hour and
   placement (`home-hero`, `home-buy`, `home-band`, `home-sticky` (mobile quick-buy bar), `home-reviews`, `guide-…-card`, …). Read with
   `python3 /workspace/astraclean/site-tools/click-report.py 2026-10`.
-- **GA4 event `store_click`** (only for visitors who accept analytics cookies): params `store` (`direct`, `ebay`, `ebay2`, `amazon`),
+- **GA4 event `store_click`** (only for visitors who accept analytics cookies): params `store` (`direct`, `direct2`, `ebay`, `ebay2`, `amazon`),
   `placement`, `link_domain`, `link_url`. To report on them in GA4, register `store` and `placement`
   as event-scoped custom dimensions (Admin → Custom definitions).
 - **Optional exact-timestamp log:** set `CLICK_LOG_URL` in `assets/config.js` once the order worker
@@ -185,7 +195,7 @@ of every page.
 Every page loads `/assets/css/styles.css?v=…`, `/assets/js/main.js?v=…` and `/assets/config.js?v=…`.
 GitHub Pages sends `Cache-Control: max-age=600` and phones can keep an old copy longer, so after editing
 any of those files bump the `?v=` value in **every** `*.html` page, `.github/news/template.html` and
-`site-tools/page_shell.py` / `guide_shell.py` (e.g. `rg -l 'v=20261008b' | xargs sed -i 's/v=20261008b/v=NEW/g'`).
+`site-tools/page_shell.py` / `guide_shell.py` (e.g. `rg -l 'v=20261008c' | xargs sed -i 's/v=20261008c/v=NEW/g'`).
 The Sink news ticker also has its critical layout inline in each page's `<head>` (`<style id="nt-critical">`),
 so it always shows as a thin one-line bar even with a stale stylesheet. Keep it in step with styles.css.
 

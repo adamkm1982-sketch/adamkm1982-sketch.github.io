@@ -123,6 +123,16 @@ th{background:var(--light);color:var(--b1)}
 .prose .linklike{color:var(--b1);font-weight:700}
 .status{display:inline-block;background:var(--light);color:var(--b1);border-radius:999px;padding:2px 12px;font-weight:700;font-size:14px}
 
+/* "Thanks for your order" banner (/?order=thanks after PayPal) */
+.order-thanks{background:var(--light);border-bottom:1px solid #cfe0f3;color:var(--ink)}
+.order-thanks:focus{outline:none}
+.order-thanks .wrap{display:flex;align-items:flex-start;gap:14px;padding-top:18px;padding-bottom:18px}
+.ot-icon{flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:var(--b1);color:#fff;font-weight:800;font-size:18px;line-height:1;display:flex;align-items:center;justify-content:center}
+.ot-text{flex:1 1 auto;margin:0;padding-top:4px;font-size:15px}
+.ot-text strong{display:block;color:var(--b1);font-size:18px;margin-bottom:2px}
+.ot-close{flex:0 0 auto;background:none;border:0;font-family:inherit;font-size:28px;line-height:1;color:var(--muted);cursor:pointer;padding:2px 8px;border-radius:8px}
+.ot-close:hover{color:var(--ink)}
+
 /* Footer */
 .site-footer{background:var(--dark);color:#c9d8ea;font-size:14px;padding:36px 0}
 .site-footer a,.site-footer .linklike{color:#fff;margin-right:16px}

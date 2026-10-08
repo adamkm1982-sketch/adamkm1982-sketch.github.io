@@ -22,7 +22,7 @@ Edit **`assets/config.js`** only:
 | `privacy.html` | Privacy and cookie policy, with a button to change the cookie choice |
 | `404.html` | Not-found page (GitHub Pages serves it automatically) |
 | `assets/config.js` | Buy direct link and price (the only settings file) |
-| `assets/js/main.js` | Buy direct switch, cookie banner + GA4 (G-CVNBPXH52L, loaded only after "Accept"), click-to-load YouTube |
+| `assets/js/main.js` | "Thanks for your order" banner on `/?order=thanks` (PayPal return URL), Buy direct switch, cookie banner + GA4 (G-CVNBPXH52L, loaded only after "Accept"), click-to-load YouTube |
 | `assets/css/styles.css` | All styles |
 | `assets/img/` | Optimised images (WebP + JPEG, several widths) and `og-image.jpg` (1200×630) |
 | `assets/fonts/` | Montserrat (variable, Latin subset, SIL OFL – see `OFL.txt`) |

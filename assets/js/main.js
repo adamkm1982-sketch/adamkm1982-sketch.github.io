@@ -1,4 +1,4 @@
-/* Astraclean UK – small vanilla JS: Buy direct switch, cookie consent + GA4, click-to-load video. */
+/* Astraclean UK – small vanilla JS: order-thanks banner, Buy direct switch, cookie consent + GA4, click-to-load video. */
 (function () {
   'use strict';
 
@@ -8,6 +8,19 @@
   var doc = document;
 
   function $all(sel, root) { return Array.prototype.slice.call((root || doc).querySelectorAll(sel)); }
+
+  /* ---------- 0. "Thanks for your order" banner ----------
+     PayPal sends buyers back to /?order=thanks (the "return" URL in config.js). */
+  var thanks = doc.querySelector('[data-order-thanks]');
+  if (thanks && /(?:^|[?&])order=thanks(?:&|$)/.test(location.search)) {
+    thanks.hidden = false;
+    try { thanks.focus({ preventScroll: true }); } catch (e) {}
+    // Tidy the address bar (this also drops any PayPal return parameters, so they
+    // never reach analytics) and stop the message reappearing on refresh or share.
+    try { history.replaceState(null, '', location.pathname + location.hash); } catch (e) {}
+    var closeThanks = thanks.querySelector('[data-order-thanks-close]');
+    if (closeThanks) closeThanks.addEventListener('click', function () { thanks.hidden = true; });
+  }
 
   /* ---------- 1. Buy direct (reads /assets/config.js) ---------- */
   var directUrl = (typeof BUY_DIRECT_URL === 'string') ? BUY_DIRECT_URL.trim() : '';

@@ -180,6 +180,15 @@ of every page.
 
 **Because the Action pushes to `main`, always `git pull --rebase` before pushing other changes.**
 
+## Cache busting (bump `?v=` when CSS/JS changes)
+
+Every page loads `/assets/css/styles.css?v=…`, `/assets/js/main.js?v=…` and `/assets/config.js?v=…`.
+GitHub Pages sends `Cache-Control: max-age=600` and phones can keep an old copy longer, so after editing
+any of those files bump the `?v=` value in **every** `*.html` page, `.github/news/template.html` and
+`site-tools/page_shell.py` / `guide_shell.py` (e.g. `rg -l 'v=20261008b' | xargs sed -i 's/v=20261008b/v=NEW/g'`).
+The Sink news ticker also has its critical layout inline in each page's `<head>` (`<style id="nt-critical">`),
+so it always shows as a thin one-line bar even with a stale stylesheet. Keep it in step with styles.css.
+
 ## Local preview
 
 ```sh

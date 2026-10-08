@@ -1,4 +1,4 @@
-/* Astraclean UK – small vanilla JS: order-thanks banner, Buy direct switch, cookie consent + GA4, click-to-load video, photo gallery, mobile quick-buy bar, customer reviews, store-button click counting. */
+/* Astraclean UK – small vanilla JS: order-thanks banner, Buy direct switch, cookie consent + GA4, click-to-load video, photo gallery, mobile quick-buy bar, customer reviews, store-button click counting, social/campaign landing counts. */
 (function () {
   'use strict';
 
@@ -21,6 +21,40 @@
     var closeThanks = thanks.querySelector('[data-order-thanks-close]');
     if (closeThanks) closeThanks.addEventListener('click', function () { thanks.hidden = true; });
   }
+
+  /* ---------- 0b. Social / campaign landing (utm_ tags) ----------
+     Read once, before anything else touches the address bar. The values are cleaned
+     to short [a-z0-9-] codes (sources and media from a fixed list, anything else
+     becomes "other"), counted cookielessly in section 5 and then removed from the
+     address bar. GA4 still gets the full landing address: it is passed to gtag as
+     page_location, including when the visitor accepts cookies later on this page. */
+  var LANDING_SOURCES = ['tiktok', 'instagram', 'facebook', 'youtube', 'pinterest', 'threads', 'x', 'reddit',
+    'whatsapp', 'linkedin', 'snapchat', 'nextdoor', 'email', 'qr'];
+  var LANDING_ALIASES = { tt: 'tiktok', ig: 'instagram', insta: 'instagram', fb: 'facebook', meta: 'facebook',
+    yt: 'youtube', pin: 'pinterest', twitter: 'x', wa: 'whatsapp', newsletter: 'email', mail: 'email', gmail: 'email' };
+  var LANDING_MEDIA = ['social', 'video', 'bio', 'email', 'referral', 'qr', 'print', 'paid-social', 'cpc'];
+
+  function codeOf(v, max) {
+    return String(v || '').toLowerCase().trim()
+      .replace(/[\s_+.\/:]+/g, '-').replace(/[^a-z0-9-]/g, '').replace(/-+/g, '-')
+      .slice(0, max).replace(/^-+|-+$/g, '');
+  }
+  function readLanding() {
+    try {
+      if (!/[?&]utm_source=/i.test(location.search) || !window.URLSearchParams) return null;
+      var q = new URLSearchParams(location.search);
+      var src = codeOf(q.get('utm_source'), 40).replace(/^(www|m|l|lm|web)-/, '').replace(/-(com|co-uk|net|org)$/, '');
+      if (!src) return null;
+      src = LANDING_ALIASES[src] || src;
+      if (LANDING_SOURCES.indexOf(src) < 0) src = 'other';
+      var med = codeOf(q.get('utm_medium'), 20);
+      med = !med ? 'none' : (LANDING_MEDIA.indexOf(med) >= 0 ? med : 'other');
+      var camp = codeOf(q.get('utm_campaign'), 24) || 'none';
+      return { source: src, medium: med, campaign: camp };
+    } catch (e) { return null; }
+  }
+  var landing = readLanding();
+  var gaPageLocation = landing ? location.href : '';
 
   /* ---------- 1. Buy direct (reads /assets/config.js) ---------- */
   var directUrl = (typeof BUY_DIRECT_URL === 'string') ? BUY_DIRECT_URL.trim() : '';
@@ -104,7 +138,10 @@
     window.dataLayer = window.dataLayer || [];
     window.gtag = function () { window.dataLayer.push(arguments); };
     window.gtag('js', new Date());
-    window.gtag('config', GA_ID);
+    // On a tagged landing the utm_ tags have already been tidied out of the address bar,
+    // so hand GA4 the original landing address for its source / campaign attribution.
+    if (gaPageLocation) window.gtag('config', GA_ID, { page_location: gaPageLocation });
+    else window.gtag('config', GA_ID);
     var s = doc.createElement('script');
     s.async = true;
     s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
@@ -479,6 +516,7 @@
     if (p === '/') return 'home';
     if (p === '/guides/') return 'guides';
     if (p === '/news/') return 'news';
+    if (p === '/links/') return 'links';
     var g = /^\/guides\/([^\/]+)\.html$/.exec(p);
     if (g) return GUIDE_CODES[g[1]] || 'guide-other';
     return 'other';
@@ -564,11 +602,49 @@
        store + '.d.' + t.day,
        store + '.h.' + t.day + 'T' + t.hour,
        store + '.p.' + placement + '.' + t.month
-      ].forEach(function (key) { ping(base + encodeURIComponent(key.slice(0, 64))); });
+      ].concat(landing ? [  // clicked on the page the visitor landed on from a tagged (e.g. social) link
+       store + '.s.' + landing.source + '.' + t.month,
+       store + '.c.' + landing.source + '.' + landing.campaign + '.' + t.month
+      ] : []).forEach(function (key) { ping(base + encodeURIComponent(key.slice(0, 64))); });
 
       if (clickLogUrl) postLog(clickLogUrl, { store: store, page: page, section: section, test: test });
     } catch (err) { /* never get in the way of the click */ }
   }
   doc.addEventListener('click', onStoreClick, true);
   doc.addEventListener('auxclick', onStoreClick, true);
+
+  /* ---------- 5. Social / campaign landing counts ----------
+     When a page is opened from a link tagged with utm_source (our social bios and posts,
+     see marketing/utm-links.md), add 1 to these Abacus counters (UK time), once per page
+     load. Cookieless: nothing is stored on or read from the device, no identifiers.
+       land.m.<YYYY-MM>, land.d.<YYYY-MM-DD>                     all tagged landings
+       land.s.<source>.m.<YYYY-MM>, land.s.<source>.d.<day>      by source
+       land.c.<source>.<campaign>.m.<YYYY-MM> / .d.<day>         by source + campaign
+       land.pg.<source>.<page>.m.<YYYY-MM>                       which page they landed on
+       land.md.<medium>.m.<YYYY-MM>                              by utm_medium
+     Store clicks made on that same page also add <store>.s.<source>.<YYYY-MM> and
+     <store>.c.<source>.<campaign>.<YYYY-MM> (see section 4). Test traffic goes to the
+     test namespace. Afterwards the utm_ tags are removed from the address bar
+     (history.replaceState), so a reload, bookmark or shared copy of the address isn't
+     counted again; GA4 gets the original address via page_location (section 2). */
+  if (landing) {
+    try {
+      var lt = ukParts(new Date());
+      var lbase = COUNTER_BASE + (isTestTraffic() ? COUNTER_TEST_NS : COUNTER_NS) + '/';
+      var L = landing;
+      ['land.m.' + lt.month,
+       'land.d.' + lt.day,
+       'land.s.' + L.source + '.m.' + lt.month,
+       'land.s.' + L.source + '.d.' + lt.day,
+       'land.c.' + L.source + '.' + L.campaign + '.m.' + lt.month,
+       'land.c.' + L.source + '.' + L.campaign + '.d.' + lt.day,
+       'land.pg.' + L.source + '.' + pageCode() + '.m.' + lt.month,
+       'land.md.' + L.medium + '.m.' + lt.month
+      ].forEach(function (key) { ping(lbase + encodeURIComponent(key.slice(0, 64))); });
+    } catch (e) {}
+    try {
+      var rest = location.search.replace(/^\?/, '').split('&').filter(function (p) { return p && !/^utm_[a-z_]*(=|$)/i.test(p); });
+      history.replaceState(history.state, '', location.pathname + (rest.length ? '?' + rest.join('&') : '') + location.hash);
+    } catch (e) {}
+  }
 })();

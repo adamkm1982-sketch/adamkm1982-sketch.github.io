@@ -383,16 +383,16 @@ html:not(.has-direct) .lp-buttons .btn-market{background:var(--b1);color:#fff;bo
 .home-news-more{margin:22px 0 0}
 @media (max-width:900px){.home-news-list{grid-template-columns:1fr;gap:14px}.home-news-item{padding:16px 18px}}
 @media (min-width:901px) and (max-width:1100px){.site-nav a{margin-left:14px;font-size:13px}}
-/* Hazard information (GB CLP): GHS07 pictogram, signal word, H statements. Same size and contrast as the
-   surrounding text, never smaller or fainter than the marketing copy. Source: SDS HC1612 Rev 3. */
-.hazard-mini{display:flex;align-items:flex-start;gap:10px;margin:14px 0 0;font-size:14px;line-height:1.45;color:var(--ink);max-width:520px}
-.hazard-mini img{flex:0 0 auto;width:30px;height:30px;margin-top:1px}
-.hazard-mini a{white-space:nowrap;font-weight:600}
-.hazard-mini-dark{color:#fff}
-.hazard-mini-dark a{color:#fff}
-.hazard-mini-lp{justify-content:center;text-align:left;margin:14px auto 0;font-size:13px}
-.hazard-mini-card{font-size:14px;margin-top:8px}
-.hazard-mini-card img{width:26px;height:26px}
+/* Discreet link by the buy buttons to the full GB CLP hazard information in #safety (GHS07, Warning,
+   H315/H319, P statements, first aid). The full statements live in #safety on the home page. */
+.safety-link{margin:12px 0 0;font-size:13px;line-height:1.4;color:var(--muted)}
+.safety-link a{color:var(--muted);text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
+.safety-link a:hover,.safety-link a:focus-visible{color:var(--ink)}
+.hero .safety-link-dark{margin:16px 0 0;font-size:14px;opacity:1}
+.safety-link-dark a{color:rgba(255,255,255,.85)}
+.safety-link-dark a:hover,.safety-link-dark a:focus-visible{color:#fff}
+.safety-link-lp{text-align:center;margin:12px auto 0}
+.safety-link-card{margin-top:8px}
 .hazard-head{display:flex;align-items:center;gap:16px;margin:4px 0 12px}
 .hazard-head img{flex:0 0 auto;width:64px;height:64px}
 .hazard-head p{margin:0;display:flex;flex-direction:column;line-height:1.45}

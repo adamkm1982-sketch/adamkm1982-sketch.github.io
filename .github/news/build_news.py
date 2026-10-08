@@ -8,7 +8,10 @@ Runs daily in GitHub Actions (.github/workflows/sink-news.yml); standard library
 - Renders news/index.html from .github/news/template.html.
 - Writes the 3 newest headlines into the home page's "Latest sink news" strip
   (index.html, between <!--NEWS-STRIP:START--> and <!--NEWS-STRIP:END-->).
-  python3 build_news.py --home-only  redoes just that from archive.json (no fetching).
+- Writes the TICKER_ITEMS newest headlines into the scrolling "Sink news" ticker under the
+  main menu of every page that has <!--NEWS-TICKER:START--> / <!--NEWS-TICKER:END--> markers
+  (home, guides, news template, policy pages, 404).
+  python3 build_news.py --home-only  redoes the strip and tickers from archive.json (no fetching).
 Only headline, source, date, a <=25-word snippet and a link to the original are shown:
 no full articles, no images.
 Exit code 1 only if every feed failed (the existing page is left untouched).
@@ -24,6 +27,9 @@ OUT = os.path.join(ROOT, 'news', 'index.html')
 HOME = os.path.join(ROOT, 'index.html')
 HOME_ITEMS = 3
 STRIP_START, STRIP_END = '<!--NEWS-STRIP:START-->', '<!--NEWS-STRIP:END-->'
+TICKER_ITEMS = 8
+TICKER_START, TICKER_END = '<!--NEWS-TICKER:START-->', '<!--NEWS-TICKER:END-->'
+TICKER_SKIP_DIRS = {'.git', '.github', 'node_modules', 'assets', 'feeds'}
 UK = ZoneInfo('Europe/London')
 KEEP_DAYS = 60
 SNIPPET_WORDS = 25
@@ -245,6 +251,45 @@ def render_home_strip(items):
                        uk_date(d).date().isoformat(), fmt_day(d)))
     return '<ul class="home-news-list">' + ''.join(lis) + '</ul>'
 
+def render_ticker(items):
+    """Scrolling headline ticker (headline + source only, linking to the original).
+    The list is written twice so the CSS animation can loop seamlessly; the copy is
+    aria-hidden and its links are out of the tab order."""
+    top = items[:TICKER_ITEMS]
+    if not top:
+        return ('<div class="nt-viewport"><p class="nt-empty"><a href="/news/">See the latest kitchen sink and KBB '
+                'trade headlines on our Sink news page</a></p></div>')
+    def lst(copy):
+        lis = []
+        for it in top:
+            lis.append('<li><a href="%s" target="_blank" rel="noopener"%s>%s</a> <span class="nt-src">%s</span></li>' % (
+                html.escape(it['link'], quote=True), ' tabindex="-1"' if copy else '',
+                html.escape(it['title']), html.escape(it['source'])))
+        return '<ul class="nt-list"%s>%s</ul>' % (' aria-hidden="true"' if copy else '', ''.join(lis))
+    chars = sum(len(it['title']) + len(it['source']) + 6 for it in top)
+    secs = max(30, min(150, round(chars / 5)))   # ~5 characters a second: slow enough to read
+    return ('<div class="nt-viewport"><div class="nt-track" style="--nt-dur:%ds">%s%s</div></div>' % (
+        secs, lst(False), lst(True)))
+
+def update_tickers(items):
+    """Replace the ticker between the markers in every .html file that has them."""
+    block = render_ticker(items)
+    n = 0
+    for dirpath, dirnames, filenames in os.walk(ROOT):
+        dirnames[:] = [d for d in dirnames if d not in TICKER_SKIP_DIRS]
+        for fn in filenames:
+            if not fn.endswith('.html'): continue
+            path = os.path.join(dirpath, fn)
+            page = open(path, encoding='utf-8').read()
+            a, b = page.find(TICKER_START), page.find(TICKER_END)
+            if a < 0 or b < a: continue
+            new = page[:a + len(TICKER_START)] + block + page[b:]
+            if new != page:
+                with open(path, 'w', encoding='utf-8') as f: f.write(new)
+                n += 1
+    log('news ticker updated on %d page(s)' % n)
+    return n
+
 def update_home(items):
     """Replace the strip between the markers in index.html. Leaves the file alone if the
     markers are missing (so a home page redesign can never be broken by this script)."""
@@ -262,6 +307,7 @@ def main():
     if '--home-only' in sys.argv[1:]:
         arch = json.load(open(ARCHIVE, encoding='utf-8'))
         update_home(arch.get('items', []))
+        update_tickers(arch.get('items', []))
         return
     now = dt.datetime.now(dt.timezone.utc)
     cutoff = now - dt.timedelta(days=KEEP_DAYS)
@@ -314,6 +360,7 @@ def main():
     page = render(kept_items, modified)
     with open(OUT, 'w', encoding='utf-8') as f: f.write(page)
     update_home(kept_items)
+    update_tickers(kept_items)
     with open(ARCHIVE, 'w', encoding='utf-8') as f:
         json.dump({'modified': modified.isoformat(), 'keep_days': KEEP_DAYS, 'items': kept_items}, f, ensure_ascii=False, indent=1)
         f.write('\n')

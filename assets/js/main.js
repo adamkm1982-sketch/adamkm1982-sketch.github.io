@@ -1,4 +1,4 @@
-/* Astraclean UK – small vanilla JS: order-thanks banner, Buy direct switch, eBay 2-pack links, cookie consent + GA4, click-to-load video, photo gallery, mobile quick-buy bar, customer reviews, store-button click counting, social/campaign landing counts. */
+/* Astraclean UK – small vanilla JS: order-thanks banner, Buy direct switch, eBay 2-pack links, cookie consent + GA4, click-to-load video, photo gallery, mobile quick-buy bar, customer reviews, store-button click counting, social/campaign landing counts, news ticker pause button. */
 (function () {
   'use strict';
 
@@ -8,6 +8,21 @@
   var doc = document;
 
   function $all(sel, root) { return Array.prototype.slice.call((root || doc).querySelectorAll(sel)); }
+
+  /* ---------- 00. Sink news ticker pause/play ----------
+     The ticker scrolls by CSS and pauses on hover/focus; this button lets anyone stop
+     it for good (WCAG 2.2.2). Hidden when the visitor prefers reduced motion (static line). */
+  $all('[data-news-ticker]').forEach(function (tk) {
+    var btn = tk.querySelector('[data-nt-toggle]');
+    if (!btn || !tk.querySelector('.nt-track')) return;
+    var label = btn.querySelector('.visually-hidden');
+    btn.hidden = false;
+    btn.addEventListener('click', function () {
+      var paused = tk.classList.toggle('is-paused');
+      btn.setAttribute('aria-pressed', paused ? 'true' : 'false');
+      if (label) label.textContent = paused ? 'Play the news ticker' : 'Pause the news ticker';
+    });
+  });
 
   /* ---------- 0. "Thanks for your order" banner ----------
      PayPal sends buyers back to /?order=thanks (the "return" URL in config.js). */

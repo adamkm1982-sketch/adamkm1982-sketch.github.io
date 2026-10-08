@@ -25,7 +25,7 @@ Edit **`assets/config.js`** only:
 | `feeds/google-products.xml` | Google Merchant Center product feed (free listings). Must match the price/delivery in `assets/config.js` and the Offer JSON-LD in `index.html` |
 | `404.html` | Not-found page (GitHub Pages serves it automatically) |
 | `assets/config.js` | Buy direct link and price (the only settings file) |
-| `assets/js/main.js` | "Thanks for your order" banner on `/?order=thanks` (PayPal return URL), Buy direct switch, cookie banner + GA4 (G-CVNBPXH52L, loaded only after "Accept"), click-to-load YouTube |
+| `assets/js/main.js` | "Thanks for your order" banner on `/?order=thanks` (PayPal return URL), Buy direct switch, cookie banner + GA4 (G-CVNBPXH52L, loaded only after "Accept"), click-to-load YouTube, buy-button click counting (see below) |
 | `assets/css/styles.css` | All styles |
 | `assets/img/` | Optimised images (WebP + JPEG, several widths) and `og-image.jpg` (1200×630) |
 | `assets/fonts/` | Montserrat (variable, Latin subset, SIL OFL – see `OFL.txt`) |
@@ -33,6 +33,23 @@ Edit **`assets/config.js`** only:
 | `robots.txt`, `sitemap.xml`, `CNAME` | Search engines and custom domain |
 
 Open items that need Adam's input are in **`TODO.md`** and marked `TODO` in the HTML comments.
+
+## Buy-button click counting
+
+Every click on a **Buy direct**, **eBay** or **Amazon** link is counted by `assets/js/main.js`:
+
+- **Cookieless counter (all visitors):** Abacus (`abacus.jasoncameron.dev`, free, no account), namespace
+  `astracleanuk-com-clicks`. Keys per store (`ebay`, `amazon`, `direct`), UK time: month, day, hour and
+  placement (`home-hero`, `home-buy`, `home-band`, `guide-…-card`, …). Read with
+  `python3 /workspace/astraclean/site-tools/click-report.py 2026-10`.
+- **GA4 event `store_click`** (only for visitors who accept analytics cookies): params `store`,
+  `placement`, `link_domain`, `link_url`. To report on them in GA4, register `store` and `placement`
+  as event-scoped custom dimensions (Admin → Custom definitions).
+- **Optional exact-timestamp log:** set `CLICK_LOG_URL` in `assets/config.js` once the order worker
+  is deployed (see `/workspace/astraclean/order-worker/README.md`).
+- **Test clicks never touch the real counts:** automated browsers, any host other than astracleanuk.com,
+  or a browser that has opened `https://www.astracleanuk.com/?clicktest=1` count into
+  `astracleanuk-com-test` instead (`/?clicktest=0` undoes it). Tests: `site-tools/click_tests.py`.
 
 ## Local preview
 

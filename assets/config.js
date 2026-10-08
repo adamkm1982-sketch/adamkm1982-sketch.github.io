@@ -18,3 +18,9 @@ var PRICE_NOTE = "free UK delivery";
 // true = tells Google delivery to UK addresses is free (0 GBP) in the
 // structured data. Set to false if you charge for delivery.
 var FREE_UK_DELIVERY = true;
+
+// Optional exact-timestamp click log (Cloudflare Worker, free). Leave "" until
+// the order worker is deployed, then set it to its /click URL, e.g.
+// "https://astraclean-order-worker.<subdomain>.workers.dev/click".
+// The free Abacus click counter in main.js works without this.
+var CLICK_LOG_URL = "";

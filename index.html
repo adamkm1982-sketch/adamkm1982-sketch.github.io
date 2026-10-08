@@ -108,6 +108,12 @@
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
+<svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-truck" viewBox="0 0 24 24"><path d="M2.5 6.5h11v9h-11z"/><path d="M13.5 9.5h4l3 3.2v2.8h-7z"/><circle cx="6.5" cy="17.5" r="2"/><circle cx="17" cy="17.5" r="2"/></symbol>
+  <symbol id="i-return" viewBox="0 0 24 24"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21.5s-7-6.3-7-11.5a7 7 0 0 1 14 0c0 5.2-7 11.5-7 11.5z"/><circle cx="12" cy="10" r="2.6"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4.5" y="10.5" width="15" height="10.5" rx="2.2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/><path d="M12 14.5v2.5"/></symbol>
+</svg>
 
 <header class="site-header"><div class="wrap">
   <a class="logo" href="/" aria-label="Astraclean home"><span>ASTRA</span><b>CLEAN</b></a>
@@ -123,17 +129,25 @@
   <button type="button" class="ot-close" aria-label="Close this message" data-order-thanks-close>×</button>
 </div></div>
 
-<section class="hero" style="padding:0"><div class="wrap">
+<section class="hero"><div class="wrap">
   <div class="hero-text">
     <p class="eyebrow">Composite Sink Cleaner &amp; Restorer</p>
     <h1>Astraclean Composite Sink Cleaner – 500ml</h1>
-    <p>Brings dull, stained and limescaled composite, granite and quartz sinks back to their original colour and finish – without harsh abrasives. Ideal for black, white and coloured sinks.</p>
-    <p class="pills">500ml &nbsp;•&nbsp; Made in the UK &nbsp;•&nbsp; Fast UK dispatch</p>
+    <p class="hero-lead">Brings dull, stained and limescaled composite, granite and quartz sinks back to their original colour and finish – without harsh abrasives. Ideal for black, white and coloured sinks.</p>
+    <!-- Filled in from /assets/data/reviews.json by main.js; stays hidden if there are no reviews. -->
+    <a class="rating-line" href="#reviews" data-rating-summary hidden></a>
+    <p class="pills">500ml &nbsp;•&nbsp; Made in the UK</p>
     <div class="ctas">
       <a class="btn btn-white" href="#buy" data-direct data-direct-link hidden rel="noopener">Buy direct<span data-direct data-needs-price hidden> – <span data-price></span></span></a>
       <a class="btn btn-white btn-market" href="https://www.ebay.co.uk/itm/197989704190" target="_blank" rel="noopener">Buy on eBay</a>
       <a class="btn btn-white btn-market" href="https://www.amazon.co.uk/dp/B0F1N7FYR9" target="_blank" rel="noopener">Buy on Amazon</a>
     </div>
+    <ul class="hero-badges">
+      <li data-direct hidden><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-truck"/></svg>Free UK delivery on direct orders</li>
+      <li><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-return"/></svg>14-day returns</li>
+      <li><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-pin"/></svg>Dispatched from Dewsbury, UK</li>
+      <li data-direct hidden><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lock"/></svg>Secure PayPal checkout</li>
+    </ul>
   </div>
   <div class="hero-card">
     <picture>
@@ -143,22 +157,18 @@
   </div>
 </div></section>
 
-<div class="trust"><div class="wrap">
-  <div><strong><span aria-hidden="true">🇬🇧</span> Made in the UK</strong>Consistent quality you can trust.</div>
-  <div><strong><span aria-hidden="true">🚚</span> Fast UK dispatch</strong>Sent in secure, protective packaging.</div>
-  <div><strong><span aria-hidden="true">🛒</span> Buy where you like</strong>On eBay or Amazon<span data-direct hidden>, or direct from us</span>.</div>
-  <div><strong><span aria-hidden="true">↩️</span> 14-day right to cancel</strong>Changed your mind? See <a href="/delivery-returns.html">Delivery &amp; returns</a>.</div>
-</div></div>
-
-<section id="buy"><div class="wrap two">
-  <div class="card-img hide-mobile">
-    <picture>
-      <source type="image/webp" srcset="/assets/img/astraclean-sink-cleaner-on-worktop-440.webp 440w, /assets/img/astraclean-sink-cleaner-on-worktop-660.webp 660w, /assets/img/astraclean-sink-cleaner-on-worktop-880.webp 880w" sizes="(max-width: 1180px) 45vw, 535px">
-      <img src="/assets/img/astraclean-sink-cleaner-on-worktop-660.jpg" srcset="/assets/img/astraclean-sink-cleaner-on-worktop-440.jpg 440w, /assets/img/astraclean-sink-cleaner-on-worktop-660.jpg 660w, /assets/img/astraclean-sink-cleaner-on-worktop-880.jpg 880w" sizes="(max-width: 1180px) 45vw, 535px" width="880" height="1168" loading="lazy" decoding="async" alt="Astraclean sink cleaner on a white kitchen worktop next to the sink">
-    </picture>
+<section id="buy"><div class="wrap two buy-grid">
+  <div class="gallery" data-gallery>
+    <div class="gallery-main"><picture><source type="image/webp" srcset="/assets/img/astraclean-sink-cleaner-on-worktop-440.webp 440w, /assets/img/astraclean-sink-cleaner-on-worktop-660.webp 660w, /assets/img/astraclean-sink-cleaner-on-worktop-880.webp 880w" sizes="(max-width: 900px) min(100vw - 48px, 340px), 440px"><img src="/assets/img/astraclean-sink-cleaner-on-worktop-660.jpg" srcset="/assets/img/astraclean-sink-cleaner-on-worktop-440.jpg 440w, /assets/img/astraclean-sink-cleaner-on-worktop-660.jpg 660w, /assets/img/astraclean-sink-cleaner-on-worktop-880.jpg 880w" sizes="(max-width: 900px) min(100vw - 48px, 340px), 440px" width="880" height="1168" loading="lazy" decoding="async" alt="Astraclean sink cleaner on a white kitchen worktop next to the sink"></picture></div>
+    <div class="gallery-thumbs" role="group" aria-label="Product photos" data-js-only hidden>
+      <button type="button" class="thumb" aria-pressed="true" aria-label="Show photo 1 of 3: Astraclean sink cleaner on a white kitchen worktop next to the sink" data-alt="Astraclean sink cleaner on a white kitchen worktop next to the sink" data-gallery-thumb><picture><source type="image/webp" srcset="/assets/img/astraclean-sink-cleaner-on-worktop-440.webp 440w, /assets/img/astraclean-sink-cleaner-on-worktop-660.webp 660w, /assets/img/astraclean-sink-cleaner-on-worktop-880.webp 880w" sizes="80px"><img src="/assets/img/astraclean-sink-cleaner-on-worktop-660.jpg" srcset="/assets/img/astraclean-sink-cleaner-on-worktop-440.jpg 440w, /assets/img/astraclean-sink-cleaner-on-worktop-660.jpg 660w, /assets/img/astraclean-sink-cleaner-on-worktop-880.jpg 880w" sizes="80px" width="880" height="1168" loading="lazy" decoding="async" alt=""></picture></button>
+      <button type="button" class="thumb" aria-pressed="false" aria-label="Show photo 2 of 3: Astraclean Kitchen Sink Cleaner 500ml white spray bottle with blue label" data-alt="Astraclean Kitchen Sink Cleaner 500ml white spray bottle with blue label" data-gallery-thumb><picture><source type="image/webp" srcset="/assets/img/astraclean-sink-cleaner-500ml-360.webp 360w, /assets/img/astraclean-sink-cleaner-500ml-540.webp 540w, /assets/img/astraclean-sink-cleaner-500ml-720.webp 720w, /assets/img/astraclean-sink-cleaner-500ml-880.webp 880w" sizes="80px"><img src="/assets/img/astraclean-sink-cleaner-500ml-540.jpg" srcset="/assets/img/astraclean-sink-cleaner-500ml-360.jpg 360w, /assets/img/astraclean-sink-cleaner-500ml-540.jpg 540w, /assets/img/astraclean-sink-cleaner-500ml-720.jpg 720w, /assets/img/astraclean-sink-cleaner-500ml-880.jpg 880w" sizes="80px" width="880" height="1168" loading="lazy" decoding="async" alt=""></picture></button>
+      <button type="button" class="thumb" aria-pressed="false" aria-label="Show photo 3 of 3: How to use Astraclean: spray, agitate and wait 2–5 minutes, rinse thoroughly, repeat if needed" data-alt="How to use Astraclean: spray, agitate and wait 2–5 minutes, rinse thoroughly, repeat if needed" data-gallery-thumb><picture><source type="image/webp" srcset="/assets/img/how-to-use-astraclean-440.webp 440w, /assets/img/how-to-use-astraclean-660.webp 660w, /assets/img/how-to-use-astraclean-880.webp 880w" sizes="80px"><img src="/assets/img/how-to-use-astraclean-660.jpg" srcset="/assets/img/how-to-use-astraclean-440.jpg 440w, /assets/img/how-to-use-astraclean-660.jpg 660w, /assets/img/how-to-use-astraclean-880.jpg 880w" sizes="80px" width="880" height="1168" loading="lazy" decoding="async" alt=""></picture></button>
+    </div>
   </div>
   <div class="buy-box">
     <h2>Astraclean Composite Sink Cleaner 500ml</h2>
+    <a class="rating-line rating-line-dark" href="#reviews" data-rating-summary hidden></a>
     <p class="price" data-direct data-needs-price hidden><span data-price></span> <small data-price-note></small></p>
     <p><strong>What's in the box:</strong> 1 × 500ml bottle of Astraclean sink cleaner.</p>
     <ul class="ticks">
@@ -173,8 +183,25 @@
       <a class="btn btn-blue btn-market" href="https://www.ebay.co.uk/itm/197989704190" target="_blank" rel="noopener">Buy on eBay</a>
       <a class="btn btn-blue btn-market" href="https://www.amazon.co.uk/dp/B0F1N7FYR9" target="_blank" rel="noopener">Buy on Amazon</a>
     </div>
-    <p class="small" style="margin-top:14px">eBay and Amazon open in a new tab. Prices and delivery options for those listings are shown on eBay and Amazon.</p>
+    <ul class="badges">
+      <li data-direct hidden><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-truck"/></svg><span><strong>Free UK delivery</strong>On orders bought direct from this site</span></li>
+      <li><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-return"/></svg><span><strong>14-day returns</strong>Changed your mind? <a href="/delivery-returns.html">How returns work</a></span></li>
+      <li><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-pin"/></svg><span><strong>UK seller</strong>Packed and dispatched by us in Dewsbury, West Yorkshire</span></li>
+      <li data-direct hidden><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lock"/></svg><span><strong>Secure checkout</strong>Pay securely through PayPal</span></li>
+    </ul>
+    <p class="small buy-note">eBay and Amazon open in a new tab. Prices and delivery options for those listings are shown on eBay and Amazon.</p>
   </div>
+</div></section>
+
+<!--
+  Customer reviews: rendered by main.js from /assets/data/reviews.json (format in README.md).
+  Hidden when the file has no reviews. Reviews are third-party (Amazon/eBay), so there is
+  deliberately NO Review/AggregateRating structured data for them (Google doesn't allow it).
+-->
+<section id="reviews" class="reviews" aria-labelledby="reviews-title" data-placement="reviews" data-reviews hidden><div class="wrap">
+  <h2 id="reviews-title" class="center">What customers say</h2>
+  <div class="review-groups" data-review-groups></div>
+  <p class="center small reviews-note" data-reviews-note></p>
 </div></section>
 
 <section id="benefits" class="bg-soft"><div class="wrap">
@@ -294,6 +321,20 @@
   </div>
 </div></div>
 </main>
+
+<!-- Mobile-only quick-buy bar (shown by main.js once the hero buttons scroll away; hidden near the
+     buy box, the closing banner, the footer and while the cookie banner is open). Clicks count as home-sticky. -->
+<div class="sticky-buy" role="region" aria-label="Quick buy" data-placement="sticky" data-sticky-buy hidden>
+  <div class="sb-info">
+    <span class="sb-name">Astraclean 500ml</span>
+    <span class="sb-price-wrap" data-direct data-needs-price hidden><strong class="sb-price" data-price></strong><span class="sb-note" data-price-note></span></span>
+  </div>
+  <div class="sb-actions">
+    <a class="sb-alt" href="https://www.ebay.co.uk/itm/197989704190" target="_blank" rel="noopener"><span class="visually-hidden">Buy on </span>eBay</a>
+    <a class="sb-alt" href="https://www.amazon.co.uk/dp/B0F1N7FYR9" target="_blank" rel="noopener"><span class="visually-hidden">Buy on </span>Amazon</a>
+    <a class="btn btn-blue sb-main" href="#buy" data-direct data-direct-link hidden rel="noopener">Buy direct</a>
+  </div>
+</div>
 
 <footer class="site-footer"><div class="wrap">
   <div class="logo"><span>ASTRA</span><b>CLEAN</b></div>

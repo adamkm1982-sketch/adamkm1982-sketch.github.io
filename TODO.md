@@ -36,6 +36,13 @@ The guides follow the same rule: no stainless/ceramic, pH, biodegradable, VOC, s
 21. **Barcode / SKU.** Add `"gtin13"` and `"sku"` to the Product JSON-LD in `index.html` if the bottle has a barcode.
 22. **Logo.** The header uses a text wordmark (ASTRA**CLEAN**) and the icons use a white "A" on the brand gradient. Swap in a proper logo file if you have one.
 
+## Reviews (`assets/data/reviews.json`)
+
+27. **Amazon review by "Trevor Marshall"** (1 May 2025, 5 stars, *not* a verified purchase) is **not shown**. Same surname as Adam. If he's a relative or friend, it must stay off the site (CMA/DMCC rules on connected reviews), and Amazon's own rules don't allow reviews from family either. If he's unrelated and a genuine customer, tell me and I'll add it.
+28. Amazon's full reviews page needs a sign-in, so only the 7 written reviews on the listing page were checked (13 ratings in total). If any other written review exists (for example a 4-star one), add it too, whatever it says.
+29. When new reviews/feedback come in, add them all (not just the good ones) and update the Amazon rating, count and `checked` date. Format and rules: README.md → Customer reviews.
+30. The Amazon listing itself still claims stainless/ceramic suitability, biodegradable, ultra-low pH, zero VOC, septic-safe and "kills germs and bacteria". Those aren't on this site (items 9 and 10). Check you have evidence for them on Amazon too. "Kills germs and bacteria" counts as a biocidal claim, which comes with extra rules.
+
 ## After going live (not code)
 
 23. Point DNS at GitHub Pages (`www` CNAME → `<github-user>.github.io`, plus apex A/AAAA records so astracleanuk.com redirects to www), tick "Enforce HTTPS", then cancel the 123 Reg Website Builder plan. Leave the MX/SPF records alone, because email runs through GoDaddy.

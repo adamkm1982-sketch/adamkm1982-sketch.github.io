@@ -26,6 +26,7 @@ Edit **`assets/config.js`** only:
 | `feeds/google-products.xml` | Google Merchant Center product feed (free listings). Must match the price/delivery in `assets/config.js` and the Offer JSON-LD in `index.html` |
 | `404.html` | Not-found page (GitHub Pages serves it automatically) |
 | `assets/config.js` | Buy direct link and price (the only settings file) |
+| `assets/data/reviews.json` | Customer reviews shown on the home page (see **Customer reviews** below) |
 | `assets/js/main.js` | "Thanks for your order" banner on `/?order=thanks` (PayPal return URL), Buy direct switch, cookie banner + GA4 (G-CVNBPXH52L, loaded only after "Accept"), click-to-load YouTube, buy-button click counting (see below) |
 | `assets/css/styles.css` | All styles |
 | `assets/img/` | Optimised images (WebP + JPEG, several widths) and `og-image.jpg` (1200×630) |
@@ -41,7 +42,7 @@ Every click on a **Buy direct**, **eBay** or **Amazon** link is counted by `asse
 
 - **Cookieless counter (all visitors):** Abacus (`abacus.jasoncameron.dev`, free, no account), namespace
   `astracleanuk-com-clicks`. Keys per store (`ebay`, `amazon`, `direct`), UK time: month, day, hour and
-  placement (`home-hero`, `home-buy`, `home-band`, `guide-…-card`, …). Read with
+  placement (`home-hero`, `home-buy`, `home-band`, `home-sticky` (mobile quick-buy bar), `home-reviews`, `guide-…-card`, …). Read with
   `python3 /workspace/astraclean/site-tools/click-report.py 2026-10`.
 - **GA4 event `store_click`** (only for visitors who accept analytics cookies): params `store`,
   `placement`, `link_domain`, `link_url`. To report on them in GA4, register `store` and `placement`
@@ -51,6 +52,68 @@ Every click on a **Buy direct**, **eBay** or **Amazon** link is counted by `asse
 - **Test clicks never touch the real counts:** automated browsers, any host other than astracleanuk.com,
   or a browser that has opened `https://www.astracleanuk.com/?clicktest=1` count into
   `astracleanuk-com-test` instead (`/?clicktest=0` undoes it). Tests: `site-tools/click_tests.py`.
+
+## Customer reviews (`assets/data/reviews.json`)
+
+`main.js` builds the home page **What customers say** section (`#reviews`) and the small star lines in the
+hero and buy box from this file. If the file is missing, broken or has no reviews, all of it stays hidden.
+
+**Rules (UK DMCC Act 2024 / CMA guidance on fake and misleading reviews):**
+
+- Only genuine reviews of *our* product bought from *Astraclean UK* (our Amazon listing B0F1N7FYR9 or our
+  eBay listings). Nothing from the old Astracast brand, nothing written by Adam, family, friends or anyone
+  paid or given free stock unless that is disclosed.
+- Copy the text **word for word** (spelling mistakes included). The only allowed change is trimming a long
+  review with "…".
+- Don't cherry-pick: add every written verified-purchase review, whatever the rating. eBay entries may be
+  `"featured"` (shown as cards first) only if the selection is fair (mixed ones included). The full list
+  is always shown underneath.
+- **Never** add `Review` / `AggregateRating` structured data for these. They are third-party reviews and
+  Google's review snippet guidelines don't allow it.
+- Refresh the Amazon `rating` / `ratingCount` / `checked` when you add reviews (the rating is shown with the
+  date it was checked).
+
+**Format:**
+
+```json
+{
+  "updated": "2026-10-08",
+  "sources": {
+    "amazon": { "label": "Amazon", "url": "https://www.amazon.co.uk/dp/B0F1N7FYR9#customerReviews",
+                "rating": 4.8, "ratingCount": 13, "checked": "2026-10-08" },
+    "ebay":   { "label": "eBay", "url": "https://www.ebay.co.uk/fdbk/feedback_profile/astracleanuk",
+                "checked": "2026-10-08" }
+  },
+  "reviews": [
+    { "source": "amazon", "name": "C.Preston", "date": "2025-11-14", "rating": 5,
+      "title": "It works !", "text": "Great product it got rid of the stains on my composite white sink !",
+      "verified": true },
+    { "source": "ebay", "name": "c***0 (55)", "dateText": "More than a year ago", "rating": "positive",
+      "text": "Arrived on time good cleaner for composite sinks", "verified": true,
+      "item": "197119177673", "featured": true }
+  ]
+}
+```
+
+| Field | Notes |
+|---|---|
+| `source` | A key of `sources` (`amazon`, `ebay`). Each source gets its own group, in the order of `sources`. |
+| `name` | Reviewer name exactly as the marketplace shows it. eBay: mask the username like eBay does, first + `***` + last character, plus the feedback score, e.g. `l***1 (225)`. |
+| `date` / `dateText` | `date` = exact `YYYY-MM-DD` (Amazon). eBay only shows relative dates, so use `dateText` ("Past month", "Past 6 months", "Past year", "More than a year ago") and set the source's `checked` date. Exact-date groups are sorted newest first; `dateText` groups keep the file order (put newest first). |
+| `rating` | Number 1–5 (stars) or `"positive"` / `"neutral"` / `"negative"` (eBay feedback). |
+| `title` | Optional review headline (Amazon). |
+| `text` | Verbatim review text. |
+| `verified` | `true` only if the marketplace marks it as a verified purchase. Shown as "Verified Amazon purchase" / "Verified eBay purchase". |
+| `featured` | Optional. Within a source, if any entry is featured, only those are shown as cards and *all* entries are listed in a "Show all" box. |
+| `item` | Optional listing number, for our records (not shown). |
+
+Excluded on 8 Oct 2026: eBay's automated "Order delivered on time with no issues" entries, eBay feedback
+for non-Astraclean items Adam sold personally, one exact-duplicate eBay comment (maida312, merged), and an
+Amazon review by "Trevor Marshall" (1 May 2025, *not* a verified purchase, same surname as Adam, so
+possibly a connected person) pending Adam's confirmation.
+
+Clicks on the "Read all reviews on Amazon" / "See all our feedback on eBay" buttons are counted like the
+buy buttons, with placement `home-reviews`. The mobile quick-buy bar counts as `home-sticky`.
 
 ## Sink news (`/news/`, updated daily)
 

@@ -1,4 +1,4 @@
-/* Astraclean UK – small vanilla JS: order-thanks banner, Buy direct switch, cookie consent + GA4, click-to-load video, store-button click counting. */
+/* Astraclean UK – small vanilla JS: order-thanks banner, Buy direct switch, cookie consent + GA4, click-to-load video, photo gallery, mobile quick-buy bar, customer reviews, store-button click counting. */
 (function () {
   'use strict';
 
@@ -203,6 +203,214 @@
       iframe.focus();
     });
   });
+
+  /* ---------- 3b. Product photo gallery (buy box) ----------
+     The main photo works without JavaScript; the thumbnails (data-js-only) swap it. */
+  $all('[data-gallery]').forEach(function (g) {
+    var mainImg = g.querySelector('.gallery-main img');
+    var mainSrc = g.querySelector('.gallery-main source');
+    var thumbs = $all('[data-gallery-thumb]', g);
+    if (!mainImg) return;
+    thumbs.forEach(function (t) {
+      t.addEventListener('click', function () {
+        var ti = t.querySelector('img'), ts = t.querySelector('source');
+        if (!ti) return;
+        if (mainSrc && ts) mainSrc.setAttribute('srcset', ts.getAttribute('srcset'));
+        mainImg.setAttribute('srcset', ti.getAttribute('srcset'));
+        mainImg.setAttribute('src', ti.getAttribute('src'));
+        mainImg.setAttribute('alt', t.getAttribute('data-alt') || '');
+        thumbs.forEach(function (o) { o.setAttribute('aria-pressed', o === t ? 'true' : 'false'); });
+      });
+    });
+  });
+
+  /* ---------- 3c. Mobile quick-buy bar ----------
+     Only on small screens (CSS hides it above 900px). Appears once the hero buttons have
+     scrolled off the top; hides again while the buy box buttons, the closing "band", the
+     footer or the cookie banner are on screen, so it never covers them. */
+  var bar = doc.querySelector('[data-sticky-buy]');
+  if (bar && window.matchMedia) {
+    bar.hidden = false;
+    var mq = window.matchMedia('(max-width: 900px)');
+    var heroCtas = doc.querySelector('.hero .ctas');
+    var blockers = $all('#buy .buy-actions, .band, .site-footer');
+    var ticking = false;
+    var inView = function (el) { var r = el.getBoundingClientRect(); return r.bottom > 0 && r.top < (window.innerHeight || doc.documentElement.clientHeight); };
+    var updateBar = function () {
+      ticking = false;
+      var cookieOpen = !!(banner && !banner.hidden);
+      var on = mq.matches && !!heroCtas && heroCtas.getBoundingClientRect().bottom < 0 && !cookieOpen && !blockers.some(inView);
+      if (bar.classList.contains('is-on') !== on) {
+        bar.classList.toggle('is-on', on);
+        doc.documentElement.classList.toggle('sticky-on', on);
+      }
+    };
+    var requestBar = function () { if (!ticking) { ticking = true; (window.requestAnimationFrame || setTimeout)(updateBar); } };
+    window.addEventListener('scroll', requestBar, { passive: true });
+    window.addEventListener('resize', requestBar);
+    doc.addEventListener('click', function () { setTimeout(requestBar, 0); }); // e.g. after a cookie choice
+    requestBar();
+  }
+
+  /* ---------- 3d. Customer reviews (from /assets/data/reviews.json) ----------
+     Genuine, verbatim reviews copied from Amazon / eBay (see README.md for the format and
+     the rules). Everything is built with textContent (no HTML from the data file). The
+     section, and the rating lines, stay hidden if the file is missing or has no reviews.
+     No Review/AggregateRating structured data: these are third-party reviews. */
+  var reviewsBox = doc.querySelector('[data-reviews]');
+  var ratingLines = $all('[data-rating-summary]');
+  if ((reviewsBox || ratingLines.length) && window.fetch) {
+    window.fetch('/assets/data/reviews.json', { cache: 'no-cache', credentials: 'omit' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (data) { if (data) renderReviews(data); })['catch'](function () {});
+  }
+
+  function el(tag, cls, text) {
+    var e = doc.createElement(tag);
+    if (cls) e.className = cls;
+    if (text != null) e.textContent = text;
+    return e;
+  }
+  function ukDate(iso) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || '');
+    if (!m) return iso || '';
+    var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    return parseInt(m[3], 10) + ' ' + months[parseInt(m[2], 10) - 1] + ' ' + m[1];
+  }
+  function stars(n, max) {
+    var s = el('span', 'stars');
+    s.setAttribute('role', 'img');
+    s.setAttribute('aria-label', n + ' out of ' + max + ' stars');
+    for (var i = 1; i <= max; i++) {
+      var st = el('span', i <= Math.round(n) ? 'star on' : 'star', '★');
+      st.setAttribute('aria-hidden', 'true');
+      s.appendChild(st);
+    }
+    return s;
+  }
+  function plural(n, word) { return n + ' ' + word + (n === 1 ? '' : 's'); }
+
+  function reviewCard(r, src) {
+    var li = el('li', 'review');
+    var head = el('div', 'review-head');
+    if (typeof r.rating === 'number') head.appendChild(stars(r.rating, 5));
+    else if (typeof r.rating === 'string' && r.rating) head.appendChild(el('span', 'review-fb review-fb-' + r.rating.toLowerCase().replace(/[^a-z]/g, ''), r.rating.charAt(0).toUpperCase() + r.rating.slice(1) + ' feedback'));
+    li.appendChild(head);
+    if (r.title) li.appendChild(el('h4', 'review-title', r.title));
+    var q = el('blockquote', 'review-text');
+    q.appendChild(el('p', null, r.text));
+    li.appendChild(q);
+    li.appendChild(reviewMeta(r));
+    li.appendChild(el('p', 'review-source', (r.verified ? 'Verified ' + (src.label || r.source) + ' purchase' : 'Review on ' + (src.label || r.source))));
+    return li;
+  }
+  function reviewMeta(r) {
+    var meta = el('p', 'review-meta');
+    meta.appendChild(el('span', 'review-name', r.name));
+    meta.appendChild(doc.createTextNode(' · '));
+    if (r.date) {
+      var t = el('time', null, ukDate(r.date));
+      t.setAttribute('datetime', r.date);
+      meta.appendChild(t);
+    } else meta.appendChild(doc.createTextNode(r.dateText));
+    return meta;
+  }
+
+  function renderReviews(data) {
+    var sources = data.sources || {};
+    var all = (data.reviews || []).filter(function (r) {
+      return r && typeof r.text === 'string' && r.text.trim() && r.name && sources[r.source] &&
+        (/^\d{4}-\d{2}-\d{2}$/.test(r.date || '') || (typeof r.dateText === 'string' && r.dateText));
+    });
+    if (!all.length) return;
+
+    // Overall star rating as shown on a marketplace (only if the data file gives one).
+    var rated = Object.keys(sources).filter(function (k) { var s = sources[k]; return typeof s.rating === 'number' && s.ratingCount > 0; });
+    if (rated.length) {
+      var top = sources[rated[0]];
+      ratingLines.forEach(function (a) {
+        a.textContent = '';
+        a.appendChild(stars(top.rating, 5));
+        a.appendChild(el('span', 'rl-text', top.rating.toFixed(1) + ' out of 5 · ' + plural(top.ratingCount, 'rating') + ' on ' + (top.label || rated[0])));
+        a.hidden = false;
+      });
+    }
+    if (!reviewsBox) return;
+
+    var groups = reviewsBox.querySelector('[data-review-groups]');
+    var labels = [];
+    Object.keys(sources).forEach(function (k) {
+      var src = sources[k], label = src.label || k;
+      var list = all.filter(function (r) { return r.source === k; });
+      if (!list.length) return;
+      labels.push(label);
+      // Exact dates: newest first. Approximate (eBay) dates keep the order of the data file (newest first).
+      if (list.every(function (r) { return r.date; })) list.sort(function (a, b) { return a.date < b.date ? 1 : a.date > b.date ? -1 : 0; });
+
+      var g = el('div', 'review-group review-group-' + k.replace(/[^a-z0-9]/gi, ''));
+      var fb = list.every(function (r) { return typeof r.rating === 'string'; });
+      g.appendChild(el('h3', 'review-group-title', fb ? label + ' buyer feedback' : label + ' reviews'));
+      var sum = '';
+      if (typeof src.rating === 'number' && src.ratingCount > 0) {
+        sum = src.rating.toFixed(1) + ' out of 5 from ' + plural(src.ratingCount, 'rating') + ' on ' + label + (src.checked ? ' (as shown on ' + ukDate(src.checked) + ')' : '') + '. Showing ' + plural(list.length, 'written review') + '.';
+      } else if (fb) {
+        var counts = {};
+        list.forEach(function (r) { counts[r.rating] = (counts[r.rating] || 0) + 1; });
+        var parts = Object.keys(counts).map(function (c) { return counts[c] + ' ' + c; });
+        sum = list.length + ' written comments from ' + label + ' buyers of Astraclean (' + (parts.length === 1 && counts.positive ? 'all rated positive' : parts.join(', ')) + ').' +
+          (src.checked ? ' ' + label + ' only shows approximate dates; these are as shown on ' + ukDate(src.checked) + '.' : '');
+      }
+      if (sum) g.appendChild(el('p', 'review-group-summary', sum));
+
+      var featured = list.filter(function (r) { return r.featured; });
+      if (featured.length && featured.length < list.length) {
+        g.appendChild(el('p', 'review-group-summary', 'Shown first: ' + featured.length + ' of the most detailed comments, mixed ones included. All ' + list.length + ' are listed underneath.'));
+      }
+      var shown = featured.length ? featured : list;
+      var cards = el('ul', 'review-list');
+      cards.setAttribute('aria-label', (fb ? label + ' buyer feedback' : label + ' reviews') + (featured.length ? ' (a selection)' : ''));
+      cards.tabIndex = 0; // scrollable sideways on phones, so keyboard users can scroll it too
+      shown.forEach(function (r) { cards.appendChild(reviewCard(r, src)); });
+      g.appendChild(cards);
+      if (shown.length > 1) g.appendChild(el('p', 'review-swipe', 'Swipe to see more \u2192'));
+
+      if (featured.length && featured.length < list.length) {
+        // The full list, so a selection up front is never the only thing shown.
+        var d = el('details', 'review-all');
+        d.appendChild(el('summary', null, 'Show all ' + list.length + ' ' + label + ' comments'));
+        var ul = el('ul', 'review-compact');
+        list.forEach(function (r) {
+          var li = el('li');
+          var q = el('q', null, r.text);
+          li.appendChild(q);
+          var m = reviewMeta(r);
+          m.appendChild(doc.createTextNode(' · ' + (typeof r.rating === 'string' ? r.rating.charAt(0).toUpperCase() + r.rating.slice(1) : r.rating + '/5') + (r.verified ? ' · Verified ' + label + ' purchase' : '')));
+          li.appendChild(m);
+          ul.appendChild(li);
+        });
+        d.appendChild(ul);
+        g.appendChild(d);
+      }
+      if (src.url && /^https:\/\//.test(src.url)) {
+        var p = el('p', 'review-group-link');
+        var a = el('a', 'btn btn-outline-b btn-sm', fb ? 'See all our feedback on ' + label : 'Read all reviews on ' + label);
+        a.href = src.url; a.target = '_blank'; a.rel = 'noopener';
+        p.appendChild(a);
+        g.appendChild(p);
+      }
+      groups.appendChild(g);
+    });
+
+    var note = reviewsBox.querySelector('[data-reviews-note]');
+    if (note) {
+      note.textContent = 'Reviews and feedback are copied word for word from ' + labels.join(' and ') +
+        ', where customers bought Astraclean from us, with the name, date and rating shown there' +
+        (sources.ebay ? ' (eBay usernames are partly hidden, as eBay does)' : '') + '. ' +
+        'We don\u2019t pick only the best: written reviews from verified purchases are added whatever their rating, and we don\u2019t edit them (a long review may be shortened with \u201c\u2026\u201d). ' +
+        'Overall ratings also include star ratings left without a written review.';
+    }
+    reviewsBox.hidden = false;
+  }
 
   /* ---------- 3e. Sink news (/news/): "nothing new today" note ----------
      The page only changes when a new headline arrives, so say so when the newest

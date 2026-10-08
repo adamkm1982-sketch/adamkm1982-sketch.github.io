@@ -1,0 +1,331 @@
+{
+  "updated": "2026-10-08",
+  "sources": {
+    "amazon": {
+      "label": "Amazon",
+      "url": "https://www.amazon.co.uk/dp/B0F1N7FYR9#customerReviews",
+      "rating": 4.8,
+      "ratingCount": 13,
+      "checked": "2026-10-08"
+    },
+    "ebay": {
+      "label": "eBay",
+      "url": "https://www.ebay.co.uk/fdbk/feedback_profile/astracleanuk",
+      "checked": "2026-10-08"
+    }
+  },
+  "reviews": [
+    {
+      "source": "amazon",
+      "name": "sandra fantini",
+      "date": "2026-08-26",
+      "rating": 5,
+      "title": "Attracts cleaner",
+      "text": "Best cleaner for composit sinks, i have a black abstracts kitchen sink which shows up every mark and bit of lime scale as i have hard water in my area, its brilliant stuff for making the sink look like new, would recommend",
+      "verified": true
+    },
+    {
+      "source": "amazon",
+      "name": "Lisa Johnson",
+      "date": "2026-06-25",
+      "rating": 5,
+      "title": "Works well with a little elbow grease",
+      "text": "Works well on white composite sink spray wipe vigorously job done",
+      "verified": true
+    },
+    {
+      "source": "amazon",
+      "name": "suzy",
+      "date": "2026-06-06",
+      "rating": 5,
+      "title": "A good cleaner",
+      "text": "I have been using another composite sink cleaner which originally worked but the second bottle didn’t work. I then bought this one which restored the sink to white again, so I was very pleased.",
+      "verified": true
+    },
+    {
+      "source": "amazon",
+      "name": "Amazon Customer",
+      "date": "2026-04-21",
+      "rating": 5,
+      "title": "Works on Lusso stone basins!",
+      "text": "Does exactly what it says on the box on Lusso stone basin. I followed the instructions exactly. Worked a charm getting rid of limescale build up in hard water areas.",
+      "verified": true
+    },
+    {
+      "source": "amazon",
+      "name": "C.Preston",
+      "date": "2025-11-14",
+      "rating": 5,
+      "title": "It works !",
+      "text": "Great product it got rid of the stains on my composite white sink !",
+      "verified": true
+    },
+    {
+      "source": "amazon",
+      "name": "Teresa ashton",
+      "date": "2025-08-30",
+      "rating": 5,
+      "title": "Stain cleaner",
+      "text": "Really worked on my composite sink, would recommend this cleaner.",
+      "verified": true
+    },
+    {
+      "source": "ebay",
+      "name": "l***1 (225)",
+      "dateText": "Past month",
+      "rating": "positive",
+      "text": "Speedy service excellent product",
+      "verified": true,
+      "item": "197989704190",
+      "featured": true
+    },
+    {
+      "source": "ebay",
+      "name": "l***l (966)",
+      "dateText": "Past month",
+      "rating": "positive",
+      "text": "Very good, thanks",
+      "verified": true,
+      "item": "197989704190"
+    },
+    {
+      "source": "ebay",
+      "name": "m***3 (205)",
+      "dateText": "Past month",
+      "rating": "positive",
+      "text": "speedy delivery. item as described. would highly recommend item.",
+      "verified": true,
+      "item": "197989704190"
+    },
+    {
+      "source": "ebay",
+      "name": "s***c (744)",
+      "dateText": "Past month",
+      "rating": "positive",
+      "text": "Good stuff, well packed and speedy delivery, cheers!",
+      "verified": true,
+      "item": "197989704190"
+    },
+    {
+      "source": "ebay",
+      "name": "w***0 (513)",
+      "dateText": "Past 6 months",
+      "rating": "positive",
+      "text": "The seller gave fast delivery and good comms. However the product did not meet my expectations. It didn’t work as I expected it too.",
+      "verified": true,
+      "item": "197989704190",
+      "featured": true
+    },
+    {
+      "source": "ebay",
+      "name": "j***2 (135)",
+      "dateText": "Past 6 months",
+      "rating": "positive",
+      "text": "Quick dispatch, packaged well Thanks",
+      "verified": true,
+      "item": "197989704190"
+    },
+    {
+      "source": "ebay",
+      "name": "r***2 (2222)",
+      "dateText": "Past 6 months",
+      "rating": "positive",
+      "text": "Great transaction , super seller .",
+      "verified": true,
+      "item": "197989704190"
+    },
+    {
+      "source": "ebay",
+      "name": "m***9 (4652)",
+      "dateText": "Past 6 months",
+      "rating": "positive",
+      "text": "Brilliant. First class service. Thank you",
+      "verified": true,
+      "item": "197989704190"
+    },
+    {
+      "source": "ebay",
+      "name": "g***n (86)",
+      "dateText": "Past 6 months",
+      "rating": "positive",
+      "text": "All good",
+      "verified": true,
+      "item": "197989704190"
+    },
+    {
+      "source": "ebay",
+      "name": "p***f (50)",
+      "dateText": "Past 6 months",
+      "rating": "positive",
+      "text": "The parcel was delivered on time, well packaged and as described by the seller. We have used this product several times and it works well on our sink.",
+      "verified": true,
+      "item": "197989704190",
+      "featured": true
+    },
+    {
+      "source": "ebay",
+      "name": "l***l (966)",
+      "dateText": "Past 6 months",
+      "rating": "positive",
+      "text": "Good",
+      "verified": true,
+      "item": "197989704190"
+    },
+    {
+      "source": "ebay",
+      "name": "a***e (3500)",
+      "dateText": "Past 6 months",
+      "rating": "positive",
+      "text": "Exactly as described, delivered on-time, many thanks",
+      "verified": true,
+      "item": "197989704190"
+    },
+    {
+      "source": "ebay",
+      "name": "b***o (214)",
+      "dateText": "Past year",
+      "rating": "positive",
+      "text": "Item exactly as described, good communication, & delivered on time. Great eBayer A+ - would highly recommend.",
+      "verified": true,
+      "item": "197989704190"
+    },
+    {
+      "source": "ebay",
+      "name": "h***8 (141)",
+      "dateText": "Past year",
+      "rating": "positive",
+      "text": "Very happy with seller’s input. Item speedily despatched and very securely wrapped. Thank you. My sink is a pale coloured composite one. Cleaner used once so far. Cleaned the sink well but didn’t make a great deal of difference to the worst areas. Hopefully, with regular use, they will improve. Given the cost of the product though, initial reaction is some disappointment with its effectiveness.",
+      "verified": true,
+      "item": "197989704190",
+      "featured": true
+    },
+    {
+      "source": "ebay",
+      "name": "c***n (1166)",
+      "dateText": "Past year",
+      "rating": "positive",
+      "text": "A bit dear but after using a few times with great results. Would use this product as maybe a monthly clean and use my other products for daily use. Great product will buy again. Highly recommend seller. These products not available in local shops.",
+      "verified": true,
+      "item": "197989704190",
+      "featured": true
+    },
+    {
+      "source": "ebay",
+      "name": "t***7 (2227)",
+      "dateText": "Past year",
+      "rating": "positive",
+      "text": "All good thanks",
+      "verified": true,
+      "item": "197989704190"
+    },
+    {
+      "source": "ebay",
+      "name": "p***k (private)",
+      "dateText": "More than a year ago",
+      "rating": "positive",
+      "text": "No problems. A+++++++++++",
+      "verified": true,
+      "item": "197119177673"
+    },
+    {
+      "source": "ebay",
+      "name": "p***9 (1020)",
+      "dateText": "More than a year ago",
+      "rating": "positive",
+      "text": "very good",
+      "verified": true,
+      "item": "197119177673"
+    },
+    {
+      "source": "ebay",
+      "name": "s***w (1074)",
+      "dateText": "More than a year ago",
+      "rating": "positive",
+      "text": "excellent service",
+      "verified": true,
+      "item": "197119177673"
+    },
+    {
+      "source": "ebay",
+      "name": "p***f (50)",
+      "dateText": "More than a year ago",
+      "rating": "positive",
+      "text": "The cleaner arrived on time well packaged and as described on the website. We have used this product several times, it is great value for money and does a great job cleaning composite sinks.",
+      "verified": true,
+      "item": "197119177673"
+    },
+    {
+      "source": "ebay",
+      "name": "h***g (1068)",
+      "dateText": "More than a year ago",
+      "rating": "positive",
+      "text": "hard to find cleaner for composite sinks",
+      "verified": true,
+      "item": "197119177673"
+    },
+    {
+      "source": "ebay",
+      "name": "h***7 (768)",
+      "dateText": "More than a year ago",
+      "rating": "positive",
+      "text": "Item as described, fast delivery, many thanks.",
+      "verified": true,
+      "item": "197119177673"
+    },
+    {
+      "source": "ebay",
+      "name": "k***g (2423)",
+      "dateText": "More than a year ago",
+      "rating": "positive",
+      "text": "Great thanks",
+      "verified": true,
+      "item": "197119177673"
+    },
+    {
+      "source": "ebay",
+      "name": "c***6 (5564)",
+      "dateText": "More than a year ago",
+      "rating": "positive",
+      "text": "Fantastic Super Fast delivery as Always Many Thanks Very Highly recommended**********",
+      "verified": true,
+      "item": "197119177673"
+    },
+    {
+      "source": "ebay",
+      "name": "a***n (962)",
+      "dateText": "More than a year ago",
+      "rating": "positive",
+      "text": "Ok",
+      "verified": true,
+      "item": "197119177673"
+    },
+    {
+      "source": "ebay",
+      "name": "d***2 (226)",
+      "dateText": "More than a year ago",
+      "rating": "positive",
+      "text": "Fast delivery",
+      "verified": true,
+      "item": "197119177673"
+    },
+    {
+      "source": "ebay",
+      "name": "c***0 (55)",
+      "dateText": "More than a year ago",
+      "rating": "positive",
+      "text": "Arrived on time good cleaner for composite sinks",
+      "verified": true,
+      "item": "197119177673",
+      "featured": true
+    },
+    {
+      "source": "ebay",
+      "name": "m***2 (455)",
+      "dateText": "More than a year ago",
+      "rating": "positive",
+      "text": "Very quick delivery will use again",
+      "verified": true,
+      "item": "197119177673"
+    }
+  ]
+}

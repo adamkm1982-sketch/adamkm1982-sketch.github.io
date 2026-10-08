@@ -14,6 +14,10 @@ These must be sorted **before** `BUY_DIRECT_URL` is filled in, because UK distan
 6. **Order confirmation.** Confirm how orders are confirmed (order email, payment receipt or dispatch email) once the payment provider is chosen (`terms.html` §4).
 7. **Meta description.** Change the end of the home page description (plus `og:description` and `twitter:description`) from "Buy on eBay or Amazon." back to the draft's "Buy direct, on eBay or Amazon."
 
+## Guides (/guides/)
+
+The guides follow the same rule: no stainless/ceramic, pH, biodegradable, VOC, septic or other unconfirmed claims. They tell readers to check their sink maker's care guide, because some makers advise against spray cleaners, descalers or acids. If you ever get a sink maker's approval or test results, they can be added.
+
 ## Facts to confirm (left off the site until confirmed)
 
 8. **Hazard information.** Add the hazard pictogram(s), signal word and hazard/precautionary statements exactly as printed on the label or Safety Data Sheet to the Safety information box (`index.html`, `#safety`). For now it says "Always read the label before use." Also confirm whether you can send a Safety Data Sheet on request.
@@ -35,6 +39,6 @@ These must be sorted **before** `BUY_DIRECT_URL` is filled in, because UK distan
 ## After going live (not code)
 
 23. Point DNS at GitHub Pages (`www` CNAME → `<github-user>.github.io`, plus apex A/AAAA records so astracleanuk.com redirects to www), tick "Enforce HTTPS", then cancel the 123 Reg Website Builder plan. Leave the MX/SPF records alone, because email runs through GoDaddy.
-24. Add the site to Google Search Console and Bing Webmaster Tools, and submit `https://www.astracleanuk.com/sitemap.xml`.
-25. Test the home page in Google's Rich Results Test. Until `BUY_DIRECT_URL` is set, the Product has no Offer, so Google will say it isn't eligible for product rich results (this is expected).
+24. Add the site to Google Search Console and Bing Webmaster Tools, submit `https://www.astracleanuk.com/sitemap.xml`, and set up Merchant Center free listings with `https://www.astracleanuk.com/feeds/google-products.xml`. Step-by-step: `/workspace/astraclean/marketing/search-console-steps.md`. Copy the Search Console `google-site-verification` TXT record across when DNS moves to Cloudflare.
+25. Test the home page and a guide in Google's Rich Results Test. The Product now has a static Offer (£19.99, in stock, free UK delivery, 14-day returns) in `index.html`; keep it in step with `assets/config.js` and the feed.
 26. Add the website link to the YouTube channel (@astraclean3350) and video descriptions.

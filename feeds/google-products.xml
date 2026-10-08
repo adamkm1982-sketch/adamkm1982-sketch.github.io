@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Google Merchant Center product feed (free listings) for www.astracleanuk.com.
+  Keep this in step with the home page: the Product/Offer JSON-LD in index.html
+  and PRICE_GBP / FREE_UK_DELIVERY in /assets/config.js.
+-->
+<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">
+  <channel>
+    <title>Astraclean UK</title>
+    <link>https://www.astracleanuk.com/</link>
+    <description>Astraclean composite sink cleaner, sold direct by Astraclean UK.</description>
+    <item>
+      <g:id>AC500</g:id>
+      <g:title>Astraclean Composite Sink Cleaner 500ml – Limescale Remover for Composite, Granite and Quartz Sinks</g:title>
+      <g:description>Astraclean Composite Sink Cleaner brings dull, stained and limescaled composite, granite and quartz sinks back to their original colour and finish without harsh abrasives. Removes limescale and hard-water deposits, eliminates water marks and restores colour to dull or faded composite sinks. Ideal for black, white and coloured sinks and for hard-water areas. Spray on, spread with a soft cloth, sponge or brush, leave for 2–5 minutes, scrub gently and rinse thoroughly. 1 × 500ml spray bottle. Made in the UK. Not suitable for unsealed natural stone or acid-sensitive surfaces such as marble, terrazzo, enamel or plated metals. Do not mix with bleach or other cleaners. Always read the label before use.</g:description>
+      <g:link>https://www.astracleanuk.com/</g:link>
+      <g:image_link>https://www.astracleanuk.com/assets/img/astraclean-sink-cleaner-500ml-880.jpg</g:image_link>
+      <g:additional_image_link>https://www.astracleanuk.com/assets/img/how-to-use-astraclean-880.jpg</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>19.99 GBP</g:price>
+      <g:shipping>
+        <g:country>GB</g:country>
+        <g:price>0.00 GBP</g:price>
+      </g:shipping>
+      <g:condition>new</g:condition>
+      <g:brand>Astraclean</g:brand>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>4973</g:google_product_category>
+      <g:product_type>Home &amp; Garden &gt; Kitchen Cleaning &gt; Sink Cleaners &gt; Composite Sink Cleaners</g:product_type>
+      <g:size>500ml</g:size>
+    </item>
+  </channel>
+</rss>

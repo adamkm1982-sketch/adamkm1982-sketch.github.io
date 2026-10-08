@@ -40,8 +40,9 @@
     addOfferToStructuredData();
   }
 
-  // The Offer (with price) is only added to the Product JSON-LD when a direct
-  // checkout exists, so Google never sees a price that can't be paid on this site.
+  // Fallback: if the static Offer is ever removed from index.html, add one to the
+  // Product JSON-LD when a direct checkout exists, so Google never sees a price that
+  // can't be paid on this site.
   function addOfferToStructuredData() {
     if (!price) return;
     var script = doc.getElementById('structured-data');
@@ -51,6 +52,7 @@
       var graph = data['@graph'] || [];
       for (var i = 0; i < graph.length; i++) {
         if (graph[i]['@type'] !== 'Product') continue;
+        if (graph[i].offers) continue; // a static Offer is already in the HTML: leave it as it is
         var offer = {
           '@type': 'Offer',
           'url': 'https://www.astracleanuk.com/#buy',

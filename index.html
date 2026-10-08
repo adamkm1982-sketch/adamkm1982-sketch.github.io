@@ -31,20 +31,16 @@
 <script src="/assets/config.js" defer></script>
 <script src="/assets/js/main.js" defer></script>
 <!--
-  Structured data (Organization + WebSite + Product).
-  Why there is no "offers" block here: the only price we could publish is the
-  proposed direct price (£19.99), and nobody can pay it on this site until
-  BUY_DIRECT_URL is set in /assets/config.js. Google requires an Offer's price
-  to match a price the visitor can actually buy at on this page. An
-  AggregateOffer was considered, but it needs a lowPrice and would have to
-  describe the eBay/Amazon prices, which we don't control and which change
-  (Google also expects Offers on a page to be the site's own sales).
-  So the Offer is omitted for now, and /assets/js/main.js adds a full Offer
-  (price from PRICE_GBP, free UK delivery, 14-day returns) to this block
-  automatically as soon as BUY_DIRECT_URL is filled in. Google renders
-  JavaScript, so it will pick that up on its next crawl.
-  TODO(Adam): add "gtin13" (barcode) and "sku" to the Product if you have them,
-  and "address" to the Organization once the business address is confirmed.
+  Structured data (Organization + WebSite + Product with a static Offer).
+  Direct sales are live (PayPal Buy Now, BUY_DIRECT_URL in /assets/config.js), so the
+  Offer is written here in the HTML for every crawler. It must match the price a
+  visitor can pay on this page AND the Google Merchant Center feed
+  (/feeds/google-products.xml): id/sku AC500, 19.99 GBP, in stock, new,
+  free UK delivery, 14-day returns (delivery-returns.html).
+  If you change PRICE_GBP or delivery in config.js, change the Offer below and the
+  feed too. (main.js only adds an Offer itself if this static one is ever removed.)
+  TODO(Adam): add "gtin13" (barcode) to the Product if the bottle has one, and
+  "address" to the Organization once the business address is confirmed.
 -->
 <script type="application/ld+json" id="structured-data">
 {
@@ -81,7 +77,30 @@
       "category": "Kitchen sink cleaner",
       "size": "500ml",
       "countryOfOrigin": { "@type": "Country", "name": "United Kingdom" },
-      "url": "https://www.astracleanuk.com/"
+      "url": "https://www.astracleanuk.com/",
+      "sku": "AC500",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.astracleanuk.com/#buy",
+        "priceCurrency": "GBP",
+        "price": "19.99",
+        "availability": "https://schema.org/InStock",
+        "itemCondition": "https://schema.org/NewCondition",
+        "seller": { "@id": "https://www.astracleanuk.com/#organization" },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "GBP" },
+          "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "GB" }
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "GB",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 14,
+          "returnMethod": "https://schema.org/ReturnByMail",
+          "merchantReturnLink": "https://www.astracleanuk.com/delivery-returns.html"
+        }
+      }
     }
   ]
 }
@@ -92,7 +111,7 @@
 
 <header class="site-header"><div class="wrap">
   <a class="logo" href="/" aria-label="Astraclean home"><span>ASTRA</span><b>CLEAN</b></a>
-  <nav class="site-nav" aria-label="Main"><a href="#benefits">Benefits</a><a href="#how-to-use">How to use</a><a href="#faq">FAQ</a><a href="#delivery">Delivery &amp; returns</a><a href="#contact">Contact</a></nav>
+  <nav class="site-nav" aria-label="Main"><a href="#benefits">Benefits</a><a href="#how-to-use">How to use</a><a href="#faq">FAQ</a><a href="/guides/">Guides</a><a href="#delivery">Delivery &amp; returns</a><a href="#contact">Contact</a></nav>
   <a class="btn btn-white btn-sm" href="#buy">Buy now</a>
 </div></header>
 
@@ -235,6 +254,16 @@
   <details><summary>Can I return it?</summary><p>Yes. You can cancel within 14 days of receiving your order, and faulty or damaged items are always put right. Orders placed on eBay or Amazon follow their returns process. See <a href="/delivery-returns.html">Delivery &amp; returns</a>.</p></details>
 </div></section>
 
+<section id="guides"><div class="wrap">
+  <h2 class="center">Sink care guides</h2>
+  <ul class="home-guides">
+    <li><a href="/guides/remove-limescale-from-composite-sink.html">How to remove limescale from a composite sink</a><p>A step-by-step method, from a quick wipe to stubborn build-up.</p></li>
+    <li><a href="/guides/black-composite-sink-turning-white.html">Why is my black composite sink turning white or grey?</a><p>Limescale or damage? How to tell, and how to fix it.</p></li>
+    <li><a href="/guides/clean-granite-composite-sink.html">How to clean and care for a granite composite sink</a><p>A simple routine, and what never to use.</p></li>
+  </ul>
+  <p class="center small guides-all"><a href="/guides/">All sink care guides</a></p>
+</div></section>
+
 <section id="about" class="bg-soft"><div class="wrap narrow center">
   <h2>About Astraclean UK</h2>
   <p>Astraclean is a specialist cleaner for composite, granite and quartz kitchen sinks, made in the UK. Astraclean UK is a small, independent UK business run by Adam Marshall in Dewsbury, West Yorkshire. Got a question about your sink? Just send us a message – we're happy to help.</p>
@@ -271,7 +300,7 @@
   <p>Composite sink cleaner, made in the UK.<br>
   <!-- TODO(Adam): add the business postal address (and VAT number if VAT-registered) here. -->
   Astraclean UK is a trading name of Adam Marshall · <a href="mailto:sales@astracleanuk.com">sales@astracleanuk.com</a></p>
-  <p class="footer-links"><a href="/privacy.html">Privacy policy</a><a href="/delivery-returns.html">Delivery &amp; returns</a><a href="/terms.html">Terms of sale</a><button type="button" class="linklike" data-cookie-settings hidden>Cookie settings</button></p>
+  <p class="footer-links"><a href="/guides/">Sink care guides</a><a href="/privacy.html">Privacy policy</a><a href="/delivery-returns.html">Delivery &amp; returns</a><a href="/terms.html">Terms of sale</a><button type="button" class="linklike" data-cookie-settings hidden>Cookie settings</button></p>
   <p class="copy">© 2026 Astraclean UK</p>
 </div></footer>
 </body>

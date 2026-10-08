@@ -110,7 +110,7 @@ details p{margin:10px 0 0;color:var(--muted)}
 .page-hero{background:var(--grad);color:#fff;padding:44px 0}
 .page-hero h1{margin:0;font-size:36px;line-height:1.2}
 .page-hero p{margin:8px 0 0;opacity:.95}
-.prose{padding:48px 0 70px}
+.prose{padding:48px 24px 70px}
 .prose h2{font-size:26px;margin-top:40px}
 .prose h2:first-child{margin-top:0}
 .prose li{margin-bottom:6px}
@@ -132,6 +132,45 @@ th{background:var(--light);color:var(--b1)}
 .ot-text strong{display:block;color:var(--b1);font-size:18px;margin-bottom:2px}
 .ot-close{flex:0 0 auto;background:none;border:0;font-family:inherit;font-size:28px;line-height:1;color:var(--muted);cursor:pointer;padding:2px 8px;border-radius:8px}
 .ot-close:hover{color:var(--ink)}
+
+/* Guides (/guides/) */
+.breadcrumbs ol{list-style:none;margin:0 0 12px;padding:0;display:flex;flex-wrap:wrap;font-size:14px}
+.breadcrumbs li{opacity:.95}
+.breadcrumbs li+li::before{content:"›";margin:0 8px;opacity:.8}
+.breadcrumbs a{color:#fff}
+.page-hero .byline{font-size:14px;opacity:.9;margin-top:12px}
+.lead{font-size:18px;color:var(--ink)}
+.guide h3{color:var(--b1)}
+.guide ol.steps{margin:16px 0 8px}
+.guide-fig{margin:28px auto;max-width:420px}
+.guide-fig img{border-radius:16px;box-shadow:0 12px 30px rgba(16,50,100,.15)}
+.guide-fig figcaption{font-size:14px;color:var(--muted);text-align:center;margin-top:10px}
+.guide details{border:1px solid #e1eaf4}
+.product-card{display:flex;gap:24px;align-items:center;background:var(--light);border-radius:18px;padding:22px;margin:40px 0}
+.pc-img{flex:0 0 150px;background:#fff;border-radius:14px;overflow:hidden}
+.pc-body p{margin:0 0 10px}
+.pc-eyebrow{font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--b1)}
+.pc-title{font-size:21px;font-weight:800;color:var(--ink);line-height:1.25}
+.pc-price{font-size:24px;font-weight:800;color:var(--ink)}
+.pc-price small{font-size:14px;font-weight:600;color:var(--muted)}
+.pc-alt{margin-top:12px!important}
+.related{padding:0;margin-top:40px;border-top:1px solid #d8e3ef;padding-top:24px}
+.related h2{font-size:22px}
+.guide-list{list-style:none;padding:0;margin:28px 0;display:grid;gap:18px}
+.guide-card{background:#fff;border-radius:14px;padding:22px 24px;box-shadow:0 4px 16px rgba(16,50,100,.08);border:1px solid #e1eaf4}
+.guide-card h2{font-size:21px;margin:0 0 6px}
+.guide-card h2 a{text-decoration:none}
+.guide-card h2 a:hover{text-decoration:underline}
+.guide-card p{margin:0 0 8px;color:var(--muted)}
+.read-more{font-weight:700;font-size:14px;text-decoration:none}
+.home-guides{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.home-guides li{background:#fff;border-radius:14px;padding:22px;box-shadow:0 4px 16px rgba(16,50,100,.07)}
+.home-guides a{font-weight:700;text-decoration:none;font-size:17px;line-height:1.35}
+.home-guides a:hover{text-decoration:underline}
+.home-guides p{margin:8px 0 0;color:var(--muted);font-size:15px}
+.guides-all{margin-top:18px}
+@media (max-width:900px){.home-guides{grid-template-columns:1fr}}
+@media (max-width:600px){.breadcrumbs li[aria-current]{display:none}.breadcrumbs li:nth-last-child(2)::after{content:"›";margin-left:8px;opacity:.8}.product-card{flex-direction:column;align-items:stretch;text-align:left}.pc-img{flex:none;width:140px;margin:0 auto}.lead{font-size:17px}}
 
 /* Footer */
 .site-footer{background:var(--dark);color:#c9d8ea;font-size:14px;padding:36px 0}

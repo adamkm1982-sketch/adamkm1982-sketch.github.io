@@ -39,9 +39,45 @@
       .replace(/[\s_+.\/:]+/g, '-').replace(/[^a-z0-9-]/g, '').replace(/-+/g, '-')
       .slice(0, max).replace(/^-+|-+$/g, '');
   }
+  /* Untagged visits to the link page (/links/) from a social platform are counted as that
+     platform's "bio" link: Pinterest strips the utm_ tags from the profile website field, and
+     the other apps sometimes do too. Only the platform name worked out from document.referrer
+     is used (the referrer itself is never sent anywhere), and only on a fresh page open, not a
+     reload or back/forward (nothing is stored to tell them apart; the browser says which). */
+  var REFERRER_SOURCES = [
+    [/(^|\.)pinterest\.(com|[a-z]{2}|co\.[a-z]{2}|com\.[a-z]{2})$|^pin\.it$/, 'pinterest'],
+    [/(^|\.)instagram\.com$/, 'instagram'],
+    [/(^|\.)facebook\.com$|^fb\.me$|^fb\.com$/, 'facebook'],
+    [/(^|\.)tiktok\.com$/, 'tiktok'],
+    [/(^|\.)youtube\.com$|^youtu\.be$/, 'youtube']
+  ];
+  function isFreshNavigation() {
+    try {
+      var nav = window.performance && performance.getEntriesByType ? performance.getEntriesByType('navigation')[0] : null;
+      if (nav && nav.type) return nav.type === 'navigate';
+      if (window.performance && performance.navigation) return performance.navigation.type === 0;
+    } catch (e) {}
+    return true;
+  }
+  function readReferrerLanding() {
+    try {
+      if (!/^\/links(\/(index\.html)?)?$/.test(location.pathname)) return null;
+      var m = /^https?:\/\/([^\/?#:]+)/i.exec(doc.referrer || '');
+      if (!m) return null;
+      var host = m[1].toLowerCase();
+      for (var i = 0; i < REFERRER_SOURCES.length; i++) {
+        if (REFERRER_SOURCES[i][0].test(host)) {
+          if (!isFreshNavigation()) return null;
+          return { source: REFERRER_SOURCES[i][1], medium: 'social', campaign: 'bio', via: 'referrer' };
+        }
+      }
+    } catch (e) {}
+    return null;
+  }
   function readLanding() {
     try {
-      if (!/[?&]utm_source=/i.test(location.search) || !window.URLSearchParams) return null;
+      if (!/[?&]utm_source=/i.test(location.search)) return readReferrerLanding();
+      if (!window.URLSearchParams) return null;
       var q = new URLSearchParams(location.search);
       var src = codeOf(q.get('utm_source'), 40).replace(/^(www|m|l|lm|web)-/, '').replace(/-(com|co-uk|net|org)$/, '');
       if (!src) return null;
@@ -54,7 +90,7 @@
     } catch (e) { return null; }
   }
   var landing = readLanding();
-  var gaPageLocation = landing ? location.href : '';
+  var gaPageLocation = (landing && landing.via !== 'referrer') ? location.href : '';
 
   /* ---------- 1. Buy direct (reads /assets/config.js) ---------- */
   var directUrl = (typeof BUY_DIRECT_URL === 'string') ? BUY_DIRECT_URL.trim() : '';
@@ -646,7 +682,10 @@
      <store>.c.<source>.<campaign>.<YYYY-MM> (see section 4). Test traffic goes to the
      test namespace. Afterwards the utm_ tags are removed from the address bar
      (history.replaceState), so a reload, bookmark or shared copy of the address isn't
-     counted again; GA4 gets the original address via page_location (section 2). */
+     counted again; GA4 gets the original address via page_location (section 2).
+     Untagged opens of /links/ coming from Pinterest, Instagram, Facebook, TikTok or YouTube
+     (by referrer, fresh page opens only, see section 0b) count the same keys as
+     <platform> / social / bio. */
   if (landing) {
     try {
       var lt = ukParts(new Date());
@@ -662,7 +701,7 @@
        'land.md.' + L.medium + '.m.' + lt.month
       ].forEach(function (key) { ping(lbase + encodeURIComponent(key.slice(0, 64))); });
     } catch (e) {}
-    try {
+    if (landing.via !== 'referrer') try {
       var rest = location.search.replace(/^\?/, '').split('&').filter(function (p) { return p && !/^utm_[a-z_]*(=|$)/i.test(p); });
       history.replaceState(history.state, '', location.pathname + (rest.length ? '?' + rest.join('&') : '') + location.hash);
     } catch (e) {}

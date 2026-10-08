@@ -81,6 +81,12 @@ Links from our social profiles and posts carry `?utm_source=<platform>&utm_mediu
 - **Report:** `python3 /workspace/astraclean/site-tools/click-report.py 2026-10` (section "Social / campaign
   landings"). Abacus can't list counters, so campaign names are read from
   `/workspace/astraclean/marketing/utm-campaigns.txt` (add a series there before using it), plus `--campaigns=a,b`.
+- **Untagged bio clicks (referrer fallback):** Pinterest strips `utm_*` from the profile website field. When
+  `/links/` (or `/links`) is opened with **no** `utm_source` and `document.referrer` is Pinterest (any
+  `pinterest.<tld>`, `pin.it`), Instagram, Facebook, TikTok or YouTube, the same `land.*` keys are counted as
+  `<platform>` / `social` / `bio`. Only on a fresh navigation (Navigation Timing type `navigate`, so reloads and
+  Back/Forward aren't recounted; no storage used). Only the platform name is sent, never the referrer. A tagged
+  URL always wins (counted once, from the tags). GA4 gets no `page_location` override (it reads the referrer).
 - Tests: `site-tools/landing_tests.py`.
 
 ## Customer reviews (`assets/data/reviews.json`)

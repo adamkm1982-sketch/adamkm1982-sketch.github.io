@@ -204,6 +204,18 @@
     });
   });
 
+  /* ---------- 3e. Sink news (/news/): "nothing new today" note ----------
+     The page only changes when a new headline arrives, so say so when the newest
+     headline is from before today (UK date). */
+  $all('[data-news-latest]').forEach(function (el) {
+    try {
+      var latest = el.getAttribute('data-news-latest');
+      var today = ukParts(new Date()).day;
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(latest)) return;
+      el.insertBefore(doc.createTextNode(latest === today ? 'New headlines today. ' : 'No new headlines yet today. '), el.firstChild);
+    } catch (e) {}
+  });
+
   /* ---------- 4. Store-button click counting ----------
      Every click on a Buy direct / eBay / Amazon link is counted in two ways.
      Nothing here ever calls preventDefault() or waits, so the link always works
@@ -258,6 +270,7 @@
     var p = location.pathname.replace(/index\.html$/, '');
     if (p === '/') return 'home';
     if (p === '/guides/') return 'guides';
+    if (p === '/news/') return 'news';
     var g = /^\/guides\/([^\/]+)\.html$/.exec(p);
     if (g) return GUIDE_CODES[g[1]] || 'guide-other';
     return 'other';

@@ -90,6 +90,22 @@ ul.ticks li::before{content:"✔";position:absolute;left:0;color:var(--b2);font-
 .alt-buy{flex-basis:100%;margin-top:6px;font-size:14px;color:var(--muted)}
 .buy-box h2{margin-bottom:8px}
 .buy-note{margin:16px 0 0}
+/* eBay 2-pack option (secondary to Buy direct; clicks count as store "ebay2") */
+.twopack{display:flex;align-items:center;gap:12px;width:fit-content;max-width:100%;margin:14px 0 0;padding:9px 16px 9px 10px;border:1.5px solid #cfe0f2;border-radius:16px;background:var(--light);color:var(--muted);text-decoration:none;font-size:14px;line-height:1.35;transition:border-color .15s,box-shadow .15s}
+.twopack:hover{border-color:var(--b2);box-shadow:0 6px 16px rgba(16,50,100,.12)}
+.tp-badge{flex:0 0 auto;background:var(--b1);color:#fff;font-weight:800;font-size:11px;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:5px 9px;line-height:1.2}
+.tp-text{min-width:0}
+.tp-text strong{display:block;color:var(--b1);font-size:15px}
+.twopack:hover .tp-text strong{text-decoration:underline}
+.tp-go{margin-left:auto;padding-left:4px;color:var(--b1);font-weight:700}
+.twopack-dark{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.5);color:rgba(255,255,255,.92)}
+.twopack-dark:hover{border-color:#fff;box-shadow:0 6px 16px rgba(8,30,70,.25)}
+.twopack-dark .tp-badge{background:#fff;color:var(--b1)}
+.twopack-dark .tp-text strong,.twopack-dark .tp-go{color:#fff}
+.twopack-center{margin:16px auto 0;text-align:left}
+.twopack-lp{width:100%;margin-top:10px}
+@media (max-width:900px){.hero .twopack,.buy-box .twopack{width:100%}}
+@media (prefers-reduced-motion:reduce){.twopack{transition:none}}
 /* Product photo gallery */
 .buy-grid{align-items:start}
 .gallery{max-width:460px;width:100%;justify-self:center}
@@ -356,3 +372,31 @@ html:not(.has-direct) .lp-buttons .btn-market{background:var(--b1);color:#fff;bo
 .lp-foot a,.lp-foot .linklike{color:var(--b1)}
 @media (max-width:360px){.lp-product{gap:12px}.lp-photo{flex-basis:84px}.lp h1{font-size:18px}.lp-trust{grid-template-columns:1fr}}
 .prose code{overflow-wrap:anywhere}
+/* Home: Latest sink news strip (written daily by .github/news/build_news.py) */
+.home-news-intro{margin:-10px 0 22px}
+.home-news-list{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.home-news-item{background:#fff;border-radius:var(--radius);padding:20px 22px;box-shadow:var(--shadow);border:1px solid #e6eef7;display:flex;flex-direction:column;justify-content:space-between;gap:10px}
+.home-news-item a{font-weight:700;text-decoration:none;font-size:16px;line-height:1.4}
+.home-news-item a:hover{text-decoration:underline}
+.home-news-item a::after{content:" ↗";font-size:13px;opacity:.6}
+.home-news-empty{text-align:center;color:var(--muted);margin:0}
+.home-news-more{margin:22px 0 0}
+@media (max-width:900px){.home-news-list{grid-template-columns:1fr;gap:14px}.home-news-item{padding:16px 18px}}
+@media (min-width:901px) and (max-width:1100px){.site-nav a{margin-left:14px;font-size:13px}}
+/* Hazard information (GB CLP): GHS07 pictogram, signal word, H statements. Same size and contrast as the
+   surrounding text, never smaller or fainter than the marketing copy. Source: SDS HC1612 Rev 3. */
+.hazard-mini{display:flex;align-items:flex-start;gap:10px;margin:14px 0 0;font-size:14px;line-height:1.45;color:var(--ink);max-width:520px}
+.hazard-mini img{flex:0 0 auto;width:30px;height:30px;margin-top:1px}
+.hazard-mini a{white-space:nowrap;font-weight:600}
+.hazard-mini-dark{color:#fff}
+.hazard-mini-dark a{color:#fff}
+.hazard-mini-lp{justify-content:center;text-align:left;margin:14px auto 0;font-size:13px}
+.hazard-mini-card{font-size:14px;margin-top:8px}
+.hazard-mini-card img{width:26px;height:26px}
+.hazard-head{display:flex;align-items:center;gap:16px;margin:4px 0 12px}
+.hazard-head img{flex:0 0 auto;width:64px;height:64px}
+.hazard-head p{margin:0;display:flex;flex-direction:column;line-height:1.45}
+.hazard-head .signal{font-size:20px;font-weight:800;color:var(--ink)}
+.safety h3{font-size:17px;margin:20px 0 6px}
+.safety-list{margin:0;padding-left:20px}
+.safety-list li{margin:4px 0}

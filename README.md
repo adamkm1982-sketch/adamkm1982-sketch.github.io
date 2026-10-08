@@ -12,6 +12,13 @@ Edit **`assets/config.js`** only:
 - `PRICE_GBP` – the direct price (shown only once `BUY_DIRECT_URL` is set).
 - **If you change the price or delivery cost**, also change the static Offer in the `index.html` JSON-LD and `feeds/google-products.xml`. Google suspends Shopping listings when the feed, the page and the structured data disagree.
 - `PRICE_NOTE` / `FREE_UK_DELIVERY` – the delivery wording and the structured-data shipping cost.
+- `EBAY_2PACK_URL` / `EBAY_2PACK_PRICE` – the eBay 2-pack listing (item 198699332202, 2 × 500ml, £39.97 with free
+  postage) behind the "2-pack – Buy 2 on eBay" links (home hero, buy box and closing band, `/links/`, the guide and
+  news product cards). The URL and price are also written into that HTML so they work without JavaScript; if the
+  item number changes, update `index.html`, `links/index.html`, `guides/*.html`, `site-tools/guide_shell.py` and
+  `.github/news/template.html` too (search for `198699332202`). `EBAY_2PACK_PRICE = ""` hides the price.
+  The 2-pack is deliberately **not** in the Product JSON-LD or the Merchant Center feed: those describe the
+  single 500ml bottle (sku AC500) sold on this site, and a second price would contradict them.
 
 ## Files
 
@@ -39,13 +46,14 @@ Open items that need Adam's input are in **`TODO.md`** and marked `TODO` in the 
 
 ## Buy-button click counting
 
-Every click on a **Buy direct**, **eBay** or **Amazon** link is counted by `assets/js/main.js`:
+Every click on a **Buy direct**, **eBay** (single bottle), **eBay 2-pack** or **Amazon** link is counted by `assets/js/main.js`:
 
 - **Cookieless counter (all visitors):** Abacus (`abacus.jasoncameron.dev`, free, no account), namespace
-  `astracleanuk-com-clicks`. Keys per store (`ebay`, `amazon`, `direct`), UK time: month, day, hour and
+  `astracleanuk-com-clicks`. Keys per store (`ebay` = single-bottle listing, `ebay2` = 2-pack listing 198699332202 or any link with
+  `data-ebay2-link`, `amazon`, `direct`), UK time: month, day, hour and
   placement (`home-hero`, `home-buy`, `home-band`, `home-sticky` (mobile quick-buy bar), `home-reviews`, `guide-…-card`, …). Read with
   `python3 /workspace/astraclean/site-tools/click-report.py 2026-10`.
-- **GA4 event `store_click`** (only for visitors who accept analytics cookies): params `store`,
+- **GA4 event `store_click`** (only for visitors who accept analytics cookies): params `store` (`direct`, `ebay`, `ebay2`, `amazon`),
   `placement`, `link_domain`, `link_url`. To report on them in GA4, register `store` and `placement`
   as event-scoped custom dimensions (Admin → Custom definitions).
 - **Optional exact-timestamp log:** set `CLICK_LOG_URL` in `assets/config.js` once the order worker
@@ -64,7 +72,7 @@ Links from our social profiles and posts carry `?utm_source=<platform>&utm_mediu
   from a fixed list, otherwise `other`; campaign ≤ 24 chars, missing = `none`) and these Abacus counters get +1
   (same namespace as the clicks, UK time): `land.m.<month>`, `land.d.<day>`, `land.s.<source>.m|d.…`,
   `land.c.<source>.<campaign>.m|d.…`, `land.pg.<source>.<page>.m.<month>`, `land.md.<medium>.m.<month>`.
-  A Buy direct / eBay / Amazon click on that same page also adds `<store>.s.<source>.<month>` and
+  A Buy direct / eBay / eBay 2-pack / Amazon click on that same page also adds `<store>.s.<source>.<month>` and
   `<store>.c.<source>.<campaign>.<month>`. No cookies or device storage. Test traffic goes to the test namespace.
 - **Address bar tidied:** straight after counting, `history.replaceState` removes the `utm_*` parameters (other
   parameters and the `#hash` stay), so reloads, bookmarks and shared copies aren't counted again.
@@ -150,13 +158,19 @@ and runs `.github/news/build_news.py` (Python standard library only). It:
 - drops sponsored posts and anything that links off the publisher's own site (eBay, Amazon, affiliate links);
 - keeps a rolling 60-day archive in `.github/news/archive.json` and renders the page from
   `.github/news/template.html`, showing only headline, publisher, date and a ≤25-word extract;
-- commits only when the headlines change, then asks GitHub Pages to rebuild.
+- writes the **3 newest headlines** (headline, publisher and date only, linking to the original) into the
+  home page's **"Latest sink news"** strip, between the `<!--NEWS-STRIP:START-->` and `<!--NEWS-STRIP:END-->`
+  markers in `index.html` (left alone if the markers are missing; with no headlines it shows a short line
+  pointing to `/news/`). Plain HTML, no JavaScript, so if the Action ever fails the last headlines stay, with
+  their dates. `python3 .github/news/build_news.py --home-only` redoes just the strip from `archive.json`;
+- commits only when the headlines change (`news/index.html`, `index.html`, `archive.json`), then asks GitHub Pages to rebuild.
 
 Run it by hand: Actions → "Sink news (daily)" → Run workflow, or `gh workflow run sink-news.yml`.
 To change the header/footer/intro, edit `site-tools/make_news_template.py` (uses `guide_shell.py`), re-run
 it, then run `python3 .github/news/build_news.py`. The page is `noindex, follow` (auto-collected headlines
 could look like scraped/thin content to Google) and is therefore deliberately **not** in `sitemap.xml`.
-Buy-button clicks on it are counted with placement `news-card`.
+Buy-button clicks on it are counted with placement `news-card`. "Sink news" is in the main menu and the footer
+of every page.
 
 **Because the Action pushes to `main`, always `git pull --rebase` before pushing other changes.**
 

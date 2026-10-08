@@ -1,4 +1,4 @@
-/* Astraclean UK – small vanilla JS: order-thanks banner, Buy direct switch, cookie consent + GA4, click-to-load video, photo gallery, mobile quick-buy bar, customer reviews, store-button click counting, social/campaign landing counts. */
+/* Astraclean UK – small vanilla JS: order-thanks banner, Buy direct switch, eBay 2-pack links, cookie consent + GA4, click-to-load video, photo gallery, mobile quick-buy bar, customer reviews, store-button click counting, social/campaign landing counts. */
 (function () {
   'use strict';
 
@@ -72,6 +72,21 @@
       el.hidden = false;
     });
     addOfferToStructuredData();
+  }
+
+  /* ---------- 1b. eBay 2-pack links (EBAY_2PACK_URL / EBAY_2PACK_PRICE in /assets/config.js) ----------
+     The HTML already has the URL and price written in (works without JavaScript); this
+     only keeps them in step with config.js. Clicks count as store "ebay2" (section 4). */
+  var ebay2Url = (typeof EBAY_2PACK_URL === 'string') ? EBAY_2PACK_URL.trim() : '';
+  var ebay2Price = (typeof EBAY_2PACK_PRICE === 'string' || typeof EBAY_2PACK_PRICE === 'number') ? String(EBAY_2PACK_PRICE).trim() : '';
+  if (/^https:\/\/(www\.)?ebay\.co\.uk\/\S+$/i.test(ebay2Url)) {
+    $all('a[data-ebay2-link]').forEach(function (a) { a.href = ebay2Url; });
+    if (typeof EBAY_2PACK_PRICE !== 'undefined') {
+      $all('[data-ebay2-price]').forEach(function (el) {
+        if (/^\d+(\.\d{2})?$/.test(ebay2Price)) { el.textContent = '£' + ebay2Price; el.hidden = false; }
+        else { el.hidden = true; var sep = el.closest('[data-ebay2-price-wrap]'); if (sep) sep.hidden = true; }
+      });
+    }
   }
 
   // Fallback: if the static Offer is ever removed from index.html, add one to the
@@ -462,7 +477,9 @@
   });
 
   /* ---------- 4. Store-button click counting ----------
-     Every click on a Buy direct / eBay / Amazon link is counted in two ways.
+     Every click on a Buy direct / eBay / eBay 2-pack / Amazon link is counted in two ways.
+     Stores: direct, ebay (single bottle), ebay2 (the 2-pack listing, EBAY_2PACK_URL in
+     config.js, or any link marked data-ebay2-link), amazon.
      Nothing here ever calls preventDefault() or waits, so the link always works
      even if a counter is down; every send is fire-and-forget inside try/catch.
      a) Google Analytics 4 event "store_click" – ONLY if the visitor accepted
@@ -498,9 +515,12 @@
     return false;
   }
 
+  var EBAY2_ITEM = (function () { var m = /\/itm\/(?:[^\/]+\/)?(\d{9,15})/.exec(ebay2Url); return m ? m[1] : '198699332202'; })();
   function storeOf(a) {
     if (a.hasAttribute('data-direct-link')) return 'direct';
     var host = (a.hostname || '').toLowerCase();
+    // The eBay 2-pack listing is counted separately from the single-bottle listing.
+    if (a.hasAttribute('data-ebay2-link') || (/(^|\.)ebay\.co\.uk$/.test(host) && new RegExp('/itm/(?:[^/]+/)?' + EBAY2_ITEM + '(?:[/?#]|$)').test(a.pathname || ''))) return 'ebay2';
     if (/(^|\.)ebay\.co\.uk$/.test(host) || host === 'ebay.us') return 'ebay';
     if (/(^|\.)amazon\.co\.uk$/.test(host) || host === 'amzn.to' || host === 'amzn.eu') return 'amazon';
     return '';

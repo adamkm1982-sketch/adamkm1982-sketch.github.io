@@ -6,6 +6,9 @@ Runs daily in GitHub Actions (.github/workflows/sink-news.yml); standard library
   and the UK kitchen & bathroom (KBB) trade, drops sponsored, deal and shopping items.
 - Merges them into a rolling archive (.github/news/archive.json, last KEEP_DAYS days).
 - Renders news/index.html from .github/news/template.html.
+- Writes the 3 newest headlines into the home page's "Latest sink news" strip
+  (index.html, between <!--NEWS-STRIP:START--> and <!--NEWS-STRIP:END-->).
+  python3 build_news.py --home-only  redoes just that from archive.json (no fetching).
 Only headline, source, date, a <=25-word snippet and a link to the original are shown:
 no full articles, no images.
 Exit code 1 only if every feed failed (the existing page is left untouched).
@@ -18,6 +21,9 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 ARCHIVE = os.path.join(ROOT, '.github', 'news', 'archive.json')
 TEMPLATE = os.path.join(ROOT, '.github', 'news', 'template.html')
 OUT = os.path.join(ROOT, 'news', 'index.html')
+HOME = os.path.join(ROOT, 'index.html')
+HOME_ITEMS = 3
+STRIP_START, STRIP_END = '<!--NEWS-STRIP:START-->', '<!--NEWS-STRIP:END-->'
 UK = ZoneInfo('Europe/London')
 KEEP_DAYS = 60
 SNIPPET_WORDS = 25
@@ -225,7 +231,38 @@ def render(items, modified):
                .replace('__NEWS_MODIFIED_ISO__', modified.isoformat())
                .replace('__NEWS_MODIFIED_TEXT__', fmt_long(modified)))
 
+def render_home_strip(items):
+    """Headline, source and date only (never article text), linking to the original."""
+    top = items[:HOME_ITEMS]
+    if not top:
+        return '<p class="home-news-empty">The latest headlines are on our Sink news page.</p>'
+    lis = []
+    for it in top:
+        d = dt.datetime.fromisoformat(it['published'])
+        lis.append('<li class="home-news-item"><a href="%s" target="_blank" rel="noopener">%s</a>'
+                   '<p class="news-meta"><span class="news-src">%s</span> · <time datetime="%s">%s</time></p></li>' % (
+                       html.escape(it['link'], quote=True), html.escape(it['title']), html.escape(it['source']),
+                       uk_date(d).date().isoformat(), fmt_day(d)))
+    return '<ul class="home-news-list">' + ''.join(lis) + '</ul>'
+
+def update_home(items):
+    """Replace the strip between the markers in index.html. Leaves the file alone if the
+    markers are missing (so a home page redesign can never be broken by this script)."""
+    try: page = open(HOME, encoding='utf-8').read()
+    except FileNotFoundError: log('home page not found, strip skipped'); return False
+    a, b = page.find(STRIP_START), page.find(STRIP_END)
+    if a < 0 or b < a: log('home page has no NEWS-STRIP markers, strip skipped'); return False
+    new = page[:a + len(STRIP_START)] + '\n  ' + render_home_strip(items) + '\n  ' + page[b:]
+    if new == page: return False
+    with open(HOME, 'w', encoding='utf-8') as f: f.write(new)
+    log('home page news strip updated')
+    return True
+
 def main():
+    if '--home-only' in sys.argv[1:]:
+        arch = json.load(open(ARCHIVE, encoding='utf-8'))
+        update_home(arch.get('items', []))
+        return
     now = dt.datetime.now(dt.timezone.utc)
     cutoff = now - dt.timedelta(days=KEEP_DAYS)
     try: arch = json.load(open(ARCHIVE, encoding='utf-8'))
@@ -276,6 +313,7 @@ def main():
         modified = now.astimezone(UK).date()
     page = render(kept_items, modified)
     with open(OUT, 'w', encoding='utf-8') as f: f.write(page)
+    update_home(kept_items)
     with open(ARCHIVE, 'w', encoding='utf-8') as f:
         json.dump({'modified': modified.isoformat(), 'keep_days': KEEP_DAYS, 'items': kept_items}, f, ensure_ascii=False, indent=1)
         f.write('\n')

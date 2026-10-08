@@ -24,3 +24,11 @@ var FREE_UK_DELIVERY = true;
 // "https://astraclean-order-worker.<subdomain>.workers.dev/click".
 // The free Abacus click counter in main.js works without this.
 var CLICK_LOG_URL = "";
+
+// eBay 2-pack listing (2 x 500ml, free postage). The site's "Buy 2 on eBay" links
+// use this URL and price (the HTML also has them written in, for visitors without
+// JavaScript, so change index.html, links/index.html, the guides and the news
+// template too if the item number changes). Clicks are counted as store "ebay2".
+// Leave EBAY_2PACK_PRICE "" to hide the price text and just say "Buy 2 on eBay".
+var EBAY_2PACK_URL = "https://www.ebay.co.uk/itm/198699332202";
+var EBAY_2PACK_PRICE = "39.97";

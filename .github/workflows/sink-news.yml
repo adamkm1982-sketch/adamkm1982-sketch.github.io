@@ -1,4 +1,5 @@
 # Sink news: rebuilds /news/ every morning from public RSS feeds (see .github/news/build_news.py).
+# Also writes the 3 newest headlines into the home page (index.html, NEWS-STRIP markers).
 # Commits only when the headlines change, then asks GitHub Pages to rebuild the site.
 name: Sink news (daily)
 
@@ -22,13 +23,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Fetch feeds and rebuild news/index.html
+      - name: Fetch feeds, rebuild news/index.html and the home page's news strip
         run: python3 .github/news/build_news.py
 
       - name: Commit and push if the headlines changed
         id: commit
         run: |
-          git add news/index.html .github/news/archive.json
+          git add news/index.html index.html .github/news/archive.json
           if git diff --cached --quiet; then
             echo "No new headlines - nothing to commit."
             echo "changed=false" >> "$GITHUB_OUTPUT"

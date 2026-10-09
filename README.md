@@ -47,7 +47,7 @@ Edit **`assets/config.js`** only:
 | `assets/data/reviews.json` | Customer reviews shown on the home page (see **Customer reviews** below) |
 | `assets/js/main.js` | "Thanks for your order" banner on `/?order=thanks` (PayPal return URL), Buy direct switch, cookie banner + GA4 (G-CVNBPXH52L, loaded only after "Accept"), click-to-load YouTube, buy-button click counting (see below) |
 | `assets/css/styles.css` | All styles |
-| `assets/img/` | Optimised images (WebP + JPEG, several widths) and `og-image.jpg` (1200×630) |
+| `assets/img/` | Optimised images (WebP + JPEG, several widths) and `og-image.jpg` (1200×630). Buy-box gallery photos 4–5 are the claim infographics Adam approved for eBay on 9 Oct 2026 (`astraclean-professional-kitchen-sink-cleaner-*`, `astraclean-premium-kitchen-sink-cleaner-*`, from `compliance/photo5-after.jpg` / `photo6-after.jpg` via `site-tools/make_claim_photos.py`). Never use the old eBay 5.jpg/6.jpg (septic-safe / eco-friendly) or the staged before/after image |
 | `assets/fonts/` | Montserrat (variable, Latin subset, SIL OFL – see `OFL.txt`) |
 | `favicon.ico`, `favicon.svg`, `apple-touch-icon.png`, `assets/icons/`, `site.webmanifest` | Icons |
 | `robots.txt`, `sitemap.xml`, `CNAME` | Search engines and custom domain |
@@ -195,7 +195,7 @@ of every page.
 Every page loads `/assets/css/styles.css?v=…`, `/assets/js/main.js?v=…` and `/assets/config.js?v=…`.
 GitHub Pages sends `Cache-Control: max-age=600` and phones can keep an old copy longer, so after editing
 any of those files bump the `?v=` value in **every** `*.html` page, `.github/news/template.html` and
-`site-tools/page_shell.py` / `guide_shell.py` (e.g. `rg -l 'v=20261008c' | xargs sed -i 's/v=20261008c/v=NEW/g'`).
+`site-tools/page_shell.py` / `guide_shell.py` (e.g. `rg -l 'v=20261009a' | xargs sed -i 's/v=20261009a/v=NEW/g'`).
 The Sink news ticker also has its critical layout inline in each page's `<head>` (`<style id="nt-critical">`),
 so it always shows as a thin one-line bar even with a stale stylesheet. Keep it in step with styles.css.
 

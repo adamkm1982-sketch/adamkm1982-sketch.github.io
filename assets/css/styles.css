@@ -442,3 +442,7 @@ html:not(.has-direct) .lp-buttons .btn-market{background:var(--b1);color:#fff;bo
 .safety h3{font-size:17px;margin:20px 0 6px}
 .safety-list{margin:0;padding-left:20px}
 .safety-list li{margin:4px 0}
+/* Gallery: 5 thumbnails (3:4 photos + 2:3 claim infographics) shrink to fit and crop to one height */
+.gallery-thumbs{flex-wrap:nowrap}
+.thumb{flex:0 1 76px;min-width:0}
+.thumb img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top}

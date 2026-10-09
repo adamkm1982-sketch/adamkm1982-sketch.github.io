@@ -195,7 +195,7 @@ of every page.
 Every page loads `/assets/css/styles.css?v=…`, `/assets/js/main.js?v=…` and `/assets/config.js?v=…`.
 GitHub Pages sends `Cache-Control: max-age=600` and phones can keep an old copy longer, so after editing
 any of those files bump the `?v=` value in **every** `*.html` page, `.github/news/template.html` and
-`site-tools/page_shell.py` / `guide_shell.py` (e.g. `rg -l 'v=20261009a' | xargs sed -i 's/v=20261009a/v=NEW/g'`).
+`site-tools/page_shell.py` / `guide_shell.py` (e.g. `rg -l 'v=20261009b' | xargs sed -i 's/v=20261009b/v=NEW/g'`).
 The Sink news ticker also has its critical layout inline in each page's `<head>` (`<style id="nt-critical">`),
 so it always shows as a thin one-line bar even with a stale stylesheet. Keep it in step with styles.css.
 
@@ -204,3 +204,5 @@ so it always shows as a thin one-line bar even with a stale stylesheet. Keep it 
 ```sh
 python3 -m http.server 8080   # then open http://localhost:8080/
 ```
+
+- About section lifestyle image (`astraclean-lifestyle-black-composite-sink-*`, from `/workspace/astraclean/demo/demo-after-with-bottle.jpg` via `site-tools/make_lifestyle_photo.py`): a generated illustrative product shot. Never caption or present it as a before/after or a real customer result.

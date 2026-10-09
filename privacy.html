@@ -30,7 +30,7 @@
 <!-- Sink news ticker: critical layout inline so it is always a thin one-line bar, even if an old styles.css is cached. Full styles in styles.css (loaded after, so it wins). -->
 <style id="nt-critical">.news-ticker{background:#14365f;color:#fff;height:36px;overflow:hidden;font-size:13px;line-height:1.3}.nt-wrap{display:flex;align-items:center;gap:10px;height:36px;overflow:hidden}.nt-label{flex:none;color:#fff;text-decoration:none;font-weight:700;white-space:nowrap}.nt-viewport{flex:1 1 auto;min-width:0;overflow:hidden}.nt-track{display:flex;flex-wrap:nowrap;width:max-content;animation:nt-scroll var(--nt-dur,60s) linear infinite}.nt-list{display:flex;flex-wrap:nowrap;flex:none;list-style:none;margin:0;padding:0}.nt-list li{list-style:none;white-space:nowrap;padding:0 22px}.nt-list a{color:#fff;text-decoration:none}@keyframes nt-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}.news-ticker:hover .nt-track,.news-ticker:focus-within .nt-track,.news-ticker.is-paused .nt-track{animation-play-state:paused}@media (prefers-reduced-motion:reduce){.nt-track{animation:none}.nt-list[aria-hidden]{display:none}}</style>
 <link rel="stylesheet" href="/assets/css/styles.css?v=20261009b">
-<script src="/assets/config.js?v=20261009b" defer></script>
+<script src="/assets/config.js?v=20261009e" defer></script>
 <script src="/assets/js/main.js?v=20261009b" defer></script>
 </head>
 <body>
@@ -102,9 +102,7 @@
 <li>Some apps (Pinterest in particular) remove the label from the website link in our profile. So when our link page (<code>/links/</code>) is opened straight from Pinterest, Instagram, Facebook, TikTok or YouTube without a label, it's counted in the same way as a visit from our profile link on that platform. To do this, the page checks which website your browser says you came from (the "referrer") and turns it into just the platform name; the referrer itself isn't sent or kept. This only happens when the page is first opened, not when you refresh it or come back to it.</li>
 <li>Other visits that don't come from one of our labelled links aren't counted this way.</li>
 </ul>
-<!-- When the optional Cloudflare click log is switched on (CLICK_LOG_URL in /assets/config.js), add:
 <p>We also send the same anonymous details (shop, page, part of the page) to our own order system on Cloudflare (Cloudflare, Inc.), which stores them with the exact time of the click. No IP address, identifiers or cookies are stored.</p>
-and add Cloudflare to sections 5, 6 and 7. -->
 
 <h2 id="cookies">4. Cookies and similar technologies</h2>
 <p>Cookies are small files that a website stores on your device. Some websites use similar technologies, such as your browser's local storage. We use:</p>
@@ -129,6 +127,7 @@ and add Cloudflare to sections 5, 6 and 7. -->
 <li><strong>Our website host:</strong> GitHub, Inc. (GitHub Pages), which serves this website and may log technical data such as IP addresses for security.</li>
 <li><strong>Our email provider:</strong> ImprovMX, which receives emails sent to sales@astracleanuk.com and forwards them to our mailbox.</li>
 <li><strong>Abacus</strong> (abacus.jasoncameron.dev): our counting service, which receives only the anonymous click and visit counts (and, to make the connection, your IP address), as described in section 3.</li>
+<li><strong>Cloudflare, Inc.:</strong> runs our small order system. When you buy direct, PayPal sends it the order details (your name, email, delivery address and what you bought) so it can email us the order to post. It also stores the anonymous buy-button click times described in section 3.</li>
 <li><strong>Payment providers:</strong> if you buy direct, the payment provider shown at checkout (such as Stripe or PayPal). They act as independent controllers for payment and fraud-prevention data under their own privacy policies.</li>
 <li><strong>Delivery companies:</strong> such as Royal Mail or Evri, who receive your name, delivery address and sometimes your email or phone number so they can deliver your order and send tracking updates.</li>
 <li><strong>Google:</strong> for Google Analytics (only if you accept) and YouTube (only if you play the video), as described above.</li>
@@ -137,7 +136,7 @@ and add Cloudflare to sections 5, 6 and 7. -->
 </ul>
 
 <h2 id="transfers">6. International transfers</h2>
-<p>Some of these providers (for example GitHub, Google, Stripe and PayPal) may process data outside the UK, including in the United States. Where they do, they protect it with recognised safeguards, such as the UK–US "data bridge" (the UK Extension to the EU–US Data Privacy Framework), the UK International Data Transfer Agreement, or the UK Addendum to the EU Standard Contractual Clauses.</p>
+<p>Some of these providers (for example GitHub, Google, Cloudflare, Stripe and PayPal) may process data outside the UK, including in the United States. Where they do, they protect it with recognised safeguards, such as the UK–US "data bridge" (the UK Extension to the EU–US Data Privacy Framework), the UK International Data Transfer Agreement, or the UK Addendum to the EU Standard Contractual Clauses.</p>
 <p>The Abacus counting service may process data outside the UK, including in the United States. It only receives the anonymous counts described in section 3 (and, to make the connection, your IP address).</p>
 
 <h2 id="retention">7. How long we keep it</h2>
@@ -149,6 +148,7 @@ and add Cloudflare to sections 5, 6 and 7. -->
 <tr><td>Order, payment and delivery records</td><td>6 years from the end of the tax year of the order, to meet HMRC record-keeping rules</td></tr>
 <tr><td>Google Analytics data</td><td>No more than 14 months (see section 3)</td></tr>
 <tr><td>Your cookie choice</td><td>Up to 12 months, after which we'll ask you again</td></tr>
+<tr><td>Anonymous buy-button click times (our Cloudflare order system)</td><td>Kept in our business records; they contain nothing that identifies you</td></tr>
 <tr><td>Anonymous buy-button click counts and social media visit counts</td><td>The counting service deletes a counter 6 months after it was last used. We keep the monthly totals in our business records</td></tr>
 </tbody></table></div>
 

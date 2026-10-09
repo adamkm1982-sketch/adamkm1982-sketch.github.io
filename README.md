@@ -205,4 +205,4 @@ so it always shows as a thin one-line bar even with a stale stylesheet. Keep it 
 python3 -m http.server 8080   # then open http://localhost:8080/
 ```
 
-- About section lifestyle image (`astraclean-lifestyle-black-composite-sink-*`, from `/workspace/astraclean/demo/demo-after-with-bottle.jpg` via `site-tools/make_lifestyle_photo.py`): a generated illustrative product shot. Never caption or present it as a before/after or a real customer result.
+- About section lifestyle image (`astraclean-lifestyle-black-composite-sink-*`, from `/workspace/astraclean/demo/demo-after-with-bottle.jpg` via `site-tools/make_lifestyle_photo.py`): a generated lifestyle product shot. Caption is just "Lifestyle product shot." (Adam asked for no "illustrative" wording). Never caption or present it as a before/after or a real customer result.

@@ -449,3 +449,29 @@ html:not(.has-direct) .lp-buttons .btn-market{background:var(--b1);color:#fff;bo
 .gallery-thumbs{flex-wrap:nowrap}
 .thumb{flex:0 1 76px;min-width:0}
 .thumb img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top}
+
+/* Social media badges: footer "Follow us" row (all pages) and "Follow Astraclean" on /links/.
+   Monochrome line icons in currentColor; 44px tap targets. */
+.follow{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;margin:18px 0 6px}
+.follow-label{margin:0;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#c9d8ea}
+.social-row{list-style:none;margin:0;padding:0;display:flex;gap:10px}
+.social-row li{margin:0}
+.site-footer .social-row a,.lp-foot .social-row a{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;margin:0;border-radius:50%;border:1px solid rgba(255,255,255,.32);color:#fff;text-decoration:none;transition:background-color .15s,border-color .15s,color .15s}
+.site-footer .social-row a:hover{background:rgba(255,255,255,.12);border-color:#fff}
+.social-row svg,.lp-soc-ico svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.lp-foot .follow{justify-content:center;margin:4px 0 12px}
+.lp-foot .follow-label{color:var(--muted)}
+.lp-foot .social-row a{color:var(--b1);border-color:#c9d8ea;background:#fff}
+.lp-foot .social-row a:hover{border-color:var(--b2);background:#f2f7fc}
+.lp-soc{display:flex;align-items:center;gap:12px}
+.lp-links .lp-soc-ico,.lp-soc-ico{display:inline-flex;align-items:center;justify-content:center;flex:0 0 44px;width:44px;height:44px;border-radius:50%;background:#eef4fb;color:var(--b1)}
+.lp-social a{min-height:44px}
+/* Slim "Follow us" row under the news ticker (all pages with the ticker). Light, not another blue band. */
+.top-social{background:#fff;border-bottom:1px solid var(--line);height:38px;overflow:hidden}
+.ts-wrap{display:flex;align-items:center;justify-content:flex-end;gap:6px;height:38px}
+.ts-label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-right:2px}
+.ts-row{gap:2px}
+.top-social .social-row a{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;color:var(--dark);opacity:.78;text-decoration:none;transition:opacity .15s,background-color .15s}
+.top-social .social-row a:hover,.top-social .social-row a:focus-visible{opacity:1;background:var(--light)}
+.top-social .social-row svg{width:18px;height:18px}
+@media (max-width:600px){.ts-wrap{justify-content:center}}

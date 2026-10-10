@@ -669,6 +669,8 @@
       if (e.type === 'auxclick' && e.button !== 1) return; // middle-click only
       var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
       if (!a) return;
+      var network = socialOf(a);
+      if (network) { onSocialClick(a, network); return; }
       var store = storeOf(a);
       if (!store) return;
       var page = pageCode(), section = sectionCode(a), placement = page + '-' + section;
@@ -703,6 +705,35 @@
       ] : []).forEach(function (key) { ping(base + encodeURIComponent(key.slice(0, 64))); });
 
       if (clickLogUrl) postLog(clickLogUrl, { store: store, page: page, section: section, test: test });
+    } catch (err) { /* never get in the way of the click */ }
+  }
+  /* Social media badge clicks (footer "Follow us" row on every page, "Follow Astraclean" on /links/).
+     Only links marked data-social="<network>" count, so the YouTube video and news-ticker links don't.
+     Same rules as the store clicks above: never blocks the click, test traffic goes to the test namespace.
+       a) GA4 event "social_click" (network, placement), only with analytics consent.
+       b) Abacus: social-<network>.m.<YYYY-MM>, social-<network>.d.<YYYY-MM-DD>,
+          social-<network>.p.<page>-<section>.<YYYY-MM>   (UK time) */
+  var SOCIAL_NETWORKS = { instagram: 1, facebook: 1, pinterest: 1, tiktok: 1, youtube: 1 };
+  function socialOf(a) {
+    var n = (a.getAttribute('data-social') || '').toLowerCase();
+    return SOCIAL_NETWORKS[n] === 1 ? n : '';
+  }
+  function onSocialClick(a, network) {
+    try {
+      var page = pageCode(), section = sectionCode(a), placement = page + '-' + section;
+      var now = Date.now(), key = 'social-' + network;
+      if (lastClick.key === key + placement && now - lastClick.time < 1000) return;
+      lastClick = { key: key + placement, time: now };
+      var test = isTestTraffic();
+      if (gaLoaded && readConsent() === 'accepted' && window['ga-disable-' + GA_ID] !== true && typeof window.gtag === 'function') {
+        var params = { network: network, placement: placement, link_domain: (a.hostname || '').toLowerCase(), transport_type: 'beacon' };
+        if (test) params.traffic_type = 'internal';
+        window.gtag('event', 'social_click', params);
+      }
+      var t = ukParts(new Date(now));
+      var base = COUNTER_BASE + (test ? COUNTER_TEST_NS : COUNTER_NS) + '/';
+      [key + '.m.' + t.month, key + '.d.' + t.day, key + '.p.' + placement + '.' + t.month]
+        .forEach(function (k) { ping(base + encodeURIComponent(k.slice(0, 64))); });
     } catch (err) { /* never get in the way of the click */ }
   }
   doc.addEventListener('click', onStoreClick, true);

@@ -508,3 +508,4 @@ html:not(.has-direct) .also-on .ao-link{background:#fff;color:var(--b1);text-dec
 
 /* Gallery photo 1 is landscape: centre its thumbnail on the bottle. */
 .thumb-wide img{object-position:72% 50%}
+.home-news-guide a::after{content:none}

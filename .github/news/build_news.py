@@ -11,6 +11,8 @@ Runs daily in GitHub Actions (.github/workflows/sink-news.yml); standard library
 - Writes the TICKER_ITEMS newest headlines into the scrolling "Sink news" ticker under the
   main menu of every page that has <!--NEWS-TICKER:START--> / <!--NEWS-TICKER:END--> markers
   (home, guides, news template, policy pages, 404).
+- Only sink-care / limescale / hard-water stories are shown (relevant()); our own guides fill gaps.
+  python3 build_news.py --relevance  lists every archived item as KEEP or drop.
   python3 build_news.py --home-only  redoes the strip and tickers from archive.json (no fetching).
 Only headline, source, date, a <=25-word snippet and a link to the original are shown:
 no full articles, no images.
@@ -80,6 +82,50 @@ RE_SHOPPING = re.compile(r'\b(?:deals?|sales?|prime day|black friday|cyber monda
                          r'tested|review(?:ed)?:|i tried|we tried|amazon|ebay|argos|ikea haul|shop the look|editor.s picks?)\b', re.I)
 BLOCKED_HOSTS = re.compile(r'(?:^|\.)(?:amazon\.[a-z.]+|amzn\.[a-z]+|ebay\.[a-z.]+|ebay\.us|awin1\.com|skimresources\.com|go\.skimlinks\.com|'
                            r'shareasale\.com|anrdoezrs\.net|dpbolvw\.net|jdoqocy\.com|tkqlhce\.com|howl\.me|bit\.ly)$', re.I)
+
+# ---- Relevance filter for what is SHOWN (ticker, home strip, /news/) ----
+# The archive still collects the wider trade feeds (classify() above), but only stories about
+# sink care, cleaning a kitchen sink, limescale / hard water and composite/granite/quartz sink care
+# are displayed. Everything else (supplier newswires, people moves, celebrity homes and house tours,
+# podcasts, interviews, showrooms, events, general business news, product launches) is left out.
+# When too few stories pass, our own sink care guides fill the gaps instead of off-topic headlines.
+RE_REL_BLOCK = re.compile(
+    r'newswire|round-?up|in brief|podcast|appoint\w*|\bnew (?:boss|md|ceo|chair\w*|(?:managing |sales |area |commercial )?directors?|head of)\b|'
+    r'\bwelcomes?\b|\bjoins?\b|\bhires?\b|\bretir\w*|leadership|interview|\bmd\b|celebrit\w*|\b(?:house|home) tours?\b|'
+    r'inside (?:\w+\W+){0,3}(?:home|house)|elvis|showrooms?|anniversary|donat\w*|hospice|charity|council|'
+    r'price (?:hike|rise|increase)s?|invest\w*|acqui\w*|merger|profits?|turnover|revenue|\bresults\b|administration|redundan\w*|'
+    r'awards?|exhibition|trade show|\bevents?\b|expands? into|strategy|supplier|distributor|partnership|signage|sales managers?', re.I)
+RE_REL_BLOCK_PATH = re.compile(r'/(?:newswire|podcasts?|people|celebrity-homes|celebrity|events?|awards?)/', re.I)
+RE_REL_CARE = re.compile(r'lime ?scale|hard[- ]water|water ?(?:marks?|spots?)|descal\w*|(?:mineral|calcium) (?:deposits?|build-?up)|water softeners?', re.I)
+RE_REL_SINK = re.compile(r'\b(?:sinks?|plugholes?|drainers?|draining boards?)\b', re.I)
+RE_REL_CLEAN = re.compile(r'\b(?:clean\w*|care|caring|look(?:ing)? after|maintain\w*|maintenance|stains?|stained|staining|scratch\w*|'
+                          r'restor\w*|dull|shine|shiny|polish\w*|unblock\w*|blocked|smell\w*|odou?rs?|bicarbonate|vinegar|'
+                          r'discolou?r\w*|turning white|marks?)\b', re.I)
+MIN_SHOWN = 4  # fewer relevant stories than this: add our own guides to the ticker
+GUIDES = [
+    {'title': 'How to remove limescale from a composite sink', 'link': '/guides/remove-limescale-from-composite-sink.html'},
+    {'title': 'Black composite sink turning white or grey? Causes and fixes', 'link': '/guides/black-composite-sink-turning-white.html'},
+    {'title': 'How to clean and care for a granite composite sink', 'link': '/guides/clean-granite-composite-sink.html'},
+]
+for _g in GUIDES: _g.update({'source': 'Astraclean guide', 'guide': True})
+
+def relevant(it):
+    title = it.get('title', '')
+    path = urllib.parse.urlsplit(it.get('link', '')).path
+    if RE_REL_BLOCK.search(title) or RE_REL_BLOCK_PATH.search(path): return False
+    if RE_REL_CARE.search(title): return True
+    return bool(RE_REL_SINK.search(title) and (RE_REL_CLEAN.search(title) or RE_REL_CARE.search(it.get('snippet', ''))))
+
+def shown(items):
+    return [i for i in items if relevant(i)]
+
+def with_guides(items, want):
+    """Relevant stories first; if there are fewer than `want`, top up with our own guides."""
+    out = list(items)
+    for g in GUIDES:
+        if len(out) >= want: break
+        out.append(g)
+    return out
 
 def log(*a): print(*a, file=sys.stderr, flush=True)
 
@@ -205,8 +251,7 @@ def render_item(it):
         uk_date(d).date().isoformat(), fmt_day(d), snip)
 
 def render(items, modified):
-    sinks = [i for i in items if i['topic'] == 'sinks']
-    rest = [i for i in items if i['topic'] != 'sinks']
+    items = shown(items)
     latest = items[0] if items else None
     if latest:
         ld = uk_date(dt.datetime.fromisoformat(latest['published'])).date()
@@ -215,21 +260,16 @@ def render(items, modified):
     else:
         status = '<p class="news-status" role="status">Checked every morning.</p>'
     parts = [status]
-    parts.append('<h2 id="sinks">Sinks, taps &amp; worktops</h2>')
-    if sinks:
-        parts.append('<ul class="news-list">' + ''.join(render_item(i) for i in sinks[:15]) + '</ul>')
-    else:
-        parts.append('<p class="news-empty">No new sink, tap or worktop stories in the last %d days. '
-                     'Sink makers tend to launch new ranges in spring and autumn, so check back soon.</p>' % KEEP_DAYS)
-    parts.append('<h2 id="industry">Kitchen &amp; bathroom industry news</h2>')
-    if rest:
-        head, tail = rest[:20], rest[20:]
+    parts.append('<h2 id="sinks">Sink care, limescale &amp; hard water</h2>')
+    if items:
+        head, tail = items[:15], items[15:]
         parts.append('<ul class="news-list">' + ''.join(render_item(i) for i in head) + '</ul>')
         if tail:
             parts.append('<details class="news-older"><summary>Older headlines (%d more from the last %d days)</summary>'
                          '<ul class="news-list">%s</ul></details>' % (len(tail), KEEP_DAYS, ''.join(render_item(i) for i in tail)))
     else:
-        parts.append('<p class="news-empty">No new industry headlines in the last %d days. Check back tomorrow.</p>' % KEEP_DAYS)
+        parts.append('<p class="news-empty">No new sink care, limescale or hard-water stories in the last %d days. '
+                     'In the meantime, our own guides below cover the most common sink problems.</p>' % KEEP_DAYS)
     body = '\n'.join(parts)
     tpl = open(TEMPLATE, encoding='utf-8').read()
     if '<!--NEWS:ITEMS-->' not in tpl: raise SystemExit('template is missing <!--NEWS:ITEMS-->')
@@ -239,11 +279,13 @@ def render(items, modified):
 
 def render_home_strip(items):
     """Headline, source and date only (never article text), linking to the original."""
-    top = items[:HOME_ITEMS]
-    if not top:
-        return '<p class="home-news-empty">The latest headlines are on our Sink news page.</p>'
+    top = with_guides(shown(items)[:HOME_ITEMS], HOME_ITEMS)
     lis = []
     for it in top:
+        if it.get('guide'):
+            lis.append('<li class="home-news-item home-news-guide"><a href="%s">%s</a><p class="news-meta"><span class="news-src">%s</span></p></li>' % (
+                html.escape(it['link'], quote=True), html.escape(it['title']), html.escape(it['source'])))
+            continue
         d = dt.datetime.fromisoformat(it['published'])
         lis.append('<li class="home-news-item"><a href="%s" target="_blank" rel="noopener">%s</a>'
                    '<p class="news-meta"><span class="news-src">%s</span> · <time datetime="%s">%s</time></p></li>' % (
@@ -255,15 +297,16 @@ def render_ticker(items):
     """Scrolling headline ticker (headline + source only, linking to the original).
     The list is written twice so the CSS animation can loop seamlessly; the copy is
     aria-hidden and its links are out of the tab order."""
-    top = items[:TICKER_ITEMS]
+    top = shown(items)[:TICKER_ITEMS]
+    if len(top) < MIN_SHOWN: top = with_guides(top, len(top) + len(GUIDES))
     if not top:
         return ('<div class="nt-viewport"><p class="nt-empty"><a href="/news/">See the latest kitchen sink and KBB '
                 'trade headlines on our Sink news page</a></p></div>')
     def lst(copy):
         lis = []
         for it in top:
-            lis.append('<li><a href="%s" target="_blank" rel="noopener"%s>%s</a> <span class="nt-src">%s</span></li>' % (
-                html.escape(it['link'], quote=True), ' tabindex="-1"' if copy else '',
+            lis.append('<li><a href="%s"%s%s>%s</a> <span class="nt-src">%s</span></li>' % (
+                html.escape(it['link'], quote=True), '' if it.get('guide') else ' target="_blank" rel="noopener"', ' tabindex="-1"' if copy else '',
                 html.escape(it['title']), html.escape(it['source'])))
         return '<ul class="nt-list"%s>%s</ul>' % (' aria-hidden="true"' if copy else '', ''.join(lis))
     chars = sum(len(it['title']) + len(it['source']) + 6 for it in top)
@@ -304,6 +347,10 @@ def update_home(items):
     return True
 
 def main():
+    if '--relevance' in sys.argv[1:]:
+        for it in json.load(open(ARCHIVE, encoding='utf-8')).get('items', []):
+            print('KEEP' if relevant(it) else 'drop', '|', it['source'][:14].ljust(14), '|', it['title'])
+        return
     if '--home-only' in sys.argv[1:]:
         arch = json.load(open(ARCHIVE, encoding='utf-8'))
         update_home(arch.get('items', []))
@@ -366,7 +413,8 @@ def main():
         f.write('\n')
     log('feeds ok=%d failed=%d; new=%d removed=%d total=%d (sinks=%d)' % (
         ok, failed, len(added), removed, len(kept_items), sum(1 for i in kept_items if i['topic'] == 'sinks')))
-    for it in added: log('  +', it['topic'].ljust(8), it['source'][:12].ljust(12), it['title'][:90])
+    for it in added: log('  +', 'shown  ' if relevant(it) else 'hidden ', it['topic'].ljust(8), it['source'][:12].ljust(12), it['title'][:90])
+    log('shown (sink care / limescale / hard water): %d of %d' % (len(shown(kept_items)), len(kept_items)))
 
 if __name__ == '__main__':
     main()

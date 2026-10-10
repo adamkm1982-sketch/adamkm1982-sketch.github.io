@@ -493,3 +493,15 @@ html:not(.has-direct) .lp-buttons .btn-market{background:var(--b1);color:#fff;bo
 .lp-foot .footer-links a,.lp-foot .footer-links .linklike{display:inline-block;padding:8px 0}
 .safety-link a,.guides-all a,.del p a,#delivery .small a{display:inline-block;padding:8px 0}
 .guides-all{margin-top:10px}
+
+/* Hero: one main button (Buy direct), the 2-pack card, then eBay / Amazon as small secondary text links. */
+.also-on{margin:14px 0 0;font-size:14.5px;color:rgba(255,255,255,.88)}
+.also-on .ao-link{color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:3px;display:inline-block;padding:8px 2px}
+.also-on .ao-sep{color:rgba(255,255,255,.7)}
+/* No direct checkout configured: eBay / Amazon become the main buttons again. */
+html:not(.has-direct) .also-on{display:flex;flex-wrap:wrap;gap:12px;margin-top:0}
+html:not(.has-direct) .also-on .ao-sep{display:none}
+html:not(.has-direct) .also-on .ao-link{background:#fff;color:var(--b1);text-decoration:none;border-radius:999px;padding:14px 28px;font-size:16px}
+@media (max-width:900px){
+ .has-direct .sb-alt{border:0;padding:8px 4px;font-weight:600;color:var(--muted);text-decoration:underline;text-underline-offset:2px}
+}

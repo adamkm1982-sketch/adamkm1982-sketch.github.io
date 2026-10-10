@@ -351,14 +351,14 @@
 
   /* ---------- 3c. Mobile quick-buy bar ----------
      Only on small screens (CSS hides it above 900px). Appears once the hero buttons have
-     scrolled off the top; hides again while the buy box buttons, the closing "band", the
+     scrolled off the top; hides again while the closing "band", the
      footer or the cookie banner are on screen, so it never covers them. */
   var bar = doc.querySelector('[data-sticky-buy]');
   if (bar && window.matchMedia) {
     bar.hidden = false;
     var mq = window.matchMedia('(max-width: 900px)');
     var heroCtas = doc.querySelector('.hero .ctas');
-    var blockers = $all('#buy .buy-actions, .band, .site-footer');
+    var blockers = $all('.band, .site-footer');
     var ticking = false;
     var inView = function (el) { var r = el.getBoundingClientRect(); return r.bottom > 0 && r.top < (window.innerHeight || doc.documentElement.clientHeight); };
     var updateBar = function () {
@@ -620,7 +620,7 @@
     var el = a.closest('[data-placement]');
     if (el) return (el.getAttribute('data-placement') || 'other').toLowerCase().replace(/[^a-z0-9-]/g, '').slice(0, 20) || 'other';
     if (a.closest('.hero')) return 'hero';
-    if (a.closest('#buy')) return 'buy';
+    if (a.closest('#product')) return 'buy'; // product box (no buy buttons since 10 Oct 2026)
     if (a.closest('.band')) return 'band';
     if (a.closest('.product-card, aside')) return 'card';
     return 'other';

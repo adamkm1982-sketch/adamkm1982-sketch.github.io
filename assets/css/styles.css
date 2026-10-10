@@ -505,3 +505,6 @@ html:not(.has-direct) .also-on .ao-link{background:#fff;color:var(--b1);text-dec
 @media (max-width:900px){
  .has-direct .sb-alt{border:0;padding:8px 4px;font-weight:600;color:var(--muted);text-decoration:underline;text-underline-offset:2px}
 }
+
+/* Gallery photo 1 is landscape: centre its thumbnail on the bottle. */
+.thumb-wide img{object-position:72% 50%}

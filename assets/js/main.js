@@ -419,13 +419,16 @@
     var li = el('li', 'review');
     var head = el('div', 'review-head');
     if (typeof r.rating === 'number') head.appendChild(stars(r.rating, 5));
-    else if (typeof r.rating === 'string' && r.rating) head.appendChild(el('span', 'review-fb review-fb-' + r.rating.toLowerCase().replace(/[^a-z]/g, ''), r.rating.charAt(0).toUpperCase() + r.rating.slice(1) + ' feedback'));
+    else if (typeof r.rating === 'string' && r.rating) head.appendChild(el('span', 'review-fb', (src.label || r.source) + ' feedback'));
     li.appendChild(head);
     if (r.title) li.appendChild(el('h4', 'review-title', r.title));
     var q = el('blockquote', 'review-text');
     q.appendChild(el('p', null, r.text));
     li.appendChild(q);
-    li.appendChild(reviewMeta(r));
+    var meta = reviewMeta(r);
+    // eBay feedback: the rating word (Positive / Neutral / Negative) stays visible as plain text.
+    if (typeof r.rating === 'string' && r.rating) meta.appendChild(doc.createTextNode(' · ' + r.rating.charAt(0).toUpperCase() + r.rating.slice(1)));
+    li.appendChild(meta);
     li.appendChild(el('p', 'review-source', (r.verified ? 'Verified ' + (src.label || r.source) + ' purchase' : 'Review on ' + (src.label || r.source))));
     return li;
   }
@@ -482,14 +485,14 @@
         var counts = {};
         list.forEach(function (r) { counts[r.rating] = (counts[r.rating] || 0) + 1; });
         var parts = Object.keys(counts).map(function (c) { return counts[c] + ' ' + c; });
-        sum = list.length + ' written comments from ' + label + ' buyers of Astraclean (' + (parts.length === 1 && counts.positive ? 'all rated positive' : parts.join(', ')) + ').' +
-          (src.checked ? ' ' + label + ' only shows approximate dates; these are as shown on ' + ukDate(src.checked) + '.' : '');
+        sum = list.length + ' written comments (' + (parts.length === 1 && counts.positive ? 'all positive' : parts.join(', ')) + ').' +
+          (src.checked ? ' Approximate dates, as shown on ' + ukDate(src.checked) + '.' : '');
       }
       if (sum) g.appendChild(el('p', 'review-group-summary', sum));
 
       var featured = list.filter(function (r) { return r.featured; });
       if (featured.length && featured.length < list.length) {
-        g.appendChild(el('p', 'review-group-summary', 'Shown first: ' + featured.length + ' of the most detailed comments, mixed ones included. All ' + list.length + ' are listed underneath.'));
+        g.appendChild(el('p', 'review-group-summary', 'Showing ' + featured.length + ' of the most detailed, mixed ones included. All ' + list.length + ' below.'));
       }
       var shown = featured.length ? featured : list;
       var cards = el('ul', 'review-list');
@@ -528,11 +531,7 @@
 
     var note = reviewsBox.querySelector('[data-reviews-note]');
     if (note) {
-      note.textContent = 'Reviews and feedback are copied word for word from ' + labels.join(' and ') +
-        ', where customers bought Astraclean from us, with the name, date and rating shown there' +
-        (sources.ebay ? ' (eBay usernames are partly hidden, as eBay does)' : '') + '. ' +
-        'We don\u2019t pick only the best: written reviews from verified purchases are added whatever their rating, and we don\u2019t edit them (a long review may be shortened with \u201c\u2026\u201d). ' +
-        'Overall ratings also include star ratings left without a written review.';
+      note.textContent = 'Copied word for word from verified ' + labels.join(' and ') + ' purchases, good and mixed.';
     }
     reviewsBox.hidden = false;
   }

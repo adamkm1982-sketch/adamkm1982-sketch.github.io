@@ -43,6 +43,14 @@ UA = 'AstracleanUK-SinkNews/1.0 (+https://www.astracleanuk.com/news/; sales@astr
 #       'strict' = consumer magazines and brand blogs: headline must be about sinks/taps/worktops/limescale
 KBB = 'https://www.kbbreview.com'
 KBN = 'https://kbnweekly.co.uk'
+GN = 'https://news.google.com/rss/search?q=%s&hl=en-GB&gl=GB&ceid=GB:en'
+# Google News: UK publishers only. Any *.uk site except syndication / press-release / aggregator hosts,
+# plus these UK outlets on .com domains.
+GNEWS_ALLOWED_COM = {'theguardian.com', 'bbc.com', 'thetimes.com', 'independent.co.uk', 'homesandgardens.com', 'livingetc.com',
+                     'realhomes.com', 'womanandhome.com', 'goodto.com', 'housebeautiful.com', 'goodhousekeeping.com'}
+GNEWS_ALLOWED_PATH = {'housebeautiful.com': '/uk/', 'goodhousekeeping.com': '/uk/'}
+GNEWS_BLOCKED = re.compile(r'(?:^|\.)(?:aol\.co\.uk|yahoo\.com|prnewswire\.co\.uk|hellorayo\.co\.uk|pixelfy\.me|youtube\.com|youtu\.be|'
+                           r'msn\.com|newsnow\.co\.uk|thecooldown\.com)$', re.I)
 SOURCES = (
     [(KBB + '/feed/', 'kbbreview', 'trade'), (KBB + '/products/feed/', 'kbbreview', 'trade')] +
     [(KBB + '/tag/%s/feed/' % t, 'kbbreview', 'trade') for t in (
@@ -58,7 +66,15 @@ SOURCES = (
      ('https://www.idealhome.co.uk/feeds.xml', 'Ideal Home', 'strict'),
      ('https://www.homebuilding.co.uk/feeds.xml', 'Homebuilding & Renovating', 'strict'),
      ('https://www.homesandgardens.com/feeds.xml', 'Homes & Gardens', 'strict'),
-     ('https://www.livingetc.com/feeds.xml', 'Livingetc', 'strict')])
+     ('https://www.livingetc.com/feeds.xml', 'Livingetc', 'strict')] +
+    # Google News RSS searches (UK edition). Only stories from the UK publishers in GNEWS_ALLOWED are
+    # kept, the publisher is shown as the source, and every story must pass relevant() below.
+    [(GN % urllib.parse.quote(q, safe=''), 'Google News', 'gnews') for q in (
+        'limescale when:60d',
+        'limescale (taps OR tap OR sink OR plughole OR kitchen) when:60d',
+        '"kitchen sink" (clean OR cleaning OR stains OR limescale OR shine) when:60d',
+        'sink (plughole OR drain) clean when:60d',
+        '"hard water" (limescale OR kitchen OR taps OR sink) when:60d')])
 
 SOURCE_HOMES = [('kbbreview', 'https://www.kbbreview.com/'), ('Kitchens & Bathrooms News (KBN)', 'https://kbnweekly.co.uk/'),
                 ('Housebuilder & Developer', 'https://www.hbdonline.co.uk/'), ('PHAM News', 'https://www.phamnews.co.uk/'),
@@ -96,6 +112,15 @@ RE_REL_BLOCK = re.compile(
     r'price (?:hike|rise|increase)s?|invest\w*|acqui\w*|merger|profits?|turnover|revenue|\bresults\b|administration|redundan\w*|'
     r'awards?|exhibition|trade show|\bevents?\b|expands? into|strategy|supplier|distributor|partnership|signage|sales managers?', re.I)
 RE_REL_BLOCK_PATH = re.compile(r'/(?:newswire|podcasts?|people|celebrity-homes|celebrity|events?|awards?)/', re.I)
+# Off-topic for a sink cleaner even when limescale is mentioned (showers, toilets, hair, kettles, laundry ...),
+# germ/disinfectant headlines, and named cleaning products / discount-shop buys (competitor products).
+RE_REL_OFFTOPIC = re.compile(r'\b(?:toilets?|loos?|showers?|shower screens?|hair|skin|shampoos?|kettles?|laundry|washing machines?|'
+                             r'towels?|bedding|sheets|irons?|steamers?|dishwashers?|coffee|plants?|humidifiers?|filters?|jugs?)\b', re.I)
+RE_REL_GERMS = re.compile(r'\b(?:germs?|bacteri\w*|antibacterial|anti-bacterial|disinfect\w*|sanitis\w*|sanitiz\w*|hygien\w*|'
+                          r'viruse?s?|kills? \d+|99\.9|mou?ld|mildew)\b', re.I)
+RE_REL_PRODUCTS = re.compile(r"\b(?:viakal|pink stuff|cillit|astonish|bar keepers|harpic|method|ecover|smol|koh|fairy|flash|mr muscle|"
+                             r"dettol|domestos|elbow grease|zoflora|scrub daddy|lakeland|b&m|aldi|lidl|poundland|home bargains|savers|tesco|asda|"
+                             r"wilko|dunelm|primark|superdrug|the range|joseph joseph|oxo)\b", re.I)
 RE_REL_CARE = re.compile(r'lime ?scale|hard[- ]water|water ?(?:marks?|spots?)|descal\w*|(?:mineral|calcium) (?:deposits?|build-?up)|water softeners?', re.I)
 RE_REL_SINK = re.compile(r'\b(?:sinks?|plugholes?|drainers?|draining boards?)\b', re.I)
 RE_REL_CLEAN = re.compile(r'\b(?:clean\w*|care|caring|look(?:ing)? after|maintain\w*|maintenance|stains?|stained|staining|scratch\w*|'
@@ -113,11 +138,34 @@ def relevant(it):
     title = it.get('title', '')
     path = urllib.parse.urlsplit(it.get('link', '')).path
     if RE_REL_BLOCK.search(title) or RE_REL_BLOCK_PATH.search(path): return False
+    if RE_REL_OFFTOPIC.search(title) or RE_REL_GERMS.search(title) or RE_REL_PRODUCTS.search(title): return False
     if RE_REL_CARE.search(title): return True
     return bool(RE_REL_SINK.search(title) and (RE_REL_CLEAN.search(title) or RE_REL_CARE.search(it.get('snippet', ''))))
 
+def gnews_ok(e):
+    """Google News item from an allowed UK publisher."""
+    u = urllib.parse.urlsplit(e.get('src_url') or e.get('publisher_url') or '')
+    host = (u.hostname or '').lower().removeprefix('www.')
+    if not host or GNEWS_BLOCKED.search(host): return False
+    if host in GNEWS_ALLOWED_COM:
+        need = GNEWS_ALLOWED_PATH.get(host)
+        return not need or (u.path or '/').startswith(need)
+    return host.endswith('.uk')
+
+def _words(t): return set(w for w in norm_title(t).split() if len(w) > 2)
+
 def shown(items):
-    return [i for i in items if relevant(i)]
+    """Relevant items, newest first, without near-duplicate headlines (the same syndicated
+    story on several regional sites) and at most 3 per publisher."""
+    out, seen, per = [], [], {}
+    for i in items:
+        if not relevant(i): continue
+        if i.get('source_mode') == 'gnews' and not gnews_ok(i): continue
+        w = _words(i['title'])
+        if any(len(w & s) / max(1, len(w | s)) >= 0.5 for s in seen): continue
+        if per.get(i['source'], 0) >= 3: continue
+        out.append(i); seen.append(w); per[i['source']] = per.get(i['source'], 0) + 1
+    return out
 
 def with_guides(items, want):
     """Relevant stories first; if there are fewer than `want`, top up with our own guides."""
@@ -207,8 +255,11 @@ def parse_feed(data):
             date = parse_date(text_of(child(it, 'published', 'updated')))
             summary = text_of(child(it, 'summary', 'content'))
         cats = [clean_text(text_of(c) or c.get('term', '')) for c in it if local(c.tag) in ('category', 'subject')]
+        src = child(it, 'source')
         if title and link.startswith('http'):
-            out.append({'title': title, 'link': link.strip(), 'date': date, 'summary': summary, 'cats': [c for c in cats if c]})
+            out.append({'title': title, 'link': link.strip(), 'date': date, 'summary': summary, 'cats': [c for c in cats if c],
+                        'src_name': clean_text(text_of(src)) if src is not None else '',
+                        'src_url': (src.get('url') or '').strip() if src is not None else ''})
     return out
 
 def classify(e, mode, feed_host):
@@ -216,6 +267,8 @@ def classify(e, mode, feed_host):
     title, cats = e['title'], e['cats']
     host = urllib.parse.urlsplit(e['link']).hostname or ''
     if BLOCKED_HOSTS.search(host): return None
+    if mode == 'gnews':
+        return 'sinks' if gnews_ok(e) and relevant(e) and not RE_SHOPPING.search(title) and not RE_SPONSORED.search(title) else None
     if host.removeprefix('www.') != feed_host.removeprefix('www.'): return None  # only link to the publisher's own article
     if RE_SPONSORED.search(title) or any(RE_SPONSORED.search(c) for c in cats): return None
     if mode != 'trade' and RE_SHOPPING.search(title): return None  # consumer titles: no deals/buying guides
@@ -375,6 +428,9 @@ def main():
         kept = 0
         for e in entries:
             if not e['date'] or e['date'] < cutoff: continue
+            if mode == 'gnews':
+                pubname = e.get('src_name') or ''
+                if pubname and e['title'].endswith(' - ' + pubname): e['title'] = e['title'][:-len(' - ' + pubname)].strip()
             topic = classify(e, mode, host)
             if not topic: continue
             iid = norm_link(e['link'])
@@ -387,6 +443,9 @@ def main():
             it = {'id': iid, 'title': e['title'], 'link': e['link'], 'source': source, 'topic': topic,
                   'published': pub.isoformat(timespec='seconds'), 'first_seen': now.isoformat(timespec='seconds'),
                   'snippet': snippet(e['summary'], e['title'])}
+            if mode == 'gnews':
+                it.update({'source': e.get('src_name') or 'Google News', 'source_mode': 'gnews', 'publisher_url': e.get('src_url', ''),
+                           'snippet': ''})  # Google News descriptions are just the headline again
             items[iid] = it; titles[nt] = iid; added.append(it); kept += 1
         per_source[url] = (len(entries), kept)
         log('ok  ', url, 'entries=%d new=%d' % (len(entries), kept))

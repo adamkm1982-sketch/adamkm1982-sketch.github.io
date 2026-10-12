@@ -112,10 +112,12 @@ RE_REL_BLOCK = re.compile(
     r'price (?:hike|rise|increase)s?|invest\w*|acqui\w*|merger|profits?|turnover|revenue|\bresults\b|administration|redundan\w*|'
     r'awards?|exhibition|trade show|\bevents?\b|expands? into|strategy|supplier|distributor|partnership|signage|sales managers?', re.I)
 RE_REL_BLOCK_PATH = re.compile(r'/(?:newswire|podcasts?|people|celebrity-homes|celebrity|events?|awards?)/', re.I)
-# Off-topic for a sink cleaner even when limescale is mentioned (showers, toilets, hair, kettles, laundry ...),
+# Off-topic for a sink cleaner even when limescale is mentioned (bathrooms, showers, toilets, hair, kettles, laundry ...),
 # germ/disinfectant headlines, and named cleaning products / discount-shop buys (competitor products).
-RE_REL_OFFTOPIC = re.compile(r'\b(?:toilets?|loos?|showers?|shower screens?|hair|skin|shampoos?|kettles?|laundry|washing machines?|'
+RE_REL_OFFTOPIC = re.compile(r'\b(?:toilets?|loos?|bathrooms?|showers?|shower screens?|hair|skin|shampoos?|kettles?|laundry|washing machines?|'
                              r'towels?|bedding|sheets|irons?|steamers?|dishwashers?|coffee|plants?|humidifiers?|filters?|jugs?)\b', re.I)
+# Bathroom / shower / etc. headlines are off-topic unless they also clearly mention a sink, tap or kitchen.
+RE_REL_SINK_CONTEXT = re.compile(r'\b(?:sinks?|plugholes?|drainers?|draining boards?|taps?|faucets?|kitchens?)\b', re.I)
 RE_REL_GERMS = re.compile(r'\b(?:germs?|bacteri\w*|antibacterial|anti-bacterial|disinfect\w*|sanitis\w*|sanitiz\w*|hygien\w*|'
                           r'viruse?s?|kills? \d+|99\.9|mou?ld|mildew)\b', re.I)
 RE_REL_PRODUCTS = re.compile(r"\b(?:viakal|pink stuff|cillit|astonish|bar keepers|harpic|method|ecover|smol|koh|fairy|flash|mr muscle|"
@@ -138,7 +140,8 @@ def relevant(it):
     title = it.get('title', '')
     path = urllib.parse.urlsplit(it.get('link', '')).path
     if RE_REL_BLOCK.search(title) or RE_REL_BLOCK_PATH.search(path): return False
-    if RE_REL_OFFTOPIC.search(title) or RE_REL_GERMS.search(title) or RE_REL_PRODUCTS.search(title): return False
+    if RE_REL_GERMS.search(title) or RE_REL_PRODUCTS.search(title): return False
+    if RE_REL_OFFTOPIC.search(title) and not RE_REL_SINK_CONTEXT.search(title): return False
     if RE_REL_CARE.search(title): return True
     return bool(RE_REL_SINK.search(title) and (RE_REL_CLEAN.search(title) or RE_REL_CARE.search(it.get('snippet', ''))))
 

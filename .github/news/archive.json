@@ -3,6 +3,36 @@
  "keep_days": 60,
  "items": [
   {
+   "id": "https://www.kbbreview.com/88032/news/exclusive-wren-expanding-beyond-kitchens-and-bedrooms/",
+   "title": "EXCLUSIVE: Wren expanding beyond kitchens and bedrooms",
+   "link": "https://www.kbbreview.com/88032/news/exclusive-wren-expanding-beyond-kitchens-and-bedrooms/",
+   "source": "kbbreview",
+   "topic": "kitchens",
+   "published": "2026-10-12T11:13:06+00:00",
+   "first_seen": "2026-10-12T13:19:16+00:00",
+   "snippet": "Wren is set to significantly expand its offering beyond kitchens and bedrooms, with the retailer now offering a range of spaces including home offices, boot…"
+  },
+  {
+   "id": "https://www.kbbreview.com/88020/research/two-thirds-of-homeowners-delay-improvements-over-cost-concerns/",
+   "title": "Two-thirds of homeowners delay improvements over cost concerns",
+   "link": "https://www.kbbreview.com/88020/research/two-thirds-of-homeowners-delay-improvements-over-cost-concerns/",
+   "source": "kbbreview",
+   "topic": "kitchens",
+   "published": "2026-10-12T09:59:43+00:00",
+   "first_seen": "2026-10-12T13:19:16+00:00",
+   "snippet": "New research suggests affordability is holding back kitchen and bathroom projects, despite a preference among most homeowners to improve their existing property rather than move."
+  },
+  {
+   "id": "https://www.kbbreview.com/88014/news/kbsa-names-luke-wedgbury-as-managing-director/",
+   "title": "KBSA names Luke Wedgbury as managing director",
+   "link": "https://www.kbbreview.com/88014/news/kbsa-names-luke-wedgbury-as-managing-director/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-10-12T09:06:25+00:00",
+   "first_seen": "2026-10-12T13:19:16+00:00",
+   "snippet": "The Kitchen Bathroom Bedroom Specialists Association (KBSA) has appointed current interim chair Luke Wedgbury to the newly-created position of managing director."
+  },
+  {
    "id": "https://www.kbbreview.com/87851/indepth/new-in-projects-october-2026/",
    "title": "New in Projects: October 2026",
    "link": "https://www.kbbreview.com/87851/indepth/new-in-projects-october-2026/",
@@ -619,16 +649,6 @@
    "published": "2026-08-18T09:22:45+00:00",
    "first_seen": "2026-10-08T19:06:52+00:00",
    "snippet": "Villeroy & Boch introduces Antao Earth washbasin. Bathroom brand Villeroy & Boch has added new dimension to its Antao washbasin collection with Antao Earth, which…"
-  },
-  {
-   "id": "https://kbnweekly.co.uk/benchmarx-adds-quooker-as-premium-product-strategy-continues/",
-   "title": "Benchmarx adds Quooker as premium product strategy continues",
-   "link": "https://kbnweekly.co.uk/benchmarx-adds-quooker-as-premium-product-strategy-continues/",
-   "source": "Kitchens & Bathrooms News (KBN)",
-   "topic": "sinks",
-   "published": "2026-08-13T10:16:26+00:00",
-   "first_seen": "2026-10-08T19:06:52+00:00",
-   "snippet": "Part of the Travis Perkins Group, Benchmarx Kitchens & Joinery is continuing to expand its range of high-tech products with a new partnership with boiling…"
   }
  ]
 }

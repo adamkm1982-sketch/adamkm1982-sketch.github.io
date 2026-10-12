@@ -136,7 +136,27 @@ GUIDES = [
 ]
 for _g in GUIDES: _g.update({'source': 'Astraclean guide', 'guide': True})
 
+# Also shown: kitchen SINK ranges/launches from sink makers and new sink materials / finishes / coatings.
+# Must be about sinks (taps alone or bathroom products do not count).
+RE_RANGE_MAT = re.compile(r'\b(?:composite|granite|quartz|ceramic|fireclay|stainless|finish(?:es)?|colou?rs?|coatings?|materials?|'
+                          r'surfaces?|nano\w*|launch\w*|introduc\w*|unveil\w*|debut\w*|new|ranges?|collections?)\b', re.I)
+RE_RANGE_BLOCK = re.compile(r'\b(?:former|employees?|staff|team|bathrooms?|basins?|showers?|baths?|vanit\w*|toilets?|wcs?)\b', re.I)
+RE_RANGE_BLOCK_PATH = re.compile(r'/new-in-bathrooms/|bathroom', re.I)
+
+def is_range(it):
+    title = it.get('title', ''); snip = it.get('snippet', '')
+    path = urllib.parse.urlsplit(it.get('link', '')).path
+    if RE_REL_BLOCK.search(title) or RE_REL_BLOCK_PATH.search(path) or RE_RANGE_BLOCK_PATH.search(path): return False
+    if RE_REL_GERMS.search(title) or RE_REL_PRODUCTS.search(title) or RE_SHOPPING.search(title) or RE_SPONSORED.search(title): return False
+    if RE_RANGE_BLOCK.search(title) or RE_RANGE_BLOCK.search(snip): return False
+    if not RE_REL_SINK.search(title) and not RE_REL_SINK.search(snip): return False  # must be about sinks
+    if re.search(r'\b(?:taps?|mixers?|faucets?|brassware)\b', title, re.I) and not RE_REL_SINK.search(title): return False  # taps alone
+    return bool(RE_RANGE_MAT.search(title + ' ' + snip))
+
 def relevant(it):
+    return relevant_care(it) or is_range(it)
+
+def relevant_care(it):
     title = it.get('title', '')
     path = urllib.parse.urlsplit(it.get('link', '')).path
     if RE_REL_BLOCK.search(title) or RE_REL_BLOCK_PATH.search(path): return False
@@ -168,7 +188,14 @@ def shown(items):
         if any(len(w & s) / max(1, len(w | s)) >= 0.5 for s in seen): continue
         if per.get(i['source'], 0) >= 3: continue
         out.append(i); seen.append(w); per[i['source']] = per.get(i['source'], 0) + 1
-    return out
+    # interleave sink-care stories with sink-range/material stories so it isn't all trade news
+    care = [i for i in out if relevant_care(i)]; rng = [i for i in out if not relevant_care(i)]
+    mixed = []
+    while care or rng:
+        if care: mixed.append(care.pop(0))
+        if care: mixed.append(care.pop(0))
+        if rng: mixed.append(rng.pop(0))
+    return mixed
 
 def with_guides(items, want):
     """Relevant stories first; if there are fewer than `want`, top up with our own guides."""
@@ -316,7 +343,7 @@ def render(items, modified):
     else:
         status = '<p class="news-status" role="status">Checked every morning.</p>'
     parts = [status]
-    parts.append('<h2 id="sinks">Sink care, limescale &amp; hard water</h2>')
+    parts.append('<h2 id="sinks">Sink care, limescale &amp; new sinks</h2>')
     if items:
         head, tail = items[:15], items[15:]
         parts.append('<ul class="news-list">' + ''.join(render_item(i) for i in head) + '</ul>')
@@ -405,7 +432,7 @@ def update_home(items):
 def main():
     if '--relevance' in sys.argv[1:]:
         for it in json.load(open(ARCHIVE, encoding='utf-8')).get('items', []):
-            print('KEEP' if relevant(it) else 'drop', '|', it['source'][:14].ljust(14), '|', it['title'])
+            print(('KEEP' if relevant_care(it) else 'RNGE' if is_range(it) else 'drop'), '|', it['source'][:14].ljust(14), '|', it['title'])
         return
     if '--home-only' in sys.argv[1:]:
         arch = json.load(open(ARCHIVE, encoding='utf-8'))

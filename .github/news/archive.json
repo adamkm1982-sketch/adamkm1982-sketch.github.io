@@ -1,7 +1,47 @@
 {
- "modified": "2026-10-12",
+ "modified": "2026-10-13",
  "keep_days": 60,
  "items": [
+  {
+   "id": "https://www.kbbreview.com/88100/people/rak-ceramics-welcomes-new-project-sales-manager/",
+   "title": "RAK Ceramics welcomes new project sales manager",
+   "link": "https://www.kbbreview.com/88100/people/rak-ceramics-welcomes-new-project-sales-manager/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-10-13T12:21:53+00:00",
+   "first_seen": "2026-10-13T12:48:10+00:00",
+   "snippet": "Lance Corfield has joined RAK Ceramics as a new project sales manager, where he will be responsible for covering the West Midlands and the South…"
+  },
+  {
+   "id": "https://www.kbbreview.com/88095/people/hisense-appoints-new-refrigeration-category-manager/",
+   "title": "Hisense appoints new refrigeration category manager",
+   "link": "https://www.kbbreview.com/88095/people/hisense-appoints-new-refrigeration-category-manager/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-10-13T11:26:55+00:00",
+   "first_seen": "2026-10-13T12:48:10+00:00",
+   "snippet": "Appliance brand Hisense UK has welcomed Nathan Newlove as its new refrigeration category manager."
+  },
+  {
+   "id": "https://www.kbbreview.com/88071/news/victorian-plumbing-reports-record-revenue-growth-in-2026/",
+   "title": "Victorian Plumbing reports ‘record’ revenue growth in 2026",
+   "link": "https://www.kbbreview.com/88071/news/victorian-plumbing-reports-record-revenue-growth-in-2026/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-10-13T10:16:13+00:00",
+   "first_seen": "2026-10-13T12:48:10+00:00",
+   "snippet": "Bathroom retail giant Victorian Plumbing has seen a record double-digit revenue increase, with CEO Stephnie Judge saying the business “continues to outperform the wider market\"."
+  },
+  {
+   "id": "https://www.kbbreview.com/88018/indepth/analysis-can-the-government-really-stop-cowboy-tradespeople/",
+   "title": "Analysis: Can the Government REALLY stop cowboy tradespeople?",
+   "link": "https://www.kbbreview.com/88018/indepth/analysis-can-the-government-really-stop-cowboy-tradespeople/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-10-13T07:00:00+00:00",
+   "first_seen": "2026-10-13T12:48:10+00:00",
+   "snippet": "Do the government's newly announced schemes really spell high noon for the cowboys? Or should we all just hold our horses instead?"
+  },
   {
    "id": "https://www.kbbreview.com/88032/news/exclusive-wren-expanding-beyond-kitchens-and-bedrooms/",
    "title": "EXCLUSIVE: Wren expanding beyond kitchens and bedrooms",

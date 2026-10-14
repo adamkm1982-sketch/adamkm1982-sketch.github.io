@@ -1,7 +1,27 @@
 {
- "modified": "2026-10-13",
+ "modified": "2026-10-14",
  "keep_days": 60,
  "items": [
+  {
+   "id": "https://www.kbbreview.com/88117/news/weve-got-the-tools-to-fix-skills-gap-rallies-ba-panel/",
+   "title": "‘We’ve got the tools to fix skills gap,’ rallies BA panel",
+   "link": "https://www.kbbreview.com/88117/news/weve-got-the-tools-to-fix-skills-gap-rallies-ba-panel/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-10-14T09:22:27+00:00",
+   "first_seen": "2026-10-14T10:21:15+00:00",
+   "snippet": "Panellists at this year’s Connect Conference explored a range of solutions to fix the ever-present industry skills gap, saying the problem was creating “an artificial…"
+  },
+  {
+   "id": "https://www.kbbreview.com/88024/opinion/forget-cowboys-show-consumers-what-good-really-looks-like/",
+   "title": "Mark Conacher: Forget cowboys, show consumers what good really looks like",
+   "link": "https://www.kbbreview.com/88024/opinion/forget-cowboys-show-consumers-what-good-really-looks-like/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-10-14T07:00:00+00:00",
+   "first_seen": "2026-10-14T10:21:15+00:00",
+   "snippet": "Welcoming the government's new cowboy-busting measures, Mark Conacher thinks we should use this as an opportunity to show consumers what professionalism really looks like"
+  },
   {
    "id": "https://www.kbbreview.com/88100/people/rak-ceramics-welcomes-new-project-sales-manager/",
    "title": "RAK Ceramics welcomes new project sales manager",

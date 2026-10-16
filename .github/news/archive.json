@@ -1,7 +1,37 @@
 {
- "modified": "2026-10-15",
+ "modified": "2026-10-16",
  "keep_days": 60,
  "items": [
+  {
+   "id": "https://www.kbbreview.com/88184/news/german-investment-company-acquires-majority-stake-in-keuco/",
+   "title": "German investment company acquires majority stake in Keuco",
+   "link": "https://www.kbbreview.com/88184/news/german-investment-company-acquires-majority-stake-in-keuco/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-10-16T09:29:04+00:00",
+   "first_seen": "2026-10-16T09:57:08+00:00",
+   "snippet": "Investment firm Hannover Finanz Opportunities (HFO) has acquired a majority stake of German bathroom furnishings manufacturer Keuco, for an undisclosed sum."
+  },
+  {
+   "id": "https://www.kbbreview.com/88169/podcast/brochures-sales-tools-or-showroom-clutter/",
+   "title": "Brochures – sales tools or showroom clutter?",
+   "link": "https://www.kbbreview.com/88169/podcast/brochures-sales-tools-or-showroom-clutter/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-10-15T11:10:39+00:00",
+   "first_seen": "2026-10-16T09:57:08+00:00",
+   "snippet": "Are suppliers giving retailers the tools to win sales – or just piles of brochures nobody uses?"
+  },
+  {
+   "id": "https://www.hbdonline.co.uk/news/solarlux-launches-avario-glazed-extension-range-and-opens-new-uk-showroom/",
+   "title": "Solarlux launches Avario glazed extension range and opens new UK showroom",
+   "link": "https://www.hbdonline.co.uk/news/solarlux-launches-avario-glazed-extension-range-and-opens-new-uk-showroom/",
+   "source": "Housebuilder & Developer",
+   "topic": "industry",
+   "published": "2026-10-15T10:15:09+00:00",
+   "first_seen": "2026-10-16T09:57:08+00:00",
+   "snippet": "Three configurations combine architectural detailing, flexible opening options and thermal insulation for year-round living spaces Solarlux has launched Avario, a new range of glazed extension…"
+  },
   {
    "id": "https://www.kbbreview.com/88098/indepth/adopted-retailer-october-2026-church-farm-kitchens/",
    "title": "Adopted Retailer October 2026: Church Farm Kitchens",

@@ -1,7 +1,17 @@
 {
- "modified": "2026-10-16",
+ "modified": "2026-10-17",
  "keep_days": 60,
  "items": [
+  {
+   "id": "https://www.kbbreview.com/88201/newswire/supplier-newswire-october-10-2026-2/",
+   "title": "Supplier Newswire: October 17, 2026",
+   "link": "https://www.kbbreview.com/88201/newswire/supplier-newswire-october-10-2026-2/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-10-17T07:00:00+00:00",
+   "first_seen": "2026-10-17T09:30:20+00:00",
+   "snippet": "Press releases and announcements supplied directly by KBB brands, suppliers and service providers. Published as received and not produced or edited by the kbbreview editorial…"
+  },
   {
    "id": "https://www.kbbreview.com/88184/news/german-investment-company-acquires-majority-stake-in-keuco/",
    "title": "German investment company acquires majority stake in Keuco",
@@ -445,6 +455,18 @@
    "publisher_url": "https://www.liverpoolecho.co.uk"
   },
   {
+   "id": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPWWl6RmlrMVpxUDlsdzB2SFZSLWluLWdFYm5lMWtzNmVoNUg3TE5tWmZIczdVRVBiajN4RFVNeDh3NTlLbFdScjBoWl92d3Y3RXVjNm1sSFZ0dEhiT25IX1lvdDlfRXR4SWZOXy1TRDZTZjRTR29JTk50M0t5eVFLN0VTQXFaVlM5MWJ1UtIBkgFBVV95cUxNZHIxQ3l4YlRZenI0NkRiMldRa095V2VzbzdvODJrNk9fZ3V6LTdHM3hTYi1IY3hPRGZ2MWVMNncwdWVQOXJQaldaMlRDSndkQnBkWVFnQzRTcXVITHRrWlR4Si1XOTFWTWRBYnE4TlRJWGZ3eUhDMFdvU2NfaEF4aW5oc1JIOUE1V2FjbndkZlBwZw/?oc=5",
+   "title": "Households urged to use 2 common kitchen items to keep shower glass limescale-free",
+   "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPWWl6RmlrMVpxUDlsdzB2SFZSLWluLWdFYm5lMWtzNmVoNUg3TE5tWmZIczdVRVBiajN4RFVNeDh3NTlLbFdScjBoWl92d3Y3RXVjNm1sSFZ0dEhiT25IX1lvdDlfRXR4SWZOXy1TRDZTZjRTR29JTk50M0t5eVFLN0VTQXFaVlM5MWJ1UtIBkgFBVV95cUxNZHIxQ3l4YlRZenI0NkRiMldRa095V2VzbzdvODJrNk9fZ3V6LTdHM3hTYi1IY3hPRGZ2MWVMNncwdWVQOXJQaldaMlRDSndkQnBkWVFnQzRTcXVITHRrWlR4Si1XOTFWTWRBYnE4TlRJWGZ3eUhDMFdvU2NfaEF4aW5oc1JIOUE1V2FjbndkZlBwZw?oc=5",
+   "source": "Daily Express",
+   "topic": "sinks",
+   "published": "2026-09-12T07:00:00+00:00",
+   "first_seen": "2026-10-17T09:30:20+00:00",
+   "snippet": "",
+   "source_mode": "gnews",
+   "publisher_url": "https://www.express.co.uk"
+  },
+  {
    "id": "https://www.kbbreview.com/87410/news/exclusive-quooker-expands-into-commercial-sector/",
    "title": "EXCLUSIVE: Quooker expands into commercial sector",
    "link": "https://www.kbbreview.com/87410/news/exclusive-quooker-expands-into-commercial-sector/",
@@ -799,16 +821,6 @@
    "published": "2026-08-20T12:23:32+00:00",
    "first_seen": "2026-10-08T19:06:52+00:00",
    "snippet": "Sink and brassware supplier Clearwater Products has expanded its Tri-Spa collection with Stella, a kitchen tap which delivers hot, cold and filtered water. Featuring a…"
-  },
-  {
-   "id": "https://kbnweekly.co.uk/villeroy-boch-introduces-antao-earth-washbasins/",
-   "title": "Villeroy & Boch introduces Antao Earth washbasins",
-   "link": "https://kbnweekly.co.uk/villeroy-boch-introduces-antao-earth-washbasins/",
-   "source": "Kitchens & Bathrooms News (KBN)",
-   "topic": "industry",
-   "published": "2026-08-18T09:22:45+00:00",
-   "first_seen": "2026-10-08T19:06:52+00:00",
-   "snippet": "Villeroy & Boch introduces Antao Earth washbasin. Bathroom brand Villeroy & Boch has added new dimension to its Antao washbasin collection with Antao Earth, which…"
   }
  ]
 }

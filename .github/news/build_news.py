@@ -117,7 +117,8 @@ RE_REL_BLOCK_PATH = re.compile(r'/(?:newswire|podcasts?|people|celebrity-homes|c
 RE_REL_OFFTOPIC = re.compile(r'\b(?:toilets?|loos?|bathrooms?|showers?|shower screens?|hair|skin|shampoos?|kettles?|laundry|washing machines?|'
                              r'towels?|bedding|sheets|irons?|steamers?|dishwashers?|coffee|plants?|humidifiers?|filters?|jugs?)\b', re.I)
 # Bathroom / shower / etc. headlines are off-topic unless they also clearly mention a sink, tap or kitchen.
-RE_REL_SINK_CONTEXT = re.compile(r'\b(?:sinks?|plugholes?|drainers?|draining boards?|taps?|faucets?|kitchens?)\b', re.I)
+# 'kitchen item / ingredient / cupboard staple' is a cleaning-hack phrase, not a kitchen setting, so it doesn't count.
+RE_REL_SINK_CONTEXT = re.compile(r'\b(?:sinks?|plugholes?|drainers?|draining boards?|taps?|faucets?|kitchens?(?! (?:items?|ingredients?|staples?|cupboards?|cupboard staples?|products?|essentials?|hacks?|tricks?|tips?|favourites?)\b))\b', re.I)
 RE_REL_GERMS = re.compile(r'\b(?:germs?|bacteri\w*|antibacterial|anti-bacterial|disinfect\w*|sanitis\w*|sanitiz\w*|hygien\w*|'
                           r'viruse?s?|kills? \d+|99\.9|mou?ld|mildew)\b', re.I)
 RE_REL_PRODUCTS = re.compile(r"\b(?:viakal|pink stuff|cillit|astonish|bar keepers|harpic|method|ecover|smol|koh|fairy|flash|mr muscle|"

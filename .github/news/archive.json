@@ -1,7 +1,27 @@
 {
- "modified": "2026-10-17",
+ "modified": "2026-10-19",
  "keep_days": 60,
  "items": [
+  {
+   "id": "https://www.kbbreview.com/88165/opinion/can-sustainability-survive-the-renovation-squeeze/",
+   "title": "Can sustainability survive the renovation squeeze?",
+   "link": "https://www.kbbreview.com/88165/opinion/can-sustainability-survive-the-renovation-squeeze/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-10-19T07:00:00+00:00",
+   "first_seen": "2026-10-19T08:48:08+00:00",
+   "snippet": "Frontline managing director, Darren Allison, says that with renovation budgets under pressure, manufacturers need to make sustainability easier for retailers to sell – and stop…"
+  },
+  {
+   "id": "https://www.idealhome.co.uk/all-rooms/kitchen-appliances/ninja-crispi-air-fryer-microwave-review/",
+   "title": "I cooked all my weeknight dinners in Ninja's new microwave-air fryer hybrid to see if it’s worth the worktop space – I was impressed by these features",
+   "link": "https://www.idealhome.co.uk/all-rooms/kitchen-appliances/ninja-crispi-air-fryer-microwave-review",
+   "source": "Ideal Home",
+   "topic": "sinks",
+   "published": "2026-10-18T13:00:00+00:00",
+   "first_seen": "2026-10-19T08:48:08+00:00",
+   "snippet": "Just when we thought Ninja had done it all…"
+  },
   {
    "id": "https://www.kbbreview.com/88201/newswire/supplier-newswire-october-10-2026-2/",
    "title": "Supplier Newswire: October 17, 2026",

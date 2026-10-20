@@ -1,7 +1,37 @@
 {
- "modified": "2026-10-19",
+ "modified": "2026-10-20",
  "keep_days": 60,
  "items": [
+  {
+   "id": "https://www.kbbreview.com/88189/indepth/new-in-showrooms-october-2026/",
+   "title": "New in showrooms: October 2026",
+   "link": "https://www.kbbreview.com/88189/indepth/new-in-showrooms-october-2026/",
+   "source": "kbbreview",
+   "topic": "kitchens",
+   "published": "2026-10-20T07:00:00+00:00",
+   "first_seen": "2026-10-20T10:12:10+00:00",
+   "snippet": "Our regular round-up of new or redesigned KBB showrooms. This month we've got a number of retail businesses celebrating new openings and a relocated showroom…"
+  },
+  {
+   "id": "https://www.kbbreview.com/88229/people/new-operations-manager-at-olive-barr/",
+   "title": "New operations manager at Olive & Barr",
+   "link": "https://www.kbbreview.com/88229/people/new-operations-manager-at-olive-barr/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-10-19T14:26:09+00:00",
+   "first_seen": "2026-10-20T10:12:10+00:00",
+   "snippet": "Kitchen retailer Olive & Barr has appointed Melissa Steele as its new operations manager, who joins with over 14 years of experience in the industry."
+  },
+  {
+   "id": "https://www.kbbreview.com/88222/news/kevin-holmes-named-as-new-bhid-group-boss/",
+   "title": "Kevin Holmes named as new BHID Group boss",
+   "link": "https://www.kbbreview.com/88222/news/kevin-holmes-named-as-new-bhid-group-boss/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-10-19T11:00:28+00:00",
+   "first_seen": "2026-10-20T10:12:10+00:00",
+   "snippet": "Tom Howley MD, Kevin Holmes, has been promoted to CEO of BHID Group, the parent company of the luxury kitchen brand as well as Neville…"
+  },
   {
    "id": "https://www.hbdonline.co.uk/news/setcrete-2k-pro-serves-up-perfect-subfloor-finish-for-kitchen-dining-extension/",
    "title": "Setcrete® 2K Pro serves up perfect subfloor finish for kitchen/dining extension",
@@ -831,26 +861,6 @@
    "published": "2026-08-21T15:24:58+00:00",
    "first_seen": "2026-10-08T19:06:52+00:00",
    "snippet": "Embracing consumer desire for customisation in the bathroom, Grohe has unveiled the Allure Gravity tap, featuring interchangeable cover plates. Part of the Grohe Spa portfolio…"
-  },
-  {
-   "id": "https://kbnweekly.co.uk/crl-stone-has-introduced-ceralsio-in-soft-black/",
-   "title": "CRL Stone has introduced Ceralsio in Soft Black",
-   "link": "https://kbnweekly.co.uk/crl-stone-has-introduced-ceralsio-in-soft-black/",
-   "source": "Kitchens & Bathrooms News (KBN)",
-   "topic": "sinks",
-   "published": "2026-08-21T07:00:00+00:00",
-   "first_seen": "2026-10-08T19:06:52+00:00",
-   "snippet": "Bringing a sleek, architectural presence to modern interiors, Soft Black is the latest finish to be added into the Ceralsio ceramic surface collection from CRL…"
-  },
-  {
-   "id": "https://kbnweekly.co.uk/clearwater-expands-tri-spa-collection-with-stella-filter-tap/",
-   "title": "Clearwater expands Tri-Spa collection with Stella filter tap",
-   "link": "https://kbnweekly.co.uk/clearwater-expands-tri-spa-collection-with-stella-filter-tap/",
-   "source": "Kitchens & Bathrooms News (KBN)",
-   "topic": "sinks",
-   "published": "2026-08-20T12:23:32+00:00",
-   "first_seen": "2026-10-08T19:06:52+00:00",
-   "snippet": "Sink and brassware supplier Clearwater Products has expanded its Tri-Spa collection with Stella, a kitchen tap which delivers hot, cold and filtered water. Featuring a…"
   }
  ]
 }

@@ -1,7 +1,77 @@
 {
- "modified": "2026-10-20",
+ "modified": "2026-10-21",
  "keep_days": 60,
  "items": [
+  {
+   "id": "https://www.kbbreview.com/88281/news/blum-donates-1500-to-adams-light-through-make-it-happen/",
+   "title": "Blum donates £1,500 to Adam’s Light through Make It Happen",
+   "link": "https://www.kbbreview.com/88281/news/blum-donates-1500-to-adams-light-through-make-it-happen/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-10-21T09:36:53+00:00",
+   "first_seen": "2026-10-21T10:20:06+00:00",
+   "snippet": "Blum has chosen suicide prevention charity Adam’s Light to receive a major donation through its recently launched ‘Make It Happen’ campaign."
+  },
+  {
+   "id": "https://www.kbbreview.com/88277/news/franke-steps-up-investment-in-next-generation-hob-extractors/",
+   "title": "Franke steps up investment in next-generation hob extractors",
+   "link": "https://www.kbbreview.com/88277/news/franke-steps-up-investment-in-next-generation-hob-extractors/",
+   "source": "kbbreview",
+   "topic": "sinks",
+   "published": "2026-10-21T09:24:09+00:00",
+   "first_seen": "2026-10-21T10:20:06+00:00",
+   "snippet": "Franke UK is stepping up its focus on hob extractors with the second phase of its product programme, adding six models as it looks to…"
+  },
+  {
+   "id": "https://www.kbbreview.com/88274/news/trustmark-appoints-new-chief-executive/",
+   "title": "TrustMark appoints new chief executive",
+   "link": "https://www.kbbreview.com/88274/news/trustmark-appoints-new-chief-executive/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-10-21T08:50:34+00:00",
+   "first_seen": "2026-10-21T10:20:06+00:00",
+   "snippet": "Guy Thompson has been appointed as the new CEO of TrustMark, with the organisation’s chair saying his arrival comes “at a time when the industry…"
+  },
+  {
+   "id": "https://www.hbdonline.co.uk/news/keller-kitchens-introduces-calm-flow-design/",
+   "title": "Keller Kitchens INTRODUCES ‘CALM FLOW’ design",
+   "link": "https://www.hbdonline.co.uk/news/keller-kitchens-introduces-calm-flow-design/",
+   "source": "Housebuilder & Developer",
+   "topic": "kitchens",
+   "published": "2026-10-21T07:08:33+00:00",
+   "first_seen": "2026-10-21T10:20:06+00:00",
+   "snippet": "A kitchen that breathes calmness Calm Flow is Keller Kitchens’ response to the growing demand for composed, understated interiors. Defined by a fluid, organic aesthetic…"
+  },
+  {
+   "id": "https://www.kbbreview.com/88237/opinion/business-advice-do-quality-and-service-still-set-us-apart/",
+   "title": "Business Advice: Do quality and service still set us apart?",
+   "link": "https://www.kbbreview.com/88237/opinion/business-advice-do-quality-and-service-still-set-us-apart/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-10-21T07:00:00+00:00",
+   "first_seen": "2026-10-21T10:20:06+00:00",
+   "snippet": "As market competition heats up, Adam Jones from Cwtch Haus thinks independents must stop relying on general claims of quality and service, and instead build…"
+  },
+  {
+   "id": "https://www.kbbreview.com/88255/news/wickes-design-install-revenue-broadly-flat-in-q3/",
+   "title": "Wickes Design & Install revenue ‘broadly flat’ in Q3",
+   "link": "https://www.kbbreview.com/88255/news/wickes-design-install-revenue-broadly-flat-in-q3/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-10-20T13:57:21+00:00",
+   "first_seen": "2026-10-21T10:20:06+00:00",
+   "snippet": "Despite growing its revenue by 4.5% in the third quarter of 2026, national DIY retailer Wickes says that revenue for big-ticket Design and Installation business…"
+  },
+  {
+   "id": "https://www.kbbreview.com/88245/news/miele-mourns-passing-of-former-managing-director/",
+   "title": "Miele mourns passing of former managing director",
+   "link": "https://www.kbbreview.com/88245/news/miele-mourns-passing-of-former-managing-director/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-10-20T10:53:43+00:00",
+   "first_seen": "2026-10-21T10:20:06+00:00",
+   "snippet": "Miele has announced the death of former MD, Dr. Peter Christian Zinkann, at the age of 98. He held the role for several decades and…"
+  },
   {
    "id": "https://www.kbbreview.com/88189/indepth/new-in-showrooms-october-2026/",
    "title": "New in showrooms: October 2026",
@@ -851,16 +921,6 @@
    "snippet": "",
    "source_mode": "gnews",
    "publisher_url": "https://www.express.co.uk"
-  },
-  {
-   "id": "https://kbnweekly.co.uk/grohe-introduces-customisable-allure-gravity-tap/",
-   "title": "Grohe unveils customisable Allure Gravity tap",
-   "link": "https://kbnweekly.co.uk/grohe-introduces-customisable-allure-gravity-tap/",
-   "source": "Kitchens & Bathrooms News (KBN)",
-   "topic": "sinks",
-   "published": "2026-08-21T15:24:58+00:00",
-   "first_seen": "2026-10-08T19:06:52+00:00",
-   "snippet": "Embracing consumer desire for customisation in the bathroom, Grohe has unveiled the Allure Gravity tap, featuring interchangeable cover plates. Part of the Grohe Spa portfolio…"
   }
  ]
 }

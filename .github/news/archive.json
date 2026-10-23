@@ -1,7 +1,67 @@
 {
- "modified": "2026-10-21",
+ "modified": "2026-10-23",
  "keep_days": 60,
  "items": [
+  {
+   "id": "https://www.kbbreview.com/88295/news/next125-opens-first-concept-store-in-ireland/",
+   "title": "next125 opens first Concept Store in Ireland",
+   "link": "https://www.kbbreview.com/88295/news/next125-opens-first-concept-store-in-ireland/",
+   "source": "kbbreview",
+   "topic": "kitchens",
+   "published": "2026-10-22T15:41:12+00:00",
+   "first_seen": "2026-10-23T10:15:11+00:00",
+   "snippet": "Premium German kitchen brand next125 has officially opened its latest Concept Store, next125 Waterford, which marks the first store of its kind in Ireland."
+  },
+  {
+   "id": "https://www.kbbreview.com/88234/podcast/what-is-the-kbsa-for/",
+   "title": "What is the KBSA for?",
+   "link": "https://www.kbbreview.com/88234/podcast/what-is-the-kbsa-for/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-10-22T15:39:25+00:00",
+   "first_seen": "2026-10-23T10:15:11+00:00",
+   "snippet": "There’s a lot changing at the KBSA, new MD Luke Wedgbury reveals his ambitions to transform the association from the inside out."
+  },
+  {
+   "id": "https://www.kbbreview.com/88289/news/neff-to-open-first-ever-uk-showroom-next-year/",
+   "title": "Neff to open first-ever UK showroom next year",
+   "link": "https://www.kbbreview.com/88289/news/neff-to-open-first-ever-uk-showroom-next-year/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-10-22T13:54:52+00:00",
+   "first_seen": "2026-10-23T10:15:11+00:00",
+   "snippet": "Neff has announced plans to open its first-ever UK appliance showroom on Wigmore Street, with the launch set to coincide with the company’s milestone 150th…"
+  },
+  {
+   "id": "https://www.kbbreview.com/88259/indepth/smegs-daniel-hadley-italy-is-a-land-built-on-cooking-and-coffee/",
+   "title": "Smeg’s Daniel Hadley: ‘Italy is a land built on cooking and coffee’",
+   "link": "https://www.kbbreview.com/88259/indepth/smegs-daniel-hadley-italy-is-a-land-built-on-cooking-and-coffee/",
+   "source": "kbbreview",
+   "topic": "kitchens",
+   "published": "2026-10-22T07:00:00+00:00",
+   "first_seen": "2026-10-23T10:15:11+00:00",
+   "snippet": "Having recently released its first new aesthetic product line in over a decade, Smeg UK’s MD Daniel Hadley explains how the iconic Italian brand is…"
+  },
+  {
+   "id": "https://www.idealhome.co.uk/all-rooms/small-appliances/jamie-oliver-20-minute-meals-air-fryer-use/",
+   "title": "Jamie Oliver’s secret weapon for fast weeknight meals might already be on your kitchen worktop",
+   "link": "https://www.idealhome.co.uk/all-rooms/small-appliances/jamie-oliver-20-minute-meals-air-fryer-use",
+   "source": "Ideal Home",
+   "topic": "sinks",
+   "published": "2026-10-22T07:00:00+00:00",
+   "first_seen": "2026-10-23T10:15:11+00:00",
+   "snippet": "How he uses it to make healthy dinners in 20 minutes flat"
+  },
+  {
+   "id": "https://www.kbbreview.com/88284/news/hafele-branches-out-into-flooring-products/",
+   "title": "Häfele branches out into flooring products",
+   "link": "https://www.kbbreview.com/88284/news/hafele-branches-out-into-flooring-products/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-10-21T11:40:36+00:00",
+   "first_seen": "2026-10-23T10:15:11+00:00",
+   "snippet": "Häfele UK has partnered with Palio by Karndean to offer its products to customers, saying that the partnership will allow it to significantly expand its…"
+  },
   {
    "id": "https://www.kbbreview.com/88281/news/blum-donates-1500-to-adams-light-through-make-it-happen/",
    "title": "Blum donates £1,500 to Adam’s Light through Make It Happen",
@@ -899,28 +959,6 @@
    "published": "2026-08-25T08:13:21+00:00",
    "first_seen": "2026-10-08T19:06:52+00:00",
    "snippet": "Luxury brassware manufacturer Dornbracht, in collaboration with Hong Kong-based design studio AB Concept, has created its second Atelier Edition, The Knot. A reinterpretation of Dornbracht’s…"
-  },
-  {
-   "id": "https://kbnweekly.co.uk/multifunction-taps-move-from-upgrade-to-kitchen-staple/",
-   "title": "Multifunction taps move from upgrade to kitchen staple",
-   "link": "https://kbnweekly.co.uk/multifunction-taps-move-from-upgrade-to-kitchen-staple/",
-   "source": "Kitchens & Bathrooms News (KBN)",
-   "topic": "sinks",
-   "published": "2026-08-24T07:00:00+00:00",
-   "first_seen": "2026-10-08T19:06:52+00:00",
-   "snippet": "As boiling, filtered, chilled and sparkling water options become increasingly available, multifunction taps provide a bigger sales opportunity for retailers. Forget the simple standard hot…"
-  },
-  {
-   "id": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOb3VnbWlkY041MkdLdjg2WnZDYnlDMVkxcERDdXVIRG1rWUs0X19zaWxGTUpYWFZKQnNUbzZWT2NwMF9pQ1ZDVlg0VDlUS2RhdUs5ZG9iTDNTRW04T1FjYUp3c1F6M0hfOVFrYU1PYWtNT3pNdkdUZzBCb2hhbTR3YWN30gGHAUFVX3lxTFAtZnFpa1NsaE81dnZEcHNLU0tmQ2pFMWs0Y0o1R19UTUt3T0FOemdCV05xSDhUN3ZpcWgyQXVGWVBiWEpqdjd6dWI0TUNOd216YXdoYTBGVElzTk1SZ0RsdU0xb2hrcWRsNWg1V0dCcmpvSG1uVUxKeHNVUW5sd19weFhXN3YtYw/?oc=5",
-   "title": "Limescale will dissolve from taps in 15 minutes using 1 kitchen ingredient",
-   "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOb3VnbWlkY041MkdLdjg2WnZDYnlDMVkxcERDdXVIRG1rWUs0X19zaWxGTUpYWFZKQnNUbzZWT2NwMF9pQ1ZDVlg0VDlUS2RhdUs5ZG9iTDNTRW04T1FjYUp3c1F6M0hfOVFrYU1PYWtNT3pNdkdUZzBCb2hhbTR3YWN30gGHAUFVX3lxTFAtZnFpa1NsaE81dnZEcHNLU0tmQ2pFMWs0Y0o1R19UTUt3T0FOemdCV05xSDhUN3ZpcWgyQXVGWVBiWEpqdjd6dWI0TUNOd216YXdoYTBGVElzTk1SZ0RsdU0xb2hrcWRsNWg1V0dCcmpvSG1uVUxKeHNVUW5sd19weFhXN3YtYw?oc=5",
-   "source": "Daily Express",
-   "topic": "sinks",
-   "published": "2026-08-23T07:00:00+00:00",
-   "first_seen": "2026-10-10T13:42:44+00:00",
-   "snippet": "",
-   "source_mode": "gnews",
-   "publisher_url": "https://www.express.co.uk"
   }
  ]
 }

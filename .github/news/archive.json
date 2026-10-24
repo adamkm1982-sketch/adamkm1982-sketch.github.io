@@ -1,7 +1,47 @@
 {
- "modified": "2026-10-23",
+ "modified": "2026-10-24",
  "keep_days": 60,
  "items": [
+  {
+   "id": "https://www.kbbreview.com/88309/newswire/supplier-newswire-october-24-2026/",
+   "title": "Supplier Newswire: October 24, 2026",
+   "link": "https://www.kbbreview.com/88309/newswire/supplier-newswire-october-24-2026/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-10-24T07:00:00+00:00",
+   "first_seen": "2026-10-24T09:38:23+00:00",
+   "snippet": "Press releases and announcements supplied directly by KBB brands, suppliers and service providers. Published as received and not produced or edited by the kbbreview editorial…"
+  },
+  {
+   "id": "https://www.kbbreview.com/88321/news/magnet-picks-cherry-red-morello-as-its-colour-of-the-year/",
+   "title": "Magnet picks cherry-red Morello as its colour of the year",
+   "link": "https://www.kbbreview.com/88321/news/magnet-picks-cherry-red-morello-as-its-colour-of-the-year/",
+   "source": "kbbreview",
+   "topic": "kitchens",
+   "published": "2026-10-23T15:29:53+00:00",
+   "first_seen": "2026-10-24T09:38:23+00:00",
+   "snippet": "National kitchen retailer Magnet has selected “Morello” to be its colour of the year for 2027, and says it believes it is the first UK…"
+  },
+  {
+   "id": "https://www.kbbreview.com/88318/people/rak-ceramics-welcomes-new-specification-manager/",
+   "title": "RAK Ceramics welcomes new specification manager",
+   "link": "https://www.kbbreview.com/88318/people/rak-ceramics-welcomes-new-specification-manager/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-10-23T14:59:15+00:00",
+   "first_seen": "2026-10-24T09:38:23+00:00",
+   "snippet": "Liam Webb has joined RAK Ceramics as a new specification manager for the North, bringing more than 10 years of industry experience to the role."
+  },
+  {
+   "id": "https://www.kbbreview.com/88306/news/sharps-unveils-new-concept-store-model/",
+   "title": "Sharps unveils new concept store model",
+   "link": "https://www.kbbreview.com/88306/news/sharps-unveils-new-concept-store-model/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-10-23T13:38:43+00:00",
+   "first_seen": "2026-10-24T09:38:23+00:00",
+   "snippet": "Sharps Furniture has opened a new “more design-led” concept store in Rugby, and says that it intends to roll out further stores using this format…"
+  },
   {
    "id": "https://www.kbbreview.com/88295/news/next125-opens-first-concept-store-in-ireland/",
    "title": "next125 opens first Concept Store in Ireland",
@@ -949,16 +989,6 @@
    "published": "2026-08-25T13:59:06+00:00",
    "first_seen": "2026-10-08T19:06:52+00:00",
    "snippet": "As part of its Bathrooms to Love collection, distributor PJH has expanded its heating category with a new range of design-led Electric Towel Rails with…"
-  },
-  {
-   "id": "https://kbnweekly.co.uk/dornbracht-presents-the-knot-as-part-of-its-atelier-edition/",
-   "title": "Dornbracht presents The Knot as part of its Atelier Edition",
-   "link": "https://kbnweekly.co.uk/dornbracht-presents-the-knot-as-part-of-its-atelier-edition/",
-   "source": "Kitchens & Bathrooms News (KBN)",
-   "topic": "sinks",
-   "published": "2026-08-25T08:13:21+00:00",
-   "first_seen": "2026-10-08T19:06:52+00:00",
-   "snippet": "Luxury brassware manufacturer Dornbracht, in collaboration with Hong Kong-based design studio AB Concept, has created its second Atelier Edition, The Knot. A reinterpretation of Dornbracht’s…"
   }
  ]
 }

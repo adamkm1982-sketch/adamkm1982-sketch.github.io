@@ -1,7 +1,27 @@
 {
- "modified": "2026-10-25",
+ "modified": "2026-10-26",
  "keep_days": 60,
  "items": [
+  {
+   "id": "https://www.kbbreview.com/88335/news/triton-calls-for-hot-water-demand-to-be-recognised-in-sap/",
+   "title": "Triton calls for hot water demand to be recognised in SAP",
+   "link": "https://www.kbbreview.com/88335/news/triton-calls-for-hot-water-demand-to-be-recognised-in-sap/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-10-26T11:10:41+00:00",
+   "first_seen": "2026-10-26T11:17:59+00:00",
+   "snippet": "Shower manufacturer Triton Showers says current assessment methods focus too heavily on heating efficiency, rather than reducing water consumption."
+  },
+  {
+   "id": "https://www.kbbreview.com/88250/opinion/opinion-the-ai-age-is-well-underway/",
+   "title": "Opinion: The AI-age is well underway",
+   "link": "https://www.kbbreview.com/88250/opinion/opinion-the-ai-age-is-well-underway/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-10-26T08:00:00+00:00",
+   "first_seen": "2026-10-26T11:17:59+00:00",
+   "snippet": "With AI now firmly here and no longer just on its way, Joe Hurles at Tec Lifestyle thinks retailers need to start seeing the technology…"
+  },
   {
    "id": "https://www.kbbreview.com/88309/newswire/supplier-newswire-october-24-2026/",
    "title": "Supplier Newswire: October 24, 2026",

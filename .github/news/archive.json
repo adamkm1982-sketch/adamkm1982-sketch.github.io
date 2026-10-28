@@ -1,7 +1,47 @@
 {
- "modified": "2026-10-27",
+ "modified": "2026-10-28",
  "keep_days": 60,
  "items": [
+  {
+   "id": "https://www.kbbreview.com/88479/news/merlyn-and-vado-smash-pink-ribbon-fundraising-goal/",
+   "title": "Merlyn and Vado smash Pink Ribbon fundraising goal",
+   "link": "https://www.kbbreview.com/88479/news/merlyn-and-vado-smash-pink-ribbon-fundraising-goal/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-10-28T09:35:13+00:00",
+   "first_seen": "2026-10-28T11:26:58+00:00",
+   "snippet": "Staff from Merlyn and Vado recently completed the Derbyshire Three Peaks Challenge, raising almost £8,000 in support of the Pink Ribbon Foundation."
+  },
+  {
+   "id": "https://www.idealhome.co.uk/open-house/leah-hodson-3-ways-i-make-kitchen-worktops-feel-cosy-not-cluttered/",
+   "title": "I found 3 clever ways to make kitchen worktops feel cosy without adding clutter",
+   "link": "https://www.idealhome.co.uk/open-house/leah-hodson-3-ways-i-make-kitchen-worktops-feel-cosy-not-cluttered",
+   "source": "Ideal Home",
+   "topic": "sinks",
+   "published": "2026-10-28T09:30:00+00:00",
+   "first_seen": "2026-10-28T11:26:58+00:00",
+   "snippet": "Worktops can be tricky to get right, but a few clever styling choices can make all the difference"
+  },
+  {
+   "id": "https://www.kbbreview.com/88475/news/breaking-shaws-of-darwen-to-leave-uk-market/",
+   "title": "BREAKING: Shaws of Darwen to leave UK market",
+   "link": "https://www.kbbreview.com/88475/news/breaking-shaws-of-darwen-to-leave-uk-market/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-10-27T19:11:50+00:00",
+   "first_seen": "2026-10-28T11:26:58+00:00",
+   "snippet": "Following the recent shock news that it was significantly increasing its prices, Shaws of Darwen has confirmed it is pulling out of the UK market…"
+  },
+  {
+   "id": "https://www.kbbreview.com/88396/news/queen-camilla-pays-a-visit-to-marlborough-tiles/",
+   "title": "Queen Camilla pays a visit to Marlborough Tiles",
+   "link": "https://www.kbbreview.com/88396/news/queen-camilla-pays-a-visit-to-marlborough-tiles/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-10-27T14:35:36+00:00",
+   "first_seen": "2026-10-28T11:26:58+00:00",
+   "snippet": "Her Majesty Queen Camilla recently paid a visit to the historic Marlborough Tiles factory, with her visit also coinciding with the brand’s 90th anniversary this…"
+  },
   {
    "id": "https://www.kbbreview.com/88363/news/magnet-appoints-store-operations-director-to-focus-on-showrooms/",
    "title": "Magnet appoints store operations director to focus on showrooms",
@@ -969,16 +1009,6 @@
    "published": "2026-09-01T06:52:00+00:00",
    "first_seen": "2026-10-08T19:06:52+00:00",
    "snippet": "Franke has unveiled two new styles for its Pescara tap range, the Semi-Pro model (pictured) and a J Pull-Down product, both of which feature a…"
-  },
-  {
-   "id": "https://kbnweekly.co.uk/why-nature-is-taking-over-bathroom-wall-panel-designs/",
-   "title": "Why nature is taking over bathroom wall panel designs",
-   "link": "https://kbnweekly.co.uk/why-nature-is-taking-over-bathroom-wall-panel-designs/",
-   "source": "Kitchens & Bathrooms News (KBN)",
-   "topic": "industry",
-   "published": "2026-08-28T15:41:10+00:00",
-   "first_seen": "2026-10-08T19:06:52+00:00",
-   "snippet": "From botanical prints to earthy textures, nature is making its mark on bathroom wall panels. KBN Weekly explores why the trend is gaining ground and…"
   }
  ]
 }

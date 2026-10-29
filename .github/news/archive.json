@@ -1,7 +1,37 @@
 {
- "modified": "2026-10-28",
+ "modified": "2026-10-29",
  "keep_days": 60,
  "items": [
+  {
+   "id": "https://www.kbbreview.com/88269/indepth/one-last-thing-natalie-fry/",
+   "title": "One last thing: Natalie Fry",
+   "link": "https://www.kbbreview.com/88269/indepth/one-last-thing-natalie-fry/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-10-29T08:00:00+00:00",
+   "first_seen": "2026-10-29T11:37:19+00:00",
+   "snippet": "Grid Thirteen creative director Natalie Fry explains what she loves most about her job, what her proudest achievement is, and reveals a secret hobby most…"
+  },
+  {
+   "id": "https://www.kbbreview.com/88486/news/midea-targets-independent-retailers-with-mhk-uk-partnership/",
+   "title": "Midea targets independent retailers with MHK UK partnership",
+   "link": "https://www.kbbreview.com/88486/news/midea-targets-independent-retailers-with-mhk-uk-partnership/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-10-28T14:22:52+00:00",
+   "first_seen": "2026-10-29T11:37:19+00:00",
+   "snippet": "Appliance manufacturer Midea has partnered with buying group MHK UK as part of its plans to expand into the independent kitchen retail market."
+  },
+  {
+   "id": "https://www.kbbreview.com/88482/news/flair-showers-holds-bathroom-design-event-with-beggs-and-partners/",
+   "title": "Flair Showers holds bathroom design event with Beggs and Partners",
+   "link": "https://www.kbbreview.com/88482/news/flair-showers-holds-bathroom-design-event-with-beggs-and-partners/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-10-28T13:58:49+00:00",
+   "first_seen": "2026-10-29T11:37:19+00:00",
+   "snippet": "Flair Showers held a Bathroom Design Consultation Day with merchant group Beggs and Partners in Belfast on 22 October."
+  },
   {
    "id": "https://www.kbbreview.com/88479/news/merlyn-and-vado-smash-pink-ribbon-fundraising-goal/",
    "title": "Merlyn and Vado smash Pink Ribbon fundraising goal",

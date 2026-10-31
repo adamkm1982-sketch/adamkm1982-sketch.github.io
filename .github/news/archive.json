@@ -1,7 +1,27 @@
 {
- "modified": "2026-10-29",
+ "modified": "2026-10-31",
  "keep_days": 60,
  "items": [
+  {
+   "id": "https://www.homebuilding.co.uk/rooms/kitchen/how-to-install-a-boiling-water-tap/",
+   "title": "Switching my regular kitchen tap for a boiling water model is one of the best (and easiest) kitchen upgrades I've done myself",
+   "link": "https://www.homebuilding.co.uk/rooms/kitchen/how-to-install-a-boiling-water-tap",
+   "source": "Homebuilding & Renovating",
+   "topic": "sinks",
+   "published": "2026-10-31T08:00:00+00:00",
+   "first_seen": "2026-10-31T10:59:51+00:00",
+   "snippet": "I swapped my regular kitchen tap for a boiling water tap on a DIY basis – here's what you need to know if you plan…"
+  },
+  {
+   "id": "https://www.kbbreview.com/88511/news/diy-kitchens-to-open-scotlands-largest-showroom/",
+   "title": "DIY Kitchens to open Scotland’s ‘largest showroom’",
+   "link": "https://www.kbbreview.com/88511/news/diy-kitchens-to-open-scotlands-largest-showroom/",
+   "source": "kbbreview",
+   "topic": "kitchens",
+   "published": "2026-10-30T12:45:34+00:00",
+   "first_seen": "2026-10-31T10:59:51+00:00",
+   "snippet": "National-scale online retailer DIY Kitchens is set to open the doors to its first Scottish showroom this weekend, claiming it to be the largest kitchen…"
+  },
   {
    "id": "https://www.kbbreview.com/88269/indepth/one-last-thing-natalie-fry/",
    "title": "One last thing: Natalie Fry",
@@ -949,96 +969,6 @@
    "published": "2026-09-01T11:00:05+00:00",
    "first_seen": "2026-10-08T19:06:52+00:00",
    "snippet": "PJH’s Bathrooms to Love brand has unveiled a Wetroom Storage Column for its Iconix showering range."
-  },
-  {
-   "id": "https://www.kbbreview.com/87061/products/new-in-bathrooms/kinedo-kinemagic-serenity-plus/",
-   "title": "Kinedo Kinemagic Serenity Plus",
-   "link": "https://www.kbbreview.com/87061/products/new-in-bathrooms/kinedo-kinemagic-serenity-plus/",
-   "source": "kbbreview",
-   "topic": "industry",
-   "published": "2026-09-01T10:57:29+00:00",
-   "first_seen": "2026-10-08T19:06:52+00:00",
-   "snippet": "Designed for those with weaker hand grips, Kinedo has re-launched its Kinemagic Serenity Plus shower cubical."
-  },
-  {
-   "id": "https://www.kbbreview.com/87058/products/new-in-bathrooms/tece-tecesquare-metal/",
-   "title": "Tece TECEsquare Metal",
-   "link": "https://www.kbbreview.com/87058/products/new-in-bathrooms/tece-tecesquare-metal/",
-   "source": "kbbreview",
-   "topic": "industry",
-   "published": "2026-09-01T10:54:19+00:00",
-   "first_seen": "2026-10-08T19:06:52+00:00",
-   "snippet": "TECE has introduced four new finishes to its TECEsquare Metal range of flushplates."
-  },
-  {
-   "id": "https://www.kbbreview.com/87055/products/new-in-bathrooms/merlyn-8mm-wetroom-panels/",
-   "title": "Merlyn 8mm Wetroom panels",
-   "link": "https://www.kbbreview.com/87055/products/new-in-bathrooms/merlyn-8mm-wetroom-panels/",
-   "source": "kbbreview",
-   "topic": "industry",
-   "published": "2026-09-01T10:48:47+00:00",
-   "first_seen": "2026-10-08T19:06:52+00:00",
-   "snippet": "Shower enclosure specialist Merlyn has added new 8mm framed panels to its Wetroom collection."
-  },
-  {
-   "id": "https://www.kbbreview.com/87052/products/new-in-bathrooms/victoria-albert-kerid-basin/",
-   "title": "Victoria + Albert Kerid basin",
-   "link": "https://www.kbbreview.com/87052/products/new-in-bathrooms/victoria-albert-kerid-basin/",
-   "source": "kbbreview",
-   "topic": "industry",
-   "published": "2026-09-01T10:43:21+00:00",
-   "first_seen": "2026-10-08T19:06:52+00:00",
-   "snippet": "In response to growing demand for statement pieces in the bathroom, Victoria + Albert has developed a new floor-standing podium model for its Kerid basin…"
-  },
-  {
-   "id": "https://kbnweekly.co.uk/callerton-co-founder-on-agility-trust-and-entrepreneurship/",
-   "title": "Callerton co-founder on agility, trust and entrepreneurship",
-   "link": "https://kbnweekly.co.uk/callerton-co-founder-on-agility-trust-and-entrepreneurship/",
-   "source": "Kitchens & Bathrooms News (KBN)",
-   "topic": "kitchens",
-   "published": "2026-09-01T10:10:27+00:00",
-   "first_seen": "2026-10-08T19:06:52+00:00",
-   "snippet": "Co-founder of Callerton furniture and retailer Callerton Kitchens & Interiors, and now KBB Retail Hall of Fame inductee, Gordon Stanger Leathes, and his daughter Ali…"
-  },
-  {
-   "id": "https://www.kbbreview.com/86980/products/new-in-kitchens/masterclass-kitchens-summer-2026-ranges/",
-   "title": "Masterclass Kitchens Summer 2026 ranges",
-   "link": "https://www.kbbreview.com/86980/products/new-in-kitchens/masterclass-kitchens-summer-2026-ranges/",
-   "source": "kbbreview",
-   "topic": "kitchens",
-   "published": "2026-09-01T06:59:00+00:00",
-   "first_seen": "2026-10-08T19:06:52+00:00",
-   "snippet": "Masterclass Kitchens has recently unveiled six new ranges as part of its Summer 2026 collection."
-  },
-  {
-   "id": "https://www.kbbreview.com/86977/products/new-in-kitchens/caple-shaftsbury-puriti/",
-   "title": "Caple Shaftsbury Puriti",
-   "link": "https://www.kbbreview.com/86977/products/new-in-kitchens/caple-shaftsbury-puriti/",
-   "source": "kbbreview",
-   "topic": "sinks",
-   "published": "2026-09-01T06:58:00+00:00",
-   "first_seen": "2026-10-08T19:06:52+00:00",
-   "snippet": "Expanding its tap portfolio, Caple has recently introduced the dual-lever Shaftsbury Puriti, which comes in four finishes."
-  },
-  {
-   "id": "https://www.kbbreview.com/86965/products/new-in-kitchens/clearwater-stella/",
-   "title": "Clearwater Stella",
-   "link": "https://www.kbbreview.com/86965/products/new-in-kitchens/clearwater-stella/",
-   "source": "kbbreview",
-   "topic": "sinks",
-   "published": "2026-09-01T06:54:00+00:00",
-   "first_seen": "2026-10-08T19:06:52+00:00",
-   "snippet": "Clearwater has added to its Tri-Spa tap collection with the launch of Stella, a new three-way kitchen tap."
-  },
-  {
-   "id": "https://www.kbbreview.com/86958/products/new-in-kitchens/franke-pescara/",
-   "title": "Franke Pescara",
-   "link": "https://www.kbbreview.com/86958/products/new-in-kitchens/franke-pescara/",
-   "source": "kbbreview",
-   "topic": "sinks",
-   "published": "2026-09-01T06:52:00+00:00",
-   "first_seen": "2026-10-08T19:06:52+00:00",
-   "snippet": "Franke has unveiled two new styles for its Pescara tap range, the Semi-Pro model (pictured) and a J Pull-Down product, both of which feature a…"
   }
  ]
 }

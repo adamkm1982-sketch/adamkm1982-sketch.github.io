@@ -1,7 +1,17 @@
 {
- "modified": "2026-10-31",
+ "modified": "2026-11-01",
  "keep_days": 60,
  "items": [
+  {
+   "id": "https://www.idealhome.co.uk/all-rooms/small-appliances/smeg-multigrill-launch/",
+   "title": "The classic George Foreman grill from your childhood just got a serious upgrade – meet Smeg's gorgeous new worktop must-have",
+   "link": "https://www.idealhome.co.uk/all-rooms/small-appliances/smeg-multigrill-launch",
+   "source": "Ideal Home",
+   "topic": "sinks",
+   "published": "2026-10-31T14:00:00+00:00",
+   "first_seen": "2026-11-01T11:54:50+00:00",
+   "snippet": "It's packed full of functionality"
+  },
   {
    "id": "https://www.homebuilding.co.uk/rooms/kitchen/how-to-install-a-boiling-water-tap/",
    "title": "Switching my regular kitchen tap for a boiling water model is one of the best (and easiest) kitchen upgrades I've done myself",
@@ -889,86 +899,6 @@
    "snippet": "",
    "source_mode": "gnews",
    "publisher_url": "https://www.express.co.uk"
-  },
-  {
-   "id": "https://www.kbbreview.com/87198/people/reginox-appoints-two-new-area-sales-managers/",
-   "title": "Reginox appoints two new area sales managers",
-   "link": "https://www.kbbreview.com/87198/people/reginox-appoints-two-new-area-sales-managers/",
-   "source": "kbbreview",
-   "topic": "sinks",
-   "published": "2026-09-02T10:00:26+00:00",
-   "first_seen": "2026-10-08T19:06:52+00:00",
-   "snippet": "Cheshire-based sinks and taps brand Reginox has expanded its area sales management team with two new appointments."
-  },
-  {
-   "id": "https://kbnweekly.co.uk/former-1810-employees-launch-white-label-sinks-and-taps/",
-   "title": "Former 1810 employees launch White Label Sinks and Taps",
-   "link": "https://kbnweekly.co.uk/former-1810-employees-launch-white-label-sinks-and-taps/",
-   "source": "Kitchens & Bathrooms News (KBN)",
-   "topic": "sinks",
-   "published": "2026-09-01T15:44:36+00:00",
-   "first_seen": "2026-10-08T19:06:52+00:00",
-   "snippet": "A new supplier of kitchen sinks and taps, White Label Sinks and Taps, has launched, bringing together a management team with a track record in…"
-  },
-  {
-   "id": "https://www.kbbreview.com/87083/products/new-in-bathrooms/frontline-bathrooms-aqua-glass/",
-   "title": "Frontline Bathrooms Aqua Glass",
-   "link": "https://www.kbbreview.com/87083/products/new-in-bathrooms/frontline-bathrooms-aqua-glass/",
-   "source": "kbbreview",
-   "topic": "industry",
-   "published": "2026-09-01T11:16:34+00:00",
-   "first_seen": "2026-10-08T19:06:52+00:00",
-   "snippet": "Frontline Bathrooms has significantly expanded its Aqua Glass collection of bathroom screens, unveiling new enclosure configurations, larger sizes and further finish options."
-  },
-  {
-   "id": "https://www.kbbreview.com/87078/products/new-in-bathrooms/sensio-studio/",
-   "title": "Sensio Studio",
-   "link": "https://www.kbbreview.com/87078/products/new-in-bathrooms/sensio-studio/",
-   "source": "kbbreview",
-   "topic": "industry",
-   "published": "2026-09-01T11:12:04+00:00",
-   "first_seen": "2026-10-08T19:06:52+00:00",
-   "snippet": "Designed exclusively for independent showrooms and specialist distributors, Sensio’s new Studio collection is made up of three ranges."
-  },
-  {
-   "id": "https://www.kbbreview.com/87076/products/new-in-bathrooms/crosswater-mada/",
-   "title": "Crosswater Mada",
-   "link": "https://www.kbbreview.com/87076/products/new-in-bathrooms/crosswater-mada/",
-   "source": "kbbreview",
-   "topic": "industry",
-   "published": "2026-09-01T11:09:33+00:00",
-   "first_seen": "2026-10-08T19:06:52+00:00",
-   "snippet": "Crosswater has recently introduced its new cylindrical-shaped Mada brassware range."
-  },
-  {
-   "id": "https://www.kbbreview.com/87073/products/new-in-bathrooms/laufen-pro-x/",
-   "title": "Laufen PRO X",
-   "link": "https://www.kbbreview.com/87073/products/new-in-bathrooms/laufen-pro-x/",
-   "source": "kbbreview",
-   "topic": "industry",
-   "published": "2026-09-01T11:06:09+00:00",
-   "first_seen": "2026-10-08T19:06:52+00:00",
-   "snippet": "Twenty years on from the launch of its PRO range, Laufen has collaborated with designer Peter Wirz again to create its third iteration: PRO X."
-  },
-  {
-   "id": "https://www.kbbreview.com/87068/products/new-in-bathrooms/ideal-standard-alu-finishes/",
-   "title": "Ideal Standard Alu+ finishes",
-   "link": "https://www.kbbreview.com/87068/products/new-in-bathrooms/ideal-standard-alu-finishes/",
-   "source": "kbbreview",
-   "topic": "industry",
-   "published": "2026-09-01T11:03:46+00:00",
-   "first_seen": "2026-10-08T19:06:52+00:00",
-   "snippet": "Ideal Standard has added new bronze and chrome finishes to its Alu+ collection of showers, taps and accessories."
-  },
-  {
-   "id": "https://www.kbbreview.com/87064/products/new-in-bathrooms/bathrooms-to-love-wetroom-storage-column/",
-   "title": "Bathrooms to Love Wetroom Storage Column",
-   "link": "https://www.kbbreview.com/87064/products/new-in-bathrooms/bathrooms-to-love-wetroom-storage-column/",
-   "source": "kbbreview",
-   "topic": "industry",
-   "published": "2026-09-01T11:00:05+00:00",
-   "first_seen": "2026-10-08T19:06:52+00:00",
-   "snippet": "PJH’s Bathrooms to Love brand has unveiled a Wetroom Storage Column for its Iconix showering range."
   }
  ]
 }

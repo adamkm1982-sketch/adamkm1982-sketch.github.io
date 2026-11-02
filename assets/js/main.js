@@ -189,6 +189,7 @@
             'returnPolicyCategory': 'https://schema.org/MerchantReturnFiniteReturnWindow',
             'merchantReturnDays': 14,
             'returnMethod': 'https://schema.org/ReturnByMail',
+            'returnFees': 'https://schema.org/FreeReturn',
             'merchantReturnLink': 'https://www.astracleanuk.com/delivery-returns.html'
           }
         };
@@ -196,7 +197,13 @@
           offer.shippingDetails = {
             '@type': 'OfferShippingDetails',
             'shippingRate': { '@type': 'MonetaryAmount', 'value': '0', 'currency': 'GBP' },
-            'shippingDestination': { '@type': 'DefinedRegion', 'addressCountry': 'GB' }
+            'shippingDestination': { '@type': 'DefinedRegion', 'addressCountry': 'GB' },
+            'deliveryTime': {
+              '@type': 'ShippingDeliveryTime',
+              'handlingTime': { '@type': 'QuantitativeValue', 'minValue': 0, 'maxValue': 1, 'unitCode': 'DAY' },
+              'transitTime': { '@type': 'QuantitativeValue', 'minValue': 2, 'maxValue': 3, 'unitCode': 'DAY' },
+              'businessDays': { '@type': 'OpeningHoursSpecification', 'dayOfWeek': ['https://schema.org/Monday', 'https://schema.org/Tuesday', 'https://schema.org/Wednesday', 'https://schema.org/Thursday', 'https://schema.org/Friday'] }
+            }
           };
         }
         graph[i].offers = offer;

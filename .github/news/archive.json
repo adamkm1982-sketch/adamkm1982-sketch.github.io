@@ -1,7 +1,147 @@
 {
- "modified": "2026-11-01",
+ "modified": "2026-11-02",
  "keep_days": 60,
  "items": [
+  {
+   "id": "https://www.kbbreview.com/88544/news/woodstock-staff-climb-welsh-three-peaks-for-charity/",
+   "title": "Woodstock staff climb Welsh Three Peaks for charity",
+   "link": "https://www.kbbreview.com/88544/news/woodstock-staff-climb-welsh-three-peaks-for-charity/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-11-02T11:56:47+00:00",
+   "first_seen": "2026-11-02T13:40:13+00:00",
+   "snippet": "Staff from KBB supplier Woodstock have completed the Welsh Three Peaks Challenge, surpassing their fundraising target for St Michael’s Hospice by a healthy 128%."
+  },
+  {
+   "id": "https://www.kbbreview.com/88541/people/new-senior-business-development-manager-for-kudos-2/",
+   "title": "New senior business development manager for Kudos",
+   "link": "https://www.kbbreview.com/88541/people/new-senior-business-development-manager-for-kudos-2/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-11-02T11:45:05+00:00",
+   "first_seen": "2026-11-02T13:40:13+00:00",
+   "snippet": "Nick Asbey has returned to Kudos Showers in the role of senior business development manager, where he will work to support independent showrooms across East…"
+  },
+  {
+   "id": "https://www.kbbreview.com/88421/indepth/showroom-of-the-month-gaggenau-marylebone/",
+   "title": "Showroom of the month: Gaggenau, Marylebone",
+   "link": "https://www.kbbreview.com/88421/indepth/showroom-of-the-month-gaggenau-marylebone/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-11-02T08:00:00+00:00",
+   "first_seen": "2026-11-02T13:40:13+00:00",
+   "snippet": "Overlooking Portman Square, Gaggenau’s new London flagship brings together the capital’s architectural heritage and contemporary kitchen design in its largest European showroom."
+  },
+  {
+   "id": "https://www.kbbreview.com/88471/products/new-in-bathrooms/atlas-concorde-boost-hux-and-vivia/",
+   "title": "Atlas Concorde Boost Hux and Vivia",
+   "link": "https://www.kbbreview.com/88471/products/new-in-bathrooms/atlas-concorde-boost-hux-and-vivia/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-11-02T07:59:00+00:00",
+   "first_seen": "2026-11-02T13:40:13+00:00",
+   "snippet": "Surface brand Atlas Concorde has recently presented two new porcelain stoneware collections, Boost Hux and Vivia, both designed to complement each other harmoniously."
+  },
+  {
+   "id": "https://www.kbbreview.com/88403/products/new-in-kitchens/blanco-lavin-and-vion/",
+   "title": "Blanco LAVIN and VION",
+   "link": "https://www.kbbreview.com/88403/products/new-in-kitchens/blanco-lavin-and-vion/",
+   "source": "kbbreview",
+   "topic": "sinks",
+   "published": "2026-11-02T07:58:00+00:00",
+   "first_seen": "2026-11-02T13:40:13+00:00",
+   "snippet": "Launching in January, Blanco has unveiled the LAVIN tap family, which the company says pairs well with the new VION sink because of their shared…"
+  },
+  {
+   "id": "https://www.kbbreview.com/88467/products/new-in-bathrooms/roca-mirai/",
+   "title": "Roca Mirai",
+   "link": "https://www.kbbreview.com/88467/products/new-in-bathrooms/roca-mirai/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-11-02T07:57:00+00:00",
+   "first_seen": "2026-11-02T13:40:13+00:00",
+   "snippet": "Roca has recently launched its new Mirai collection, a range of illuminated bathroom mirrors that feature a slim Matt Black aluminium frame with built-in LED…"
+  },
+  {
+   "id": "https://www.kbbreview.com/88394/products/new-in-kitchens/florim-oblio/",
+   "title": "Florim Oblìo",
+   "link": "https://www.kbbreview.com/88394/products/new-in-kitchens/florim-oblio/",
+   "source": "kbbreview",
+   "topic": "kitchens",
+   "published": "2026-11-02T07:56:00+00:00",
+   "first_seen": "2026-11-02T13:40:13+00:00",
+   "snippet": "In partnership with design startup Namui, Florim has recently announced Oblìo, a new modular outdoor kitchen system."
+  },
+  {
+   "id": "https://www.kbbreview.com/88463/products/new-in-bathrooms/hib-aria-halo-and-lance/",
+   "title": "hib Aria, Halo and Lance",
+   "link": "https://www.kbbreview.com/88463/products/new-in-bathrooms/hib-aria-halo-and-lance/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-11-02T07:55:00+00:00",
+   "first_seen": "2026-11-02T13:40:13+00:00",
+   "snippet": "hib. has released three new lighting families, Aria, Halo and Lance, which are available across wall and pendant designs."
+  },
+  {
+   "id": "https://www.kbbreview.com/88390/products/new-in-kitchens/armac-martin-lighting/",
+   "title": "Armac Martin Lighting",
+   "link": "https://www.kbbreview.com/88390/products/new-in-kitchens/armac-martin-lighting/",
+   "source": "kbbreview",
+   "topic": "kitchens",
+   "published": "2026-11-02T07:54:00+00:00",
+   "first_seen": "2026-11-02T13:40:13+00:00",
+   "snippet": "Armac Martin has recently launched its first-ever lighting collection."
+  },
+  {
+   "id": "https://www.kbbreview.com/88459/products/new-in-bathrooms/calypso-oriana/",
+   "title": "Calypso Oriana",
+   "link": "https://www.kbbreview.com/88459/products/new-in-bathrooms/calypso-oriana/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-11-02T07:53:00+00:00",
+   "first_seen": "2026-11-02T13:40:13+00:00",
+   "snippet": "Woodstock-owned bathroom brand Calypso has recently unveiled its new Oriana vanity collection."
+  },
+  {
+   "id": "https://www.kbbreview.com/88386/products/new-in-kitchens/specta-surfaces-bretonstone/",
+   "title": "Specta Surfaces Bretonstone",
+   "link": "https://www.kbbreview.com/88386/products/new-in-kitchens/specta-surfaces-bretonstone/",
+   "source": "kbbreview",
+   "topic": "kitchens",
+   "published": "2026-11-02T07:52:00+00:00",
+   "first_seen": "2026-11-02T13:40:13+00:00",
+   "snippet": "Quartz manufacturer Specta Surfaces has recently launched in the UK and has introduced more than 60 new designs to the market using its Bretonstone technology."
+  },
+  {
+   "id": "https://www.kbbreview.com/88454/products/new-in-bathrooms/kinedo-royal-foliage/",
+   "title": "Kinedo Royal Foliage",
+   "link": "https://www.kbbreview.com/88454/products/new-in-bathrooms/kinedo-royal-foliage/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-11-02T07:51:00+00:00",
+   "first_seen": "2026-11-02T13:40:13+00:00",
+   "snippet": "Kinedo has added a new design to its growing portfolio of Kinewall panels."
+  },
+  {
+   "id": "https://www.kbbreview.com/88382/products/new-in-kitchens/poggenpohl-mollis/",
+   "title": "Poggenpohl Mollis",
+   "link": "https://www.kbbreview.com/88382/products/new-in-kitchens/poggenpohl-mollis/",
+   "source": "kbbreview",
+   "topic": "kitchens",
+   "published": "2026-11-02T07:50:00+00:00",
+   "first_seen": "2026-11-02T13:40:13+00:00",
+   "snippet": "Planned for launch in the UK market next year, Poggenpohl has recently unveiled Mollis, a new kitchen design which it says lays the groundwork for…"
+  },
+  {
+   "id": "https://www.kbbreview.com/88450/products/new-in-bathrooms/crosswater-mpro-flute/",
+   "title": "Crosswater MPRO Flute",
+   "link": "https://www.kbbreview.com/88450/products/new-in-bathrooms/crosswater-mpro-flute/",
+   "source": "kbbreview",
+   "topic": "sinks",
+   "published": "2026-11-02T07:49:00+00:00",
+   "first_seen": "2026-11-02T13:40:13+00:00",
+   "snippet": "Crosswater has expanded its MPRO brassware range with the new MPRO Flute."
+  },
   {
    "id": "https://www.idealhome.co.uk/all-rooms/small-appliances/smeg-multigrill-launch/",
    "title": "The classic George Foreman grill from your childhood just got a serious upgrade – meet Smeg's gorgeous new worktop must-have",

@@ -1,7 +1,37 @@
 {
- "modified": "2026-11-02",
+ "modified": "2026-11-03",
  "keep_days": 60,
  "items": [
+  {
+   "id": "https://www.kbbreview.com/88555/podcast/technology-and-the-customer-journey/",
+   "title": "Technology and the customer journey",
+   "link": "https://www.kbbreview.com/88555/podcast/technology-and-the-customer-journey/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-11-03T11:15:21+00:00",
+   "first_seen": "2026-11-03T12:53:23+00:00",
+   "snippet": "Cyncly’s Anand Krishnan explains how technology is transforming the customer journey and giving retailers more opportunities to turn inspiration into orders."
+  },
+  {
+   "id": "https://www.kbbreview.com/88439/indepth/the-kbbreview-interview-luke-wedgbury-kbsa-md/",
+   "title": "The kbbreview Interview: Luke Wedgbury, KBSA MD",
+   "link": "https://www.kbbreview.com/88439/indepth/the-kbbreview-interview-luke-wedgbury-kbsa-md/",
+   "source": "kbbreview",
+   "topic": "kitchens",
+   "published": "2026-11-03T08:00:00+00:00",
+   "first_seen": "2026-11-03T12:53:23+00:00",
+   "snippet": "Luke Wedgbury has big plans for the KBSA, from making membership harder to achieve to giving retailers more reasons to join. The new MD explains…"
+  },
+  {
+   "id": "https://www.livingetc.com/features/buying-turkish-marble/",
+   "title": "Marble Sinks From Turkey Have Become the 'Worth the Risk' Viral I,port — Here's What You Need to Know Before You Buy Direct",
+   "link": "https://www.livingetc.com/features/buying-turkish-marble",
+   "source": "Livingetc",
+   "topic": "sinks",
+   "published": "2026-11-03T06:30:00+00:00",
+   "first_seen": "2026-11-03T12:53:23+00:00",
+   "snippet": "We dig behind the social media posts to find out more about Turkey's natural stone industry, and how it might be the most affordable way…"
+  },
   {
    "id": "https://www.kbbreview.com/88544/news/woodstock-staff-climb-welsh-three-peaks-for-charity/",
    "title": "Woodstock staff climb Welsh Three Peaks for charity",

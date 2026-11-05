@@ -1,7 +1,67 @@
 {
- "modified": "2026-11-04",
+ "modified": "2026-11-05",
  "keep_days": 60,
  "items": [
+  {
+   "id": "https://www.kbbreview.com/88622/news/david-sanders-appointed-as-kbsa-board-chair/",
+   "title": "David Sanders appointed as KBSA board chair",
+   "link": "https://www.kbbreview.com/88622/news/david-sanders-appointed-as-kbsa-board-chair/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-11-05T10:35:52+00:00",
+   "first_seen": "2026-11-05T13:20:42+00:00",
+   "snippet": "The KBSA has named David Sanders as its new board chair, following the recent appointment of Luke Wedgbury as its managing director."
+  },
+  {
+   "id": "https://www.kbbreview.com/88619/news/howdens-enjoys-sales-boost-after-buying-diy-kitchens/",
+   "title": "Howdens enjoys sales boost after buying DIY Kitchens",
+   "link": "https://www.kbbreview.com/88619/news/howdens-enjoys-sales-boost-after-buying-diy-kitchens/",
+   "source": "kbbreview",
+   "topic": "kitchens",
+   "published": "2026-11-05T10:11:56+00:00",
+   "first_seen": "2026-11-05T13:20:42+00:00",
+   "snippet": "Howdens has reported a very healthy boost to its sales following the acquisition of DIY Kitchens, adding that it achieved “record” sales during this year's…"
+  },
+  {
+   "id": "https://www.idealhome.co.uk/all-rooms/coffee/ninja-luxe-cafe-mini-plus-coffee-machine-review/",
+   "title": "Ninja's mini-size coffee machine is a worktop saviour",
+   "link": "https://www.idealhome.co.uk/all-rooms/coffee/ninja-luxe-cafe-mini-plus-coffee-machine-review",
+   "source": "Ideal Home",
+   "topic": "sinks",
+   "published": "2026-11-05T09:00:00+00:00",
+   "first_seen": "2026-11-05T13:20:42+00:00",
+   "snippet": "Here's how I got on with Ninja's smallest coffee machine (which is still ultra-capable)"
+  },
+  {
+   "id": "https://www.kbbreview.com/88492/indepth/kbbreview-adopted-retailers-what-2026-has-taught-us/",
+   "title": "kbbreview Adopted Retailers: What 2026 has taught us",
+   "link": "https://www.kbbreview.com/88492/indepth/kbbreview-adopted-retailers-what-2026-has-taught-us/",
+   "source": "kbbreview",
+   "topic": "kitchens",
+   "published": "2026-11-05T08:00:00+00:00",
+   "first_seen": "2026-11-05T13:20:42+00:00",
+   "snippet": "As our 2026 Adopted Retailer series comes to a close, we bring our trio together to reflect on the challenges and wins of the past…"
+  },
+  {
+   "id": "https://www.homesandgardens.com/household/storage-organization/joseph-joseph-cupboardstore-under-sink-organizer/",
+   "title": "This Joseph Joseph CupboardStore Makes Under-Sink Storage Effortless – Its Compact Design Fits Even Small Spaces",
+   "link": "https://www.homesandgardens.com/household/storage-organization/joseph-joseph-cupboardstore-under-sink-organizer",
+   "source": "Homes & Gardens",
+   "topic": "sinks",
+   "published": "2026-11-05T05:00:00+00:00",
+   "first_seen": "2026-11-05T13:20:42+00:00",
+   "snippet": "It allows access to the very back of the cabinets"
+  },
+  {
+   "id": "https://www.kbbreview.com/88612/news/sharps-finds-japandi-to-be-most-eye-catching-interior-style/",
+   "title": "Sharps finds Japandi to be most eye-catching interior style",
+   "link": "https://www.kbbreview.com/88612/news/sharps-finds-japandi-to-be-most-eye-catching-interior-style/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-11-04T15:24:34+00:00",
+   "first_seen": "2026-11-05T13:20:42+00:00",
+   "snippet": "Sharps has named Japandi as literally the most eye-catching interior style, after conducting a study using eye-tracking technology to see which styles were most appealing."
+  },
   {
    "id": "https://www.kbbreview.com/88608/news/frontline-introduces-new-metallic-painting-service/",
    "title": "Frontline introduces new metallic painting service",

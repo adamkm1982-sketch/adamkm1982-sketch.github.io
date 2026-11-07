@@ -1,7 +1,17 @@
 {
- "modified": "2026-11-06",
+ "modified": "2026-11-07",
  "keep_days": 60,
  "items": [
+  {
+   "id": "https://www.kbbreview.com/88637/newswire/supplier-newswire-november-7-2026/",
+   "title": "Supplier Newswire: November 7, 2026",
+   "link": "https://www.kbbreview.com/88637/newswire/supplier-newswire-november-7-2026/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-11-07T08:00:00+00:00",
+   "first_seen": "2026-11-07T11:49:42+00:00",
+   "snippet": "Press releases supplied directly by KBB brands, suppliers and service providers. Published as received and not produced or edited by the kbbreview editorial team."
+  },
   {
    "id": "https://www.kbbreview.com/88590/podcast/whats-the-point-of-trends/",
    "title": "What’s the point of trends?",
@@ -1135,16 +1145,6 @@
    "snippet": "",
    "source_mode": "gnews",
    "publisher_url": "https://www.express.co.uk"
-  },
-  {
-   "id": "https://www.kbbreview.com/87410/news/exclusive-quooker-expands-into-commercial-sector/",
-   "title": "EXCLUSIVE: Quooker expands into commercial sector",
-   "link": "https://www.kbbreview.com/87410/news/exclusive-quooker-expands-into-commercial-sector/",
-   "source": "kbbreview",
-   "topic": "sinks",
-   "published": "2026-09-07T15:26:46+00:00",
-   "first_seen": "2026-10-08T19:06:52+00:00",
-   "snippet": "Quooker has officially launched into the commercial market, with MD Stephen Johnson saying the company has “aspirations to grow a significant business” in the UK's…"
   }
  ]
 }

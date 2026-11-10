@@ -1,7 +1,57 @@
 {
- "modified": "2026-11-09",
+ "modified": "2026-11-10",
  "keep_days": 60,
  "items": [
+  {
+   "id": "https://www.kbbreview.com/88564/indepth/new-in-showrooms-november/",
+   "title": "New in Showrooms: November 2026",
+   "link": "https://www.kbbreview.com/88564/indepth/new-in-showrooms-november/",
+   "source": "kbbreview",
+   "topic": "kitchens",
+   "published": "2026-11-10T08:00:00+00:00",
+   "first_seen": "2026-11-10T13:37:33+00:00",
+   "snippet": "Our regular round-up of new or redesigned KBB showrooms. This month we've got a number of retail businesses celebrating new openings and refurbishments."
+  },
+  {
+   "id": "https://www.kbbreview.com/88655/people/roca-group-appoints-new-offsite-specification-manager/",
+   "title": "Roca Group appoints new offsite specification manager",
+   "link": "https://www.kbbreview.com/88655/people/roca-group-appoints-new-offsite-specification-manager/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-11-09T15:32:48+00:00",
+   "first_seen": "2026-11-10T13:37:33+00:00",
+   "snippet": "Zara Oatey has joined Roca Group UK and Ireland as its new offsite specification manager."
+  },
+  {
+   "id": "https://www.kbbreview.com/88650/people/wilsonart-welcomes-new-commercial-director/",
+   "title": "Wilsonart welcomes new commercial director",
+   "link": "https://www.kbbreview.com/88650/people/wilsonart-welcomes-new-commercial-director/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-11-09T15:10:29+00:00",
+   "first_seen": "2026-11-10T13:37:33+00:00",
+   "snippet": "Wilsonart has welcomed Alex Gambroudes to the newly-created role of commercial director, saying his appointment will help to support the company's growth."
+  },
+  {
+   "id": "https://www.kbbreview.com/88646/people/two-new-business-development-managers-for-grant-westfield/",
+   "title": "Two new business development managers for Grant Westfield",
+   "link": "https://www.kbbreview.com/88646/people/two-new-business-development-managers-for-grant-westfield/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-11-09T14:52:42+00:00",
+   "first_seen": "2026-11-10T13:37:33+00:00",
+   "snippet": "Wall panelling brand Grant Westfield has recently welcomed two new business development managers: Luke Holmwood and Darren Gardiner."
+  },
+  {
+   "id": "https://www.kbbreview.com/88503/opinion/opinion-how-clients-use-showrooms-has-changed-forever/",
+   "title": "Opinion: How clients use showrooms has changed forever",
+   "link": "https://www.kbbreview.com/88503/opinion/opinion-how-clients-use-showrooms-has-changed-forever/",
+   "source": "kbbreview",
+   "topic": "kitchens",
+   "published": "2026-11-09T08:00:00+00:00",
+   "first_seen": "2026-11-10T13:37:33+00:00",
+   "snippet": "After recently announcing plans to close his original showroom, Et Lorem founder Jamie Harding says he has noticed a major change in the way clients…"
+  },
   {
    "id": "https://www.kbbreview.com/88503/opinion/how-clients-use-showrooms-has-changed-forever/",
    "title": "How clients use showrooms has changed forever",

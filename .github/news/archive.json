@@ -1,7 +1,27 @@
 {
- "modified": "2026-11-10",
+ "modified": "2026-11-11",
  "keep_days": 60,
  "items": [
+  {
+   "id": "https://www.kbbreview.com/88680/news/rotpunkt-invests-e50m-into-robot-powered-production/",
+   "title": "Rotpunkt invests €50m into robot-powered production",
+   "link": "https://www.kbbreview.com/88680/news/rotpunkt-invests-e50m-into-robot-powered-production/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-11-11T11:58:41+00:00",
+   "first_seen": "2026-11-11T12:49:46+00:00",
+   "snippet": "Rotpunkt has now completed a €50m investment into its production facilities, which the company says will significantly strengthen its manufacturing capacity."
+  },
+  {
+   "id": "https://www.kbbreview.com/88677/news/florim-renews-b-corp-certification/",
+   "title": "Florim renews B Corp certification",
+   "link": "https://www.kbbreview.com/88677/news/florim-renews-b-corp-certification/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-11-11T11:11:08+00:00",
+   "first_seen": "2026-11-11T12:49:46+00:00",
+   "snippet": "Porcelain surface brand Florim has successfully renewed its B Corp certification, which CEO Beatrice Lucchese called “a reaffirmation of the way we have chosen to…"
+  },
   {
    "id": "https://www.kbbreview.com/88564/indepth/new-in-showrooms-november/",
    "title": "New in Showrooms: November 2026",
@@ -1215,18 +1235,6 @@
    "snippet": "",
    "source_mode": "gnews",
    "publisher_url": "https://www.liverpoolecho.co.uk"
-  },
-  {
-   "id": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPWWl6RmlrMVpxUDlsdzB2SFZSLWluLWdFYm5lMWtzNmVoNUg3TE5tWmZIczdVRVBiajN4RFVNeDh3NTlLbFdScjBoWl92d3Y3RXVjNm1sSFZ0dEhiT25IX1lvdDlfRXR4SWZOXy1TRDZTZjRTR29JTk50M0t5eVFLN0VTQXFaVlM5MWJ1UtIBkgFBVV95cUxNZHIxQ3l4YlRZenI0NkRiMldRa095V2VzbzdvODJrNk9fZ3V6LTdHM3hTYi1IY3hPRGZ2MWVMNncwdWVQOXJQaldaMlRDSndkQnBkWVFnQzRTcXVITHRrWlR4Si1XOTFWTWRBYnE4TlRJWGZ3eUhDMFdvU2NfaEF4aW5oc1JIOUE1V2FjbndkZlBwZw/?oc=5",
-   "title": "Households urged to use 2 common kitchen items to keep shower glass limescale-free",
-   "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPWWl6RmlrMVpxUDlsdzB2SFZSLWluLWdFYm5lMWtzNmVoNUg3TE5tWmZIczdVRVBiajN4RFVNeDh3NTlLbFdScjBoWl92d3Y3RXVjNm1sSFZ0dEhiT25IX1lvdDlfRXR4SWZOXy1TRDZTZjRTR29JTk50M0t5eVFLN0VTQXFaVlM5MWJ1UtIBkgFBVV95cUxNZHIxQ3l4YlRZenI0NkRiMldRa095V2VzbzdvODJrNk9fZ3V6LTdHM3hTYi1IY3hPRGZ2MWVMNncwdWVQOXJQaldaMlRDSndkQnBkWVFnQzRTcXVITHRrWlR4Si1XOTFWTWRBYnE4TlRJWGZ3eUhDMFdvU2NfaEF4aW5oc1JIOUE1V2FjbndkZlBwZw?oc=5",
-   "source": "Daily Express",
-   "topic": "sinks",
-   "published": "2026-09-12T07:00:00+00:00",
-   "first_seen": "2026-10-17T09:30:20+00:00",
-   "snippet": "",
-   "source_mode": "gnews",
-   "publisher_url": "https://www.express.co.uk"
   }
  ]
 }

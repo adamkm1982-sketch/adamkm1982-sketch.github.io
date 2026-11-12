@@ -1,7 +1,37 @@
 {
- "modified": "2026-11-11",
+ "modified": "2026-11-12",
  "keep_days": 60,
  "items": [
+  {
+   "id": "https://www.kbbreview.com/88593/indepth/analysis-the-kitchen-markets-road-to-recovery/",
+   "title": "Analysis: The kitchen market’s road to recovery",
+   "link": "https://www.kbbreview.com/88593/indepth/analysis-the-kitchen-markets-road-to-recovery/",
+   "source": "kbbreview",
+   "topic": "kitchens",
+   "published": "2026-11-12T08:00:00+00:00",
+   "first_seen": "2026-11-12T13:52:34+00:00",
+   "snippet": "After years of falling sales, the UK kitchen market is finally showing signs of recovery. Mark Waddy of MTW Research explains why independent retailers are…"
+  },
+  {
+   "id": "https://www.kbbreview.com/88660/podcast/what-does-2027-have-in-store/",
+   "title": "What does 2027 have in store?",
+   "link": "https://www.kbbreview.com/88660/podcast/what-does-2027-have-in-store/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-11-12T07:40:24+00:00",
+   "first_seen": "2026-11-12T13:52:34+00:00",
+   "snippet": "Is 2027 the year the kitchen and bathroom market finally gets back to normal, or have the rules changed for good?"
+  },
+  {
+   "id": "https://www.kbbreview.com/88687/news/cata-appliances-gains-amdea-membership/",
+   "title": "CATA Appliances gains AMDEA membership",
+   "link": "https://www.kbbreview.com/88687/news/cata-appliances-gains-amdea-membership/",
+   "source": "kbbreview",
+   "topic": "kitchens",
+   "published": "2026-11-11T14:58:06+00:00",
+   "first_seen": "2026-11-12T13:52:34+00:00",
+   "snippet": "CATA Appliances has become a full member of AMDEA, saying it plans to draw on its experience to help support the organisation’s work."
+  },
   {
    "id": "https://www.kbbreview.com/88680/news/rotpunkt-invests-e50m-into-robot-powered-production/",
    "title": "Rotpunkt invests €50m into robot-powered production",

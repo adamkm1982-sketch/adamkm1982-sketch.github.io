@@ -1,7 +1,17 @@
 {
- "modified": "2026-11-12",
+ "modified": "2026-11-13",
  "keep_days": 60,
  "items": [
+  {
+   "id": "https://www.homebuilding.co.uk/outdoors/garden/how-to-insulate-an-outdoor-tap/",
+   "title": "Is your outdoor tap ready for winter? This simple £5 add-on could prevent it freezing and bursting",
+   "link": "https://www.homebuilding.co.uk/outdoors/garden/how-to-insulate-an-outdoor-tap",
+   "source": "Homebuilding & Renovating",
+   "topic": "sinks",
+   "published": "2026-11-13T08:00:00+00:00",
+   "first_seen": "2026-11-13T13:15:42+00:00",
+   "snippet": "Winterising your outdoor tap is key to avoiding frozen and burst pipes – our experts teach you how with this easy step-by-step guide"
+  },
   {
    "id": "https://www.kbbreview.com/88593/indepth/analysis-the-kitchen-markets-road-to-recovery/",
    "title": "Analysis: The kitchen market’s road to recovery",
@@ -1241,30 +1251,6 @@
    "snippet": "",
    "source_mode": "gnews",
    "publisher_url": "https://www.express.co.uk"
-  },
-  {
-   "id": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQS3RQcEF3Z3BaRi1KTm1OQTBOVDJETl9TZ3hXc3FXcFB6Y3EzNlJWOElzMjM3dTBMQ05lcUJfcGpCNjhSd3FnRVVLNW52Y2tSbjFrZ2RzYjd1RGpwYXBFZnlWenlKRzlkbGVNUE9UbUFyRVRXampIdENxV2VBdFdQV2lvbVVpNUJ2dDEtN0lR0gGTAUFVX3lxTE9RYXJ1NnpHR0pDSzVNRENWWlFxRmw3elBsVzFDMFJsNjFXWV8wSzhWLWlQUjc3R09UQUdVaWJoSWJodEhUcHFLZ0FfUjhhUW1RWmFQWXRXRVdOYk90VXNTTlU1Nnp1cTZpd0JFS04tQzhoRTVKVFFYRHcxMGlzanBpTG05YVNxLXJjVUtKQTN0UHcxbw/?oc=5",
-   "title": "Natural item to put in your kitchen sink to deep clean drains — not vinegar or soda",
-   "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQS3RQcEF3Z3BaRi1KTm1OQTBOVDJETl9TZ3hXc3FXcFB6Y3EzNlJWOElzMjM3dTBMQ05lcUJfcGpCNjhSd3FnRVVLNW52Y2tSbjFrZ2RzYjd1RGpwYXBFZnlWenlKRzlkbGVNUE9UbUFyRVRXampIdENxV2VBdFdQV2lvbVVpNUJ2dDEtN0lR0gGTAUFVX3lxTE9RYXJ1NnpHR0pDSzVNRENWWlFxRmw3elBsVzFDMFJsNjFXWV8wSzhWLWlQUjc3R09UQUdVaWJoSWJodEhUcHFLZ0FfUjhhUW1RWmFQWXRXRVdOYk90VXNTTlU1Nnp1cTZpd0JFS04tQzhoRTVKVFFYRHcxMGlzanBpTG05YVNxLXJjVUtKQTN0UHcxbw?oc=5",
-   "source": "Wales Online",
-   "topic": "sinks",
-   "published": "2026-09-14T07:00:00+00:00",
-   "first_seen": "2026-10-10T13:41:11+00:00",
-   "snippet": "",
-   "source_mode": "gnews",
-   "publisher_url": "https://www.walesonline.co.uk"
-  },
-  {
-   "id": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQdEZIRGhaUUVXNGJ2TnBkTEFzbGtKSi1GanJkWjBvNmhGb0F4NDNIN1U2RDR1UDBzWDU4WWo0UzgzUmV4OXlBYUc0VzI2Z1k0VU9HQ2lWc0FRSUxGUEVRa2RLRDQxQ1NpRXh5cFRSV1JPUmRmRnJqVWR3bDN1WC1wWXZnS0E5a25j0gGOAUFVX3lxTFBlc3c5WXZDOVRCN29kX0EtTDdMTVcyRDhhVW9vRkxMSGdIeERSS01lUUpNU3JLQzBNckJJajRRell3ZUoxdm9oRS1HdnRLS0FNNVlHU0hscmZESGF0WUJaWk1MOE9ac1hHMHBFN0Q0ZXc3RE8xSHoyYjlCcE9nVTViLWk1aEN4aDFvUWpRNkE/?oc=5",
-   "title": "Deep clean your kitchen sink with natural item 'better' than vinegar and baking soda",
-   "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQdEZIRGhaUUVXNGJ2TnBkTEFzbGtKSi1GanJkWjBvNmhGb0F4NDNIN1U2RDR1UDBzWDU4WWo0UzgzUmV4OXlBYUc0VzI2Z1k0VU9HQ2lWc0FRSUxGUEVRa2RLRDQxQ1NpRXh5cFRSV1JPUmRmRnJqVWR3bDN1WC1wWXZnS0E5a25j0gGOAUFVX3lxTFBlc3c5WXZDOVRCN29kX0EtTDdMTVcyRDhhVW9vRkxMSGdIeERSS01lUUpNU3JLQzBNckJJajRRell3ZUoxdm9oRS1HdnRLS0FNNVlHU0hscmZESGF0WUJaWk1MOE9ac1hHMHBFN0Q0ZXc3RE8xSHoyYjlCcE9nVTViLWk1aEN4aDFvUWpRNkE?oc=5",
-   "source": "Liverpool Echo",
-   "topic": "sinks",
-   "published": "2026-09-14T07:00:00+00:00",
-   "first_seen": "2026-10-10T13:41:11+00:00",
-   "snippet": "",
-   "source_mode": "gnews",
-   "publisher_url": "https://www.liverpoolecho.co.uk"
   }
  ]
 }

@@ -1,7 +1,27 @@
 {
- "modified": "2026-11-13",
+ "modified": "2026-11-14",
  "keep_days": 60,
  "items": [
+  {
+   "id": "https://www.kbbreview.com/88702/news/repair-and-maintenance-growth-spells-opportunity-for-kbb-retailers/",
+   "title": "Repair and maintenance growth spells opportunity for KBB retailers",
+   "link": "https://www.kbbreview.com/88702/news/repair-and-maintenance-growth-spells-opportunity-for-kbb-retailers/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-11-13T15:47:29+00:00",
+   "first_seen": "2026-11-14T12:19:31+00:00",
+   "snippet": "Repair and maintenance activity saw healthy growth in the third quarter of 2026, which is good news for retailers appealing to consumers wanting to improve…"
+  },
+  {
+   "id": "https://www.kbbreview.com/88697/news/franke-restructures-sales-team-to-increase-customer-focus/",
+   "title": "Franke restructures sales team to increase customer focus",
+   "link": "https://www.kbbreview.com/88697/news/franke-restructures-sales-team-to-increase-customer-focus/",
+   "source": "kbbreview",
+   "topic": "sinks",
+   "published": "2026-11-13T15:17:15+00:00",
+   "first_seen": "2026-11-14T12:19:31+00:00",
+   "snippet": "Franke UK has significantly restructured its sales organisation, moving from five sales territories to eight and also hiring three new area sales managers."
+  },
   {
    "id": "https://www.homebuilding.co.uk/outdoors/garden/how-to-insulate-an-outdoor-tap/",
    "title": "Is your outdoor tap ready for winter? This simple £5 add-on could prevent it freezing and bursting",

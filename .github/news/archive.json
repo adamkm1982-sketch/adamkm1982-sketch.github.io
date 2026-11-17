@@ -1,7 +1,37 @@
 {
- "modified": "2026-11-16",
+ "modified": "2026-11-17",
  "keep_days": 60,
  "items": [
+  {
+   "id": "https://www.kbbreview.com/88725/news/whitebirk-sees-sales-spike-after-shaws-price-shock/",
+   "title": "Whitebirk sees sales spike after Shaws price shock",
+   "link": "https://www.kbbreview.com/88725/news/whitebirk-sees-sales-spike-after-shaws-price-shock/",
+   "source": "kbbreview",
+   "topic": "sinks",
+   "published": "2026-11-17T14:34:15+00:00",
+   "first_seen": "2026-11-17T14:42:32+00:00",
+   "snippet": "Whitebirk Sink Company has reported its orders have increased by nearly 50% since news broke that Shaws of Darwen was significantly increasing its prices and…"
+  },
+  {
+   "id": "https://www.kbbreview.com/88575/indepth/trublue-drawing-up-new-plans/",
+   "title": "TruBlue: Drawing up new plans",
+   "link": "https://www.kbbreview.com/88575/indepth/trublue-drawing-up-new-plans/",
+   "source": "kbbreview",
+   "topic": "kitchens",
+   "published": "2026-11-17T08:00:00+00:00",
+   "first_seen": "2026-11-17T14:42:32+00:00",
+   "snippet": "Connecting design, pricing and business management sounds an obvious step, but persuading retailers to change familiar software is a different challenge. TruBlue founder Leigh Martin…"
+  },
+  {
+   "id": "https://www.kbbreview.com/88706/news/landau-reportedly-ceases-trading-with-immediate-effect/",
+   "title": "Landau reportedly ceases trading with immediate effect",
+   "link": "https://www.kbbreview.com/88706/news/landau-reportedly-ceases-trading-with-immediate-effect/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-11-16T15:40:06+00:00",
+   "first_seen": "2026-11-17T14:42:32+00:00",
+   "snippet": "Kitchen manufacturer Landau Holdings has ceased trading and is reportedly set to enter a creditors' voluntary liquidation, bringing an end to a business with more…"
+  },
   {
    "id": "https://www.kbbreview.com/88597/indepth/new-in-projects-november-2026/",
    "title": "New in Projects: November 2026",

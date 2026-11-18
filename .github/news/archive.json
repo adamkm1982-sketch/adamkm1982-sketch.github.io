@@ -1,7 +1,27 @@
 {
- "modified": "2026-11-17",
+ "modified": "2026-11-18",
  "keep_days": 60,
  "items": [
+  {
+   "id": "https://www.kbbreview.com/88750/news/ripples-retailers-regroup-at-annual-conference/",
+   "title": "Ripples retailers regroup at annual conference",
+   "link": "https://www.kbbreview.com/88750/news/ripples-retailers-regroup-at-annual-conference/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-11-18T11:36:13+00:00",
+   "first_seen": "2026-11-18T14:20:08+00:00",
+   "snippet": "Bathroom retail franchise Ripples brought its franchisees together for its Annual Conference, which covered a topics such as design creativity, software, sales, finance and marketing."
+  },
+  {
+   "id": "https://www.idealhome.co.uk/all-rooms/kitchen/dunelm-umbra-sling-folding-dish-rack-and-drying-mat/",
+   "title": "Dunelm is selling the ultimate dish drainer for tiny kitchens – its clever design feature means you can say goodbye to cluttered sinks",
+   "link": "https://www.idealhome.co.uk/all-rooms/kitchen/dunelm-umbra-sling-folding-dish-rack-and-drying-mat",
+   "source": "Ideal Home",
+   "topic": "sinks",
+   "published": "2026-11-18T07:00:00+00:00",
+   "first_seen": "2026-11-18T14:20:08+00:00",
+   "snippet": "*Adds to cart*"
+  },
   {
    "id": "https://www.kbbreview.com/88725/news/whitebirk-sees-sales-spike-after-shaws-price-shock/",
    "title": "Whitebirk sees sales spike after Shaws price shock",
@@ -1245,16 +1265,6 @@
    "snippet": "",
    "source_mode": "gnews",
    "publisher_url": "https://www.liverpoolecho.co.uk"
-  },
-  {
-   "id": "https://www.kbbreview.com/87515/newswire/supplier-newswire-september-19-2026/",
-   "title": "Supplier Newswire: September 19, 2026",
-   "link": "https://www.kbbreview.com/87515/newswire/supplier-newswire-september-19-2026/",
-   "source": "kbbreview",
-   "topic": "kitchens",
-   "published": "2026-09-19T07:00:00+00:00",
-   "first_seen": "2026-10-08T19:06:52+00:00",
-   "snippet": "Press releases and announcements supplied directly by KBB brands, suppliers and service providers. Published as received and not produced or edited by the kbbreview editorial…"
   }
  ]
 }

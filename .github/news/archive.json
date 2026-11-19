@@ -1,7 +1,37 @@
 {
- "modified": "2026-11-18",
+ "modified": "2026-11-19",
  "keep_days": 60,
  "items": [
+  {
+   "id": "https://www.kbbreview.com/88753/news/exhibitor-surge-sees-kbbreview-one-gather-momentum/",
+   "title": "Exhibitor surge sees kbbreview ONE gather momentum",
+   "link": "https://www.kbbreview.com/88753/news/exhibitor-surge-sees-kbbreview-one-gather-momentum/",
+   "source": "kbbreview",
+   "topic": "kitchens",
+   "published": "2026-11-19T10:21:42+00:00",
+   "first_seen": "2026-11-19T14:32:31+00:00",
+   "snippet": "A surge in exhibitor sign-ups has given kbbreview ONE a major boost ahead of its debut next April, as more kitchen and bathroom brands get…"
+  },
+  {
+   "id": "https://www.kbbreview.com/88741/opinion/gemma-mcrae-accessibility-needs-to-be-more-personal/",
+   "title": "Gemma McRae: ‘Accessibility needs to be more personal’",
+   "link": "https://www.kbbreview.com/88741/opinion/gemma-mcrae-accessibility-needs-to-be-more-personal/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-11-19T08:00:00+00:00",
+   "first_seen": "2026-11-19T14:32:31+00:00",
+   "snippet": "Although the industry’s understanding of accessible design is clearly growing, Häfele UK’s Gemma McRae believes we still need to allow for personality, taste and choice…"
+  },
+  {
+   "id": "https://www.kbbreview.com/88754/people/harrison-bathrooms-appoints-new-area-sales-manager/",
+   "title": "Harrison Bathrooms appoints new area sales manager",
+   "link": "https://www.kbbreview.com/88754/people/harrison-bathrooms-appoints-new-area-sales-manager/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-11-18T16:06:47+00:00",
+   "first_seen": "2026-11-19T14:32:31+00:00",
+   "snippet": "Brett Catrall has been appointed as a new area sales manager for Harrison Bathrooms, where he will have responsibility for parts of Yorkshire and the…"
+  },
   {
    "id": "https://www.kbbreview.com/88750/news/ripples-retailers-regroup-at-annual-conference/",
    "title": "Ripples retailers regroup at annual conference",

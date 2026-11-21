@@ -1,7 +1,29 @@
 {
- "modified": "2026-11-20",
+ "modified": "2026-11-21",
  "keep_days": 60,
  "items": [
+  {
+   "id": "https://news.google.com/rss/articles/CBMingFBVV95cUxQdVduNHBocXMzMVU0ZUFVZjdod091REtBTmc5c1pzbDc1Z0JjN3g1WkxaeFZFZTFGSkFxcXRfby1YREtObUlMUGJaQmpGa3dkTzJqeGVmVXgyczJpSnd3Z1lQZVNsdDVveklWVWo4X3J1Y0pMV1lPUlkxMWU4WUM5dzQwMnczcENrSVZhUEdZTVJ3NHhYQmJsU25sWUZ6d9IBngFBVV95cUxQdVduNHBocXMzMVU0ZUFVZjdod091REtBTmc5c1pzbDc1Z0JjN3g1WkxaeFZFZTFGSkFxcXRfby1YREtObUlMUGJaQmpGa3dkTzJqeGVmVXgyczJpSnd3Z1lQZVNsdDVveklWVWo4X3J1Y0pMV1lPUlkxMWU4WUM5dzQwMnczcENrSVZhUEdZTVJ3NHhYQmJsU25sWUZ6dw/?oc=5",
+   "title": "My taps were covered in limescale — £2.50 supermarket spray made them gleam in minutes",
+   "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQdVduNHBocXMzMVU0ZUFVZjdod091REtBTmc5c1pzbDc1Z0JjN3g1WkxaeFZFZTFGSkFxcXRfby1YREtObUlMUGJaQmpGa3dkTzJqeGVmVXgyczJpSnd3Z1lQZVNsdDVveklWVWo4X3J1Y0pMV1lPUlkxMWU4WUM5dzQwMnczcENrSVZhUEdZTVJ3NHhYQmJsU25sWUZ6d9IBngFBVV95cUxQdVduNHBocXMzMVU0ZUFVZjdod091REtBTmc5c1pzbDc1Z0JjN3g1WkxaeFZFZTFGSkFxcXRfby1YREtObUlMUGJaQmpGa3dkTzJqeGVmVXgyczJpSnd3Z1lQZVNsdDVveklWVWo4X3J1Y0pMV1lPUlkxMWU4WUM5dzQwMnczcENrSVZhUEdZTVJ3NHhYQmJsU25sWUZ6dw?oc=5",
+   "source": "Mirror",
+   "topic": "sinks",
+   "published": "2026-11-21T08:08:00+00:00",
+   "first_seen": "2026-11-21T13:35:36+00:00",
+   "snippet": "",
+   "source_mode": "gnews",
+   "publisher_url": "https://www.mirror.co.uk"
+  },
+  {
+   "id": "https://www.kbbreview.com/88790/newswire/supplier-newswire-november-21-2026/",
+   "title": "Supplier Newswire: November 21, 2026",
+   "link": "https://www.kbbreview.com/88790/newswire/supplier-newswire-november-21-2026/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-11-21T08:00:00+00:00",
+   "first_seen": "2026-11-21T13:35:36+00:00",
+   "snippet": "Press releases supplied directly by KBB brands, organisations and service providers. Published as received and not produced or edited by the kbbreview editorial team."
+  },
   {
    "id": "https://www.kbbreview.com/88764/news/irish-retailer-goodbrother-launches-uk-franchise-model/",
    "title": "Irish retailer goodbrother launches UK franchise model",

@@ -1,7 +1,27 @@
 {
- "modified": "2026-11-24",
+ "modified": "2026-11-25",
  "keep_days": 60,
  "items": [
+  {
+   "id": "https://www.kbbreview.com/88863/news/frontline-furniture-sees-20-growth-after-aqua-rebrand/",
+   "title": "Frontline furniture sees 20% growth after Aqua rebrand",
+   "link": "https://www.kbbreview.com/88863/news/frontline-furniture-sees-20-growth-after-aqua-rebrand/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-11-25T14:31:42+00:00",
+   "first_seen": "2026-11-25T15:49:28+00:00",
+   "snippet": "Frontline Bathrooms, the sister company of the soon-to-be-closed distributor Smiths Briten, has seen a 20% increase in furniture sales since the launch of its Aqua…"
+  },
+  {
+   "id": "https://www.kbbreview.com/88853/news/breaking-smiths-briten-to-close-after-49-years/",
+   "title": "BREAKING: Smiths Briten to close after 49 years",
+   "link": "https://www.kbbreview.com/88853/news/breaking-smiths-briten-to-close-after-49-years/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-11-25T11:11:01+00:00",
+   "first_seen": "2026-11-25T15:49:28+00:00",
+   "snippet": "Bathroom distributor Smiths Briten has confirmed it will be closing at the end of this year after almost half a century in business, with several…"
+  },
   {
    "id": "https://www.kbbreview.com/88849/news/sub-zero-wolf-exclusive-uk-distributor-for-the-galley/",
    "title": "Sub-Zero & Wolf exclusive UK distributor for The Galley",

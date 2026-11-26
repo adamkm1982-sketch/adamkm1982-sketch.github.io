@@ -1,7 +1,27 @@
 {
- "modified": "2026-11-25",
+ "modified": "2026-11-26",
  "keep_days": 60,
  "items": [
+  {
+   "id": "https://www.kbbreview.com/88870/news/neolith-secures-new-financial-agreements/",
+   "title": "Neolith secures new financial agreements",
+   "link": "https://www.kbbreview.com/88870/news/neolith-secures-new-financial-agreements/",
+   "source": "kbbreview",
+   "topic": "industry",
+   "published": "2026-11-26T09:55:27+00:00",
+   "first_seen": "2026-11-26T15:29:12+00:00",
+   "snippet": "Sintered stone surfaces manufacturer Neolith has announced new financial agreements with the continued backing of CVC and its lenders."
+  },
+  {
+   "id": "https://www.kbbreview.com/88665/opinion/are-we-becoming-too-obsessed-with-trends/",
+   "title": "Are we becoming too obsessed with trends?",
+   "link": "https://www.kbbreview.com/88665/opinion/are-we-becoming-too-obsessed-with-trends/",
+   "source": "kbbreview",
+   "topic": "kitchens",
+   "published": "2026-11-26T08:00:00+00:00",
+   "first_seen": "2026-11-26T15:29:12+00:00",
+   "snippet": "Design trends in the KBB industry seem to come and go faster than ever now, but Charlotte Tilby, head of marketing and design at Woodstock…"
+  },
   {
    "id": "https://www.kbbreview.com/88863/news/frontline-furniture-sees-20-growth-after-aqua-rebrand/",
    "title": "Frontline furniture sees 20% growth after Aqua rebrand",
